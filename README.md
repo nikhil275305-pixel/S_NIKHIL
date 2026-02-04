@@ -4,6 +4,7 @@ This is my first Git Repository
 Q.PRINT ALL PRIME NUMBER FORM 1 TO N.
 import java.util.*;
 public class JavaBasics{
+
     public static boolean isPrime(int n){
         if(n==2){
             return true;
@@ -34,6 +35,7 @@ public class JavaBasics{
 Q.CONVERSION FROM BINARY TO DECIMAL.
 import java.util.*;
 public class JavaBasics{
+
     public static void binToDec(int binNum){
         int urNum=binNum;
         int pow=0;
@@ -53,3 +55,4 @@ public class JavaBasics{
         binToDec(n);
     }
 }
+
