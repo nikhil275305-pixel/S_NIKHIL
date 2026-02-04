@@ -1,7 +1,7 @@
 # S_NIKHIL
 This is my first Git Repository
 
-Q_PRIME NUMBER FORM 1 TO N.
+Q._PRIME NUMBER FORM 1 TO N.
 import java.util.*;
 public class JavaBasics{
 
@@ -32,7 +32,7 @@ public class JavaBasics{
     }
 }
 
-Q_BINARY TO DECIMAL.
+Q._BINARY TO DECIMAL.
 import java.util.*;
 public class JavaBasics{
 
@@ -57,7 +57,7 @@ public class JavaBasics{
 }
 
 
-Q_DECIMAL TO BINARY.
+Q._DECIMAL TO BINARY.
 import java.util.*;
 public class JavaBasics{
 
