@@ -56,3 +56,29 @@ public class JavaBasics{
     }
 }
 
+
+Q.CONVERSION FROM DECIMAL TO BINARY.
+import java.util.*;
+public class JavaBasics{
+
+    public static void DecToBin(int DecNum){
+        int urNum=DecNum;
+        int binNum=0;
+        int rmndr=0;
+        int pow=0;
+        while(DecNum>0){
+            rmndr=DecNum%2;
+            binNum=binNum+rmndr*(int)Math.pow(10,pow);
+            pow++;
+            DecNum=DecNum/2;
+        }
+        System.out.println("ur Binary number of "+urNum+" is:"+binNum);
+    }
+
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter ur Number:");
+        int n=sc.nextInt();
+        DecToBin(n);
+    }
+}
