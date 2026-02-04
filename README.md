@@ -1,7 +1,7 @@
 # S_NIKHIL
 This is my first Git Repository
 
-Q.PRINT ALL PRIME NUMBER FORM 1 TO N.
+Q_PRIME NUMBER FORM 1 TO N.
 import java.util.*;
 public class JavaBasics{
 
@@ -32,7 +32,7 @@ public class JavaBasics{
     }
 }
 
-Q.CONVERSION FROM BINARY TO DECIMAL.
+Q_BINARY TO DECIMAL.
 import java.util.*;
 public class JavaBasics{
 
@@ -57,7 +57,7 @@ public class JavaBasics{
 }
 
 
-Q.CONVERSION FROM DECIMAL TO BINARY.
+Q_DECIMAL TO BINARY.
 import java.util.*;
 public class JavaBasics{
 
