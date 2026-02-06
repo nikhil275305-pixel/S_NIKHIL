@@ -1,7 +1,7 @@
 # S_NIKHIL
 This is my first Git Repository
 
-Q._PRIME NUMBER FORM 1 TO N.
+Q. PRIME NUMBER FORM 1 TO N.
 import java.util.*;
 public class JavaBasics{
 
@@ -32,7 +32,7 @@ public class JavaBasics{
     }
 }
 
-Q._BINARY TO DECIMAL.
+Q. BINARY TO DECIMAL.
 import java.util.*;
 public class JavaBasics{
 
@@ -57,7 +57,7 @@ public class JavaBasics{
 }
 
 
-Q._DECIMAL TO BINARY.
+Q. DECIMAL TO BINARY.
 import java.util.*;
 public class JavaBasics{
 
@@ -80,5 +80,26 @@ public class JavaBasics{
         System.out.print("Enter ur Number:");
         int n=sc.nextInt();
         DecToBin(n);
+    }
+}
+
+Q. SUM OF DIGITS OF THAT NUMBER.
+import java.util.*;
+public class JavaBasics{
+
+    public static int digSum(int n){
+        int DigSum=0;  
+        while(n>0){
+            int ld=n%10;
+            DigSum=DigSum+ld;
+            n=n/10;
+          }return DigSum;
+          
+    }
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter ur number:");
+        int n=sc.nextInt();
+        System.out.println("The sum of digits is:"+digSum(n));
     }
 }
