@@ -103,3 +103,34 @@ public class JavaBasics{
         System.out.println("The sum of digits is:"+digSum(n));
     }
 }
+
+Q. CHECK IF A NUBER IS PALINDROME.
+import java.util.*;
+public class JavaBasics{
+
+    public static long revNum(long n){
+         long num=0;
+        while(n>0){
+            long ld=n%10;
+            num=num*10+ld;
+            n=n/10;
+        }return num;
+    }
+    public static void palindrome(long n){
+        if(n==revNum(n)){
+            System.out.println("ur number is palindrome:"+n);
+        }else{
+            System.out.println("ur number is not palindrome:"+n);
+        }
+    }
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter ur number :");
+        long n=sc.nextLong();
+        palindrome(n);
+    }
+}
+          OR
+
+
+          
