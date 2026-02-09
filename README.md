@@ -131,6 +131,25 @@ public class JavaBasics{
     }
 }
           OR
+---------------------------
 
+Q. RECTANGLE SHAPE WITH STAR.
+import java.util.*;
+public class JavaBasics{
 
+    public static void hollowRectangle(int totRows,int totColmns){
+        for(int row=1;row<=totRows;row++){
+            for(int colmn=1;colmn<=totColmns;colmn++){
+                if(row==1||row==totRows||colmn==1||colmn==totColmns){
+                System.out.print("* ");
+            }else{
+                System.out.print("  ");
+            }
+            }System.out.println();
+        }
+    }
+    public static void main(String args[]){
+        hollowRectangle(4,5);
+    }
+}
           
