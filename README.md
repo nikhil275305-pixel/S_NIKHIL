@@ -152,4 +152,39 @@ public class JavaBasics{
         hollowRectangle(4,5);
     }
 }
+
+Q. HALF PYRAMID.
+import java.util.*;
+public class JavaBasics{
+
+    public static void half_pyramid(int totRows){
+        for(int row=1;row<=totRows;row++){
+            for(int j=1;j<=row;j++){
+                System.out.print("*");
+            }System.out.print("\n");
+        }
+    }
+    public static void main(String args[]){
+        half_pyramid(4);
+    }
+}
+
+Q. INVERTED & ROTATED HALF PYRAMID.
+import java.util.*;
+public class JavaBasics{
+
+    public static void invrtd_rotated_half_pyramid(int totRows){
+        for(int row=1;row<=totRows;row++){
+            for(int i=1;i<=totRows-row;i++){
+                System.out.print(" ");
+            }
+            for(int j=1;j<=row;j++){
+                System.out.print("*");
+            }System.out.print("\n");
+        }
+    }
+    public static void main(String args[]){
+        invrtd_rotated_half_pyramid(4);
+    }
+}
           
