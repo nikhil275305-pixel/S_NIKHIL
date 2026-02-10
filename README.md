@@ -203,4 +203,22 @@ public class JavaBasics{
         inverted_half_numPyramid(5);
     }
 }
+
+Q. FLOYD'S TRIANGLE.
+import java.util.*;
+public class JavaBasics{
+
+    public static void triangle_folyd(int totLine){
+        int counter=1;
+        for(int line=1;line<=totLine;line++){
+            for(int i=1;i<=line;i++){
+                System.out.print(counter+" ");
+                counter++;
+            }System.out.print("\n");
+        }
+    }
+    public static void main(String args[]){
+        triangle_folyd(5);
+    }
+}
           
