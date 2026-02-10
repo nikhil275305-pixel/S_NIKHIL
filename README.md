@@ -221,4 +221,24 @@ public class JavaBasics{
         triangle_folyd(5);
     }
 }
+
+Q. 0-1 TRIANGLE.
+import java.util.*;
+public class JavaBasics{
+
+    public static void zero_one_triangle(int totRows){
+        for(int row=1;row<=totRows;row++){
+            for(int colmn=1;colmn<=row;colmn++){
+                if((row+colmn)%2==0){
+                    System.out.print(1);
+                }else{
+                    System.out.print(0);
+                }
+            }System.out.println();
+        }
+    }
+    public static void main(String args[]){
+           zero_one_triangle(5); 
+    }
+}
           
