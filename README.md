@@ -153,7 +153,7 @@ public class JavaBasics{
     }
 }
 
-Q. HALF PYRAMID.
+Q. HALF PYRAMID WITH STAR.
 import java.util.*;
 public class JavaBasics{
 
@@ -169,7 +169,7 @@ public class JavaBasics{
     }
 }
 
-Q. INVERTED & ROTATED HALF PYRAMID.
+Q. INVERTED & ROTATED HALF PYRAMID WITH STAR.
 import java.util.*;
 public class JavaBasics{
 
@@ -185,6 +185,22 @@ public class JavaBasics{
     }
     public static void main(String args[]){
         invrtd_rotated_half_pyramid(4);
+    }
+}
+
+Q. INVERTED HALF PYRAMID WITH NUMNBERS.
+import java.util.*;
+public class JavaBasics{
+
+    public static void inverted_half_numPyramid(int totLine){
+        for(int line=1;line<=totLine;line++){
+            for(int i=1;i<=totLine-line+1;i++){
+                System.out.print(i);
+            }System.out.print("\n");
+        }
+    }
+    public static void main(String args[]){
+        inverted_half_numPyramid(5);
     }
 }
           
