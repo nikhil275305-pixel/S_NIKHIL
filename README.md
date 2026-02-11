@@ -271,4 +271,25 @@ public class JavaBasics{
             butterfly_pattern(10);
     }
 }
+
+Q. SOLID RHOMBUS PATTERN.
+import java.util.*;
+public class JavaBasics{
+
+    public static void solid_rhombus_pattern(int totLine){
+        for(int line=1;line<=totLine;line++){
+            //space
+            for(int i=1;i<=totLine-line;i++){
+                System.out.print(" ");
+            }for(int j=1;j<=totLine;j++){
+                System.out.print("*");
+            }
+            System.out.print("\n");
+        }
+    }
+    public static void main(String args[]){
+            solid_rhombus_pattern(5);
+    }
+}
+
           
