@@ -241,4 +241,34 @@ public class JavaBasics{
            zero_one_triangle(5); 
     }
 }
+
+Q. BUTTERFLY PATTERN.
+import java.util.*;
+public class JavaBasics{
+
+    public static void butterfly_pattern(int totLine){
+        for(int line=1;line<=totLine;line++){
+            for(int i=1;i<=line;i++){
+                System.out.print("*");
+            }for(int j=1;j<=2*(totLine-line);j++){
+                System.out.print(" ");
+            }for(int i=1;i<=line;i++){
+                System.out.print("*");
+            }
+            System.out.print("\n");
+    }for(int line=totLine;line>=1;line--){
+            for(int i=line;i>=1;i--){
+                System.out.print("*");
+            }for(int j=2*(totLine-line);j>=1;j--){
+                System.out.print(" ");
+            }for(int i=line;i>=1;i--){
+                System.out.print("*");
+            }
+            System.out.print("\n");
+           }
+    }
+    public static void main(String args[]){
+            butterfly_pattern(10);
+    }
+}
           
