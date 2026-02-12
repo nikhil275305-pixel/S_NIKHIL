@@ -351,4 +351,31 @@ public class JavaBasics{
     }
 }
 
+Q. DIAMOND PATTERN.
+import java.util.*;
+public class JavaBasics{
+
+    public static void diamond_pattern(int totLine){
+        for(int line=1;line<=totLine;line++){
+            for(int i=1;i<=totLine-line;i++){
+                System.out.print(" ");
+            }for(int j=1;j<=line*2-1;j++){
+                System.out.print("*");
+            }
+           System.out.print("\n");
+        }for(int line=totLine;line>=1;line--){
+            for(int i=totLine-line;i>=1;i--){
+                System.out.print(" ");
+            }for(int j=line*2-1;j>=1;j--){
+                System.out.print("*");
+            }
+            System.out.print("\n");
+        }
+    }
+    public static void main(String args[]){
+        diamond_pattern(4);
+    }
+}
+
+
           
