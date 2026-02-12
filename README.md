@@ -133,7 +133,7 @@ public class JavaBasics{
           OR
 ---------------------------
 
-Q. RECTANGLE SHAPE WITH STAR.
+Q. RECTANGLE (HOLLOW) SHAPE WITH STAR.
 import java.util.*;
 public class JavaBasics{
 
@@ -289,6 +289,65 @@ public class JavaBasics{
     }
     public static void main(String args[]){
             solid_rhombus_pattern(5);
+    }
+}
+
+Q. HOLLOW RHOMBUS PATTERN.
+import java.util.*;
+public class JavaBasics{
+
+    public static void hollow_rhombus(int totLine){
+        for(int line=1;line<=totLine;line++){
+            //space
+            for(int i=1;i<=totLine-line;i++){
+                System.out.print("  ");
+        }for(int colmn=1;colmn<=totLine;colmn++){
+            if(line==1||line==totLine||colmn==1||colmn==totLine){
+                System.out.print("* ");    
+            }else{
+                System.out.print("  ");
+                }
+            }System.out.print("\n");
+        }
+    }
+    public static void main(String args[]){
+        hollow_rhombus(5);
+    }
+}
+
+------------OR------------
+
+import java.util.*;
+public class JavaBasics{
+
+    public static void hollow_rhombus(int totLine){
+        for(int line=1;line<=totLine;line++){
+            //space
+            for(int i=1;i<=totLine-line;i++){
+                System.out.print("  ");
+            }//for 1st & last line star
+            if(line==1||line==totLine){
+                for(int j=1;j<=totLine;j++){
+                System.out.print("* ");    
+                }
+                //next line
+                System.out.print("\n");
+            }else{
+                //star
+                System.out.print("* ");
+                //space
+                for(int k=1;k<=totLine-2;k++){
+                    System.out.print("  ");
+                }
+                //star
+                System.out.print("* ");
+                //next line
+                System.out.print("\n");
+            }
+        }
+    }
+    public static void main(String args[]){
+        hollow_rhombus(5);
     }
 }
 
