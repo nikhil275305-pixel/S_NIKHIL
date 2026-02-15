@@ -377,5 +377,86 @@ public class JavaBasics{
     }
 }
 
+Q. LINEAR SEARCH IN ARRAY.
+import java.util.*;
+public class JavaBasics{
+
+    public static int linearSearch(int numbers[], int key){
+        for(int i=0;i<=numbers[i];i++){
+            if(numbers[i]==key){
+                return i;
+            }
+        }return -1;
+    }
+    public static void main(String args[]){
+     Scanner sc = new Scanner(System.in);
+
+        // 1. Array ka size pucha
+        System.out.print("Array ka size enter karein: ");
+        int n = sc.nextInt();
+
+        // 2. Array create kiya
+        int[] numbers = new int[n];
+
+        // 3. Loop se values input li
+        System.out.println("Ab " + n + " elements enter karein:");
+        for (int i = 0; i < n; i++) {
+            System.out.print("Element " + (i + 1) + ": ");
+            numbers[i] = sc.nextInt();
+        }
+
+        // 4. Output dikhane ke liye
+        System.out.println("\nAapka Array yeh hai:");
+        for (int i = 0; i < n; i++) {
+            System.out.print(numbers[i] + " ");
+        }System.out.println("\n");
+        int key=5;
+        int index=linearSearch(numbers,  key);
+        if(index==-1){
+            System.out.println("NOT found");
+        }else{
+            System.out.println("key is at index:"+index);
+        }
+    } 
+}
+
+
+Q. LARGEST/SMALLEST NUMBER IN ARRAY.
+import java.util.*;
+import java.util.Scanner;
+public class JavaBasics{
+
+    public static int getLargest(int numbers[]){
+        int largest=Integer.MIN_VALUE;//- infinity
+        int smallest=Integer.MAX_VALUE;//+ infinity0
+        for(int i=0;i<numbers.length;i++){
+            if(largest<numbers[i]){
+                largest=numbers[i];
+            }    
+        }
+        for(int i=0;i<numbers.length;i++){
+            if(smallest>numbers[i]){
+                smallest=numbers[i];
+            }
+        }System.out.println("smallest value is:"+smallest);
+        return largest;
+        
+    }    
+    public static void main(String args[]){
+       Scanner sc=new Scanner(System.in);
+       //size of array
+       System.out.print("Enter size of num array: ");
+       int n=sc.nextInt();
+       int numbers[]=new int[n];
+       System.out.println("Enter ur num array-");
+       for(int i=0;i<n;i++){
+       System.out.print("Element "+(i+1)+": "); 
+        numbers[i]=sc.nextInt();
+       }
+       System.out.println("largest value is:"+getLargest(numbers));
+    }
+}
+
+
 
           
