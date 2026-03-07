@@ -550,13 +550,14 @@ public class JavaBasics{
     }
 }
 
-Q. PRINT AND COUNT SUBARRAY OF A GIVEN ARRAY ALSO COMPUTE THE SUM OF THE ELEMENT OF EACH SUBARRAY.
+Q. PRINT AND COUNT SUBARRAY OF A GIVEN ARRAY AND COMPUTE THE SUM OF THE ELEMENT OF EACH SUBARRAY ALSO FIND MINIMUM AND MAXIMUM SUM OF SUBARRAY.
 import java.util.*;
 public class JavaBasics{
 
     public static void printSubArray(int numbers[]){
         int ttlsbary=0;
         int sbarysum=0;
+        int maxsum=0;
         for(int i=0; i<numbers.length;i++){
             int start=i;
             for(int j=i; j<numbers.length;j++){
@@ -565,10 +566,11 @@ public class JavaBasics{
                     System.out.print(numbers[k]+" ");
                     sbarysum=sbarysum+numbers[k]; 
                 }System.out.println();
-                System.out.println("sum of the element of this subArray is:"+sbarysum);
+                System.out.println("sum of element:"+sbarysum);
+                maxsum=sbarysum;
                 sbarysum=0;
                 ttlsbary++;
-            }System.out.println();
+            }System.out.println("minimum sum of subArray is:"+numbers[start]+" \nmaximum sum of subArray is:"+maxsum+"\n");
         }System.out.println("total subarray:"+ttlsbary);
     }
     public static void main(String args[]){
@@ -576,5 +578,4 @@ public class JavaBasics{
         printSubArray(numbers);
     }
 }
-
           
