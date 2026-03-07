@@ -3,7 +3,7 @@ This is my first Git Repository.
 It is my learnings, not any project. I am writing code here only for easy access in any device which is helpful for me.
 I will upload my projects and give description here in future.
 
-Q. PRIME NUMBER FORM 1 TO N.
+Q.1 -> PRIME NUMBER FORM 1 TO N.
 import java.util.*;
 public class JavaBasics{
 
@@ -34,7 +34,8 @@ public class JavaBasics{
     }
 }
 
-Q. BINARY TO DECIMAL.
+Q.2 -> BINARY TO DECIMAL.
+
 import java.util.*;
 public class JavaBasics{
 
@@ -59,7 +60,7 @@ public class JavaBasics{
 }
 
 
-Q. DECIMAL TO BINARY.
+Q.3 -> DECIMAL TO BINARY.
 import java.util.*;
 public class JavaBasics{
 
@@ -85,7 +86,7 @@ public class JavaBasics{
     }
 }
 
-Q. SUM OF DIGITS OF THAT NUMBER.
+Q.4 -> SUM OF DIGITS OF THAT NUMBER.
 import java.util.*;
 public class JavaBasics{
 
@@ -106,7 +107,7 @@ public class JavaBasics{
     }
 }
 
-Q. CHECK IF A NUBER IS PALINDROME.
+Q.5 -> CHECK IF A NUBER IS PALINDROME.
 import java.util.*;
 public class JavaBasics{
 
@@ -132,10 +133,8 @@ public class JavaBasics{
         palindrome(n);
     }
 }
-          OR
----------------------------
 
-Q. RECTANGLE (HOLLOW) SHAPE WITH STAR.
+Q.6 -> RECTANGLE (HOLLOW) SHAPE WITH STAR.
 import java.util.*;
 public class JavaBasics{
 
@@ -155,7 +154,7 @@ public class JavaBasics{
     }
 }
 
-Q. HALF PYRAMID WITH STAR.
+Q.7 -> HALF PYRAMID WITH STAR.
 import java.util.*;
 public class JavaBasics{
 
@@ -171,7 +170,7 @@ public class JavaBasics{
     }
 }
 
-Q. INVERTED & ROTATED HALF PYRAMID WITH STAR.
+Q.8 -> INVERTED & ROTATED HALF PYRAMID WITH STAR.
 import java.util.*;
 public class JavaBasics{
 
@@ -190,7 +189,7 @@ public class JavaBasics{
     }
 }
 
-Q. INVERTED HALF PYRAMID WITH NUMNBERS.
+Q.9 -> INVERTED HALF PYRAMID WITH NUMNBERS.
 import java.util.*;
 public class JavaBasics{
 
@@ -206,7 +205,7 @@ public class JavaBasics{
     }
 }
 
-Q. FLOYD'S TRIANGLE.
+Q.10 -> FLOYD'S TRIANGLE.
 import java.util.*;
 public class JavaBasics{
 
@@ -224,7 +223,7 @@ public class JavaBasics{
     }
 }
 
-Q. 0-1 TRIANGLE.
+Q.11 -> 0-1 TRIANGLE.
 import java.util.*;
 public class JavaBasics{
 
@@ -244,7 +243,7 @@ public class JavaBasics{
     }
 }
 
-Q. BUTTERFLY PATTERN.
+Q.12 -> BUTTERFLY PATTERN.
 import java.util.*;
 public class JavaBasics{
 
@@ -274,7 +273,7 @@ public class JavaBasics{
     }
 }
 
-Q. SOLID RHOMBUS PATTERN.
+Q.13 -> SOLID RHOMBUS PATTERN.
 import java.util.*;
 public class JavaBasics{
 
@@ -294,7 +293,7 @@ public class JavaBasics{
     }
 }
 
-Q. HOLLOW RHOMBUS PATTERN.
+Q.14 -> HOLLOW RHOMBUS PATTERN.
 import java.util.*;
 public class JavaBasics{
 
@@ -353,7 +352,7 @@ public class JavaBasics{
     }
 }
 
-Q. DIAMOND PATTERN.
+Q.15 -> DIAMOND PATTERN.
 import java.util.*;
 public class JavaBasics{
 
@@ -379,7 +378,7 @@ public class JavaBasics{
     }
 }
 
-Q. LINEAR SEARCH IN ARRAY.
+Q.16 -> LINEAR SEARCH IN ARRAY.
 import java.util.*;
 public class JavaBasics{
 
@@ -423,7 +422,7 @@ public class JavaBasics{
 }
 
 
-Q. LARGEST/SMALLEST NUMBER IN ARRAY.
+Q.17 -> LARGEST/SMALLEST NUMBER IN ARRAY.
 import java.util.*;
 import java.util.Scanner;
 public class JavaBasics{
@@ -459,7 +458,7 @@ public class JavaBasics{
     }
 }
 
-Q. BINARY SEARCH IN A SORTED ARRAY.
+Q.18 -> BINARY SEARCH IN A SORTED ARRAY.
 import java.util.*;
 public class JavaBasics{
 
@@ -485,7 +484,7 @@ public class JavaBasics{
     }
 }
 
-Q. REVERSE OF AN ARRAY.
+Q.19 -> REVERSE OF AN ARRAY.
 import java.util.*;
 public class JavaBasics{
 
@@ -508,7 +507,7 @@ public class JavaBasics{
     }
 }
 
-Q. PRINT PAIR FROM AN ARRAY.
+Q.20 -> PRINT PAIR FROM AN ARRAY.
 import java.util.*;
 public class JavaBasics{
 
@@ -527,7 +526,7 @@ public class JavaBasics{
     }
 }
 
-Q. PRINT AND COUNT SUBARRAY OF A GIVEN ARRAY.
+Q.21 -> PRINT AND COUNT SUBARRAY OF A GIVEN ARRAY.
 import java.util.*;
 public class JavaBasics{
 
@@ -550,7 +549,7 @@ public class JavaBasics{
     }
 }
 
-Q. PRINT AND COUNT SUBARRAY OF A GIVEN ARRAY AND COMPUTE THE SUM OF THE ELEMENT OF EACH SUBARRAY ALSO FIND MINIMUM AND MAXIMUM SUM OF SUBARRAY.
+Q.22 -> PRINT AND COUNT SUBARRAY OF A GIVEN ARRAY AND COMPUTE THE SUM OF THE ELEMENT OF EACH SUBARRAY ALSO FIND MINIMUM AND MAXIMUM SUM OF SUBARRAY.
 import java.util.*;
 public class JavaBasics{
 
@@ -579,7 +578,7 @@ public class JavaBasics{
     }
 }
 
-Q. FIND MAXIMUM SUM OF SUBARRAY.
+Q.23 -> FIND MAXIMUM SUM OF SUBARRAY.
 import java.util.*;
 public class JavaBasics{
 
