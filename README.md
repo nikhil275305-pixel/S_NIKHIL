@@ -508,4 +508,23 @@ public class JavaBasics{
     }
 }
 
+Q. PRINT PAIR FROM AN ARRAY.
+import java.util.*;
+public class JavaBasics{
+
+    public static void printPair(int numbers[]){
+        for(int i=0; i<numbers.length; i++){
+            int curnt=numbers[i];
+            for(int j=i+1; j<numbers.length; j++){
+                System.out.print("("+curnt+","+numbers[j]+")");
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String args[]){
+        int numbers[]={2,4,6,8,10};
+        printPair(numbers);
+    }
+}
+
           
