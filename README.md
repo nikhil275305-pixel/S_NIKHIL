@@ -578,4 +578,30 @@ public class JavaBasics{
         printSubArray(numbers);
     }
 }
+
+Q. FIND MAXIMUM SUM OF SUBARRAY.
+import java.util.*;
+public class JavaBasics{
+
+    public static void printSubArray(int numbers[]){
+        int sbarysum=0;
+        int maxsum=0;
+        for(int i=0; i<numbers.length;i++){
+            int start=i;
+            for(int j=i; j<numbers.length;j++){
+                int end=j;
+                for(int k=start; k<=end; k++){
+                    sbarysum=sbarysum+numbers[k]; 
+                }System.out.println("sum of element:"+sbarysum);
+                if(maxsum<sbarysum){
+                maxsum=sbarysum;
+                }sbarysum=0;
+            }
+        }System.out.println("maximum sum of subArray is:"+maxsum+"\n");
+    }
+    public static void main(String args[]){
+        int numbers[]={2,4,6,8,10};
+        printSubArray(numbers);
+    }
+}
           
