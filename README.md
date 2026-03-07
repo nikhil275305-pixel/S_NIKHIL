@@ -1,5 +1,7 @@
 # S_NIKHIL
-This is my first Git Repository
+This is my first Git Repository.
+This is my learnings, not any project. I am writing code here only for easy access in any device which is helpful for me.
+I will upload my projects and give description here in future.
 
 Q. PRIME NUMBER FORM 1 TO N.
 import java.util.*;
