@@ -584,7 +584,7 @@ public class JavaBasics{
 
     public static void printSubArray(int numbers[]){
         int sbarysum=0;
-        int maxsum=0;
+        int maxsum=Integer.MIN_VALUE;
         for(int i=0; i<numbers.length;i++){
             int start=i;
             for(int j=i; j<numbers.length;j++){
@@ -603,4 +603,3 @@ public class JavaBasics{
         printSubArray(numbers);
     }
 }
-          
