@@ -3,7 +3,8 @@ This is my first Git Repository.
 It is my learnings, not any project. I am writing code here only for easy access in any device which is helpful for me.
 I will upload my projects and give description here in future.
 
-Q.1 -> PRIME NUMBER FORM 1 TO N.
+// Q.1 -> PRIME NUMBER FORM 1 TO N.
+
 import java.util.*;
 public class JavaBasics{
 
@@ -34,7 +35,7 @@ public class JavaBasics{
     }
 }
 
-Q.2 -> BINARY TO DECIMAL.
+// Q.2 -> BINARY TO DECIMAL.
 
 import java.util.*;
 public class JavaBasics{
@@ -60,7 +61,8 @@ public class JavaBasics{
 }
 
 
-Q.3 -> DECIMAL TO BINARY.
+// Q.3 -> DECIMAL TO BINARY.
+
 import java.util.*;
 public class JavaBasics{
 
@@ -86,7 +88,8 @@ public class JavaBasics{
     }
 }
 
-Q.4 -> SUM OF DIGITS OF THAT NUMBER.
+// Q.4 -> SUM OF DIGITS OF THAT NUMBER.
+
 import java.util.*;
 public class JavaBasics{
 
@@ -107,7 +110,8 @@ public class JavaBasics{
     }
 }
 
-Q.5 -> CHECK IF A NUBER IS PALINDROME.
+// Q.5 -> CHECK IF A NUBER IS PALINDROME.
+
 import java.util.*;
 public class JavaBasics{
 
@@ -134,7 +138,8 @@ public class JavaBasics{
     }
 }
 
-Q.6 -> RECTANGLE (HOLLOW) SHAPE WITH STAR.
+// Q.6 -> RECTANGLE (HOLLOW) SHAPE WITH STAR.
+
 import java.util.*;
 public class JavaBasics{
 
@@ -154,7 +159,8 @@ public class JavaBasics{
     }
 }
 
-Q.7 -> HALF PYRAMID WITH STAR.
+// Q.7 -> HALF PYRAMID WITH STAR.
+
 import java.util.*;
 public class JavaBasics{
 
@@ -170,7 +176,8 @@ public class JavaBasics{
     }
 }
 
-Q.8 -> INVERTED & ROTATED HALF PYRAMID WITH STAR.
+// Q.8 -> INVERTED & ROTATED HALF PYRAMID WITH STAR.
+
 import java.util.*;
 public class JavaBasics{
 
@@ -189,7 +196,8 @@ public class JavaBasics{
     }
 }
 
-Q.9 -> INVERTED HALF PYRAMID WITH NUMNBERS.
+// Q.9 -> INVERTED HALF PYRAMID WITH NUMNBERS.
+
 import java.util.*;
 public class JavaBasics{
 
@@ -205,7 +213,8 @@ public class JavaBasics{
     }
 }
 
-Q.10 -> FLOYD'S TRIANGLE.
+// Q.10 -> FLOYD'S TRIANGLE.
+
 import java.util.*;
 public class JavaBasics{
 
@@ -223,7 +232,8 @@ public class JavaBasics{
     }
 }
 
-Q.11 -> 0-1 TRIANGLE.
+// Q.11 -> 0-1 TRIANGLE.
+
 import java.util.*;
 public class JavaBasics{
 
@@ -243,7 +253,8 @@ public class JavaBasics{
     }
 }
 
-Q.12 -> BUTTERFLY PATTERN.
+// Q.12 -> BUTTERFLY PATTERN.
+
 import java.util.*;
 public class JavaBasics{
 
@@ -273,7 +284,8 @@ public class JavaBasics{
     }
 }
 
-Q.13 -> SOLID RHOMBUS PATTERN.
+// Q.13 -> SOLID RHOMBUS PATTERN.
+
 import java.util.*;
 public class JavaBasics{
 
@@ -293,7 +305,8 @@ public class JavaBasics{
     }
 }
 
-Q.14 -> HOLLOW RHOMBUS PATTERN.
+// Q.14 -> HOLLOW RHOMBUS PATTERN.
+
 import java.util.*;
 public class JavaBasics{
 
@@ -352,7 +365,8 @@ public class JavaBasics{
     }
 }
 
-Q.15 -> DIAMOND PATTERN.
+// Q.15 -> DIAMOND PATTERN.
+
 import java.util.*;
 public class JavaBasics{
 
@@ -378,7 +392,8 @@ public class JavaBasics{
     }
 }
 
-Q.16 -> LINEAR SEARCH IN ARRAY.
+// Q.16 -> LINEAR SEARCH IN ARRAY.
+
 import java.util.*;
 public class JavaBasics{
 
@@ -422,7 +437,8 @@ public class JavaBasics{
 }
 
 
-Q.17 -> LARGEST/SMALLEST NUMBER IN ARRAY.
+// Q.17 -> LARGEST/SMALLEST NUMBER IN ARRAY.
+
 import java.util.*;
 import java.util.Scanner;
 public class JavaBasics{
@@ -458,7 +474,8 @@ public class JavaBasics{
     }
 }
 
-Q.18 -> BINARY SEARCH IN A SORTED ARRAY.
+// Q.18 -> BINARY SEARCH IN A SORTED ARRAY.
+
 import java.util.*;
 public class JavaBasics{
 
@@ -484,7 +501,8 @@ public class JavaBasics{
     }
 }
 
-Q.19 -> REVERSE OF AN ARRAY.
+// Q.19 -> REVERSE OF AN ARRAY.
+
 import java.util.*;
 public class JavaBasics{
 
@@ -507,7 +525,8 @@ public class JavaBasics{
     }
 }
 
-Q.20 -> PRINT PAIR FROM AN ARRAY.
+// Q.20 -> PRINT PAIR FROM AN ARRAY.
+
 import java.util.*;
 public class JavaBasics{
 
@@ -526,7 +545,8 @@ public class JavaBasics{
     }
 }
 
-Q.21 -> PRINT AND COUNT SUBARRAY OF A GIVEN ARRAY.
+// Q.21 -> PRINT AND COUNT SUBARRAY OF A GIVEN ARRAY.
+
 import java.util.*;
 public class JavaBasics{
 
@@ -549,7 +569,8 @@ public class JavaBasics{
     }
 }
 
-Q.22 -> PRINT AND COUNT SUBARRAY OF A GIVEN ARRAY AND COMPUTE THE SUM OF THE ELEMENT OF EACH SUBARRAY ALSO FIND MINIMUM AND MAXIMUM SUM OF SUBARRAY.
+// Q.22 -> PRINT AND COUNT SUBARRAY OF A GIVEN ARRAY AND COMPUTE THE SUM OF THE ELEMENT OF EACH SUBARRAY ALSO FIND MINIMUM AND MAXIMUM SUM OF SUBARRAY.
+
 import java.util.*;
 public class JavaBasics{
 
@@ -578,11 +599,12 @@ public class JavaBasics{
     }
 }
 
-Q.23 -> FIND MAXIMUM SUM OF SUBARRAY.
+// Q.23 -> FIND MAXIMUM SUM OF SUBARRAY (BRUTE FORCE).
+
 import java.util.*;
 public class JavaBasics{
 
-    public static void printSubArray(int numbers[]){
+    public static void maxSubArraySum(int numbers[]){
         int sbarysum=0;
         int maxsum=Integer.MIN_VALUE;
         for(int i=0; i<numbers.length;i++){
@@ -600,6 +622,89 @@ public class JavaBasics{
     }
     public static void main(String args[]){
         int numbers[]={2,4,6,8,10};
-        printSubArray(numbers);
+        maxSubArraySum(numbers);
     }
 }
+
+// Q.24 -> FIND MAXIMUM SUBARRAY SUM (PREFIX SUM).
+
+import java.util.*;
+public class JavaBasics {
+
+    public static void maxSubArraySum(int numbers[]){
+        int sbArySum=0;
+        int maxSum=Integer.MIN_VALUE;
+        int prefix[]=new int [numbers.length];
+        prefix[0]=numbers[0];
+        for(int i=1; i<prefix.length; i++){
+            prefix[i]=prefix[i-1] + numbers[i];
+        }
+        for(int i=0; i<numbers.length; i++){
+            int start=i;
+            for(int j=i; j<numbers.length; j++){
+                int end=j;
+                sbArySum= start==0 ? prefix[end] : prefix[end] - prefix[start-1];
+                if(maxSum<sbArySum){
+                    maxSum=sbArySum;
+                }
+            }
+        }System.out.println("maximum sum is:"+maxSum);
+    }
+    public static void main(String args[]){
+        int numbers[]={1,-2,6,-1,3};
+        maxSubArraySum(numbers);
+    }
+}
+
+// Q.25 -> FIND MAXIMUM SUM OF SUBARRAY (KADAN'S ALGORITHM)  --> (ALL ARRAY ELEMENT ARE 'NOT' NEGATIVE).         " [  VERY IMPORTANT QUESTION  ] "
+
+import java.util.*;
+public class JavaBasics{
+
+    public static void kadanes(int numbers[]){
+        int sbArySum=0;
+        int maxSum=Integer.MIN_VALUE;
+        for(int i=0; i<numbers.length; i++){
+            sbArySum = sbArySum + numbers[i];
+            if(sbArySum<0){
+                sbArySum=0;
+            } 
+            maxSum=Math.max(maxSum,sbArySum);
+        }System.out.println("max sum is:"+maxSum);
+    }
+    public static void main(String args[]){
+        int numbers[]={-2,-3,4,-1,-2,1,5,-3};
+        kadanes(numbers);
+    }
+}
+
+// Q.26 -> FIND MAXIMUM SUM OF SUBARRAY (KADAN'S ALGORITHM)  --> (ALL ARRAY ELEMENT ARE NEGATIVE).         " [  VERY IMPORTANT QUESTION  ] "
+
+import java.util.*;
+public class JavaBasics{
+
+    public static void kadanes(int numbers[]){
+        int sbArySum=0;
+        int minsbArySum=0;
+        int maxSum=Integer.MIN_VALUE;
+        int minSum=Integer.MAX_VALUE;
+        for(int i=0; i<numbers.length; i++){
+            sbArySum = sbArySum + numbers[i];
+            if(sbArySum<0){
+                minsbArySum=sbArySum;
+                sbArySum=0;
+            } 
+            maxSum=Math.max(maxSum,sbArySum);
+            minSum=Math.min(minSum,minsbArySum);
+        }if(minsbArySum<0 && maxSum==0){
+            System.out.println("min sum is:"+minSum);
+        }else{
+            System.out.println("max sum is:"+maxSum);
+        }
+    }
+    public static void main(String args[]){
+        int numbers[]={2,4,6,8,10};
+        kadanes(numbers);
+    }
+}
+
