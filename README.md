@@ -656,7 +656,7 @@ public class JavaBasics {
     }
 }
 
-// Q.25 -> FIND MAXIMUM SUM OF SUBARRAY (KADAN'S ALGORITHM)  --> (ALL ARRAY ELEMENT ARE 'NOT' NEGATIVE).         " [  VERY IMPORTANT QUESTION  ] "
+// Q.25 -> FIND MAXIMUM SUM OF SUBARRAY (KADAN'S ALGORITHM)  --> (ALL ARRAY ELEMENT ARE 'NOT' NEGATIVE 'OR' MIX OF (-VE) AND (+VE) ELEMENT).         " [  VERY IMPORTANT QUESTION  ] "
 
 import java.util.*;
 public class JavaBasics{
@@ -678,33 +678,34 @@ public class JavaBasics{
     }
 }
 
-// Q.26 -> FIND MAXIMUM SUM OF SUBARRAY (KADAN'S ALGORITHM)  --> (ALL ARRAY ELEMENT ARE NEGATIVE).         " [  VERY IMPORTANT QUESTION  ] "
+// Q.26 -> FIND MAXIMUM SUM OF SUBARRAY (KADAN'S ALGORITHM)  --> ( ALL ARRAY ELEMENT ARE NEGATIVE 'OR' MIX OF (-VE) AND (+VE) ELEMENT ).         " [  VERY IMPORTANT QUESTION  ] "
 
 import java.util.*;
 public class JavaBasics{
 
     public static void kadanes(int numbers[]){
         int sbArySum=0;
-        int minsbArySum=0;
+        int mxsbArySumNeg=0;
         int maxSum=Integer.MIN_VALUE;
-        int minSum=Integer.MAX_VALUE;
+        int mxSumNeg=Integer.MIN_VALUE;
         for(int i=0; i<numbers.length; i++){
             sbArySum = sbArySum + numbers[i];
             if(sbArySum<0){
-                minsbArySum=sbArySum;
+                mxsbArySumNeg=sbArySum;
                 sbArySum=0;
             } 
             maxSum=Math.max(maxSum,sbArySum);
-            minSum=Math.min(minSum,minsbArySum);
-        }if(minsbArySum<0 && maxSum==0){
-            System.out.println("min sum is:"+minSum);
+            mxSumNeg=Math.max(mxSumNeg,mxsbArySumNeg);
+        }if(mxsbArySumNeg<0 && maxSum==0){
+            System.out.println("max sum is:"+mxSumNeg);
         }else{
             System.out.println("max sum is:"+maxSum);
         }
     }
     public static void main(String args[]){
-        int numbers[]={2,4,6,8,10};
+        int numbers[]={-2,-4,-6,-8,-10};
         kadanes(numbers);
     }
 }
+
 
