@@ -743,4 +743,27 @@ public class JavaBasics{
     }
 }
 
+Q.28 - CALCULATE MAX PROFIT IN STOCK ( BUY & SELL STOCKS ).
+
+import java.util.*;
+public class JavaBasics{
+
+    public static int buyAndSellStocks(int prices[]){
+        int buyPrice=Integer.MAX_VALUE;
+        int maxProfit=0;
+        for(int i=0; i<prices.length; i++){
+            if( buyPrice < prices[i]){
+                int profit= prices[i] - buyPrice; //profit of that day
+                maxProfit=Math.max(maxProfit,profit);
+            }else{
+                buyPrice=prices[i]; //ussi din kharid liya
+            }
+        }return maxProfit;
+    }
+    public static void main(String args[]){
+        int prices[]={7,1,5,3,6,4};
+        System.out.println(" max profit is:"+buyAndSellStocks(prices));
+    }
+}
+
 
