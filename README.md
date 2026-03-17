@@ -743,7 +743,7 @@ public class JavaBasics{
     }
 }
 
-Q.28 - CALCULATE MAX PROFIT IN STOCK ( BUY & SELL STOCKS ).
+// Q.28 -> CALCULATE MAX PROFIT IN STOCK ( BUY & SELL STOCKS ).
 
 import java.util.*;
 public class JavaBasics{
@@ -992,9 +992,7 @@ public class JavaBasics{
     }
 }
 
-Question 5:
-Given an integer array nums, return all the triplets 
-[nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+// Question 5: Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
 Notice that the solution set must not contain duplicate triplets.
 
 Example 1:
@@ -1043,5 +1041,32 @@ public class JavaBasics{
         returnTriplets(nums); 
     }
 }
+
+// Q.29 -> BUBBLE SORT.
+
+import java.util.*;
+public class JavaBasics{
+
+    public static void bubbleSort(int arr[]){
+        int n=arr.length;
+        for(int turns=0; turns<n-2; turns++){
+            for(int i=0; i<n-2-turns; i++){
+                if(arr[i]>arr[i+1]){
+                    int temp=arr[i];
+                    arr[i]=arr[i+1];
+                    arr[i+1]=temp;
+                }
+            }
+        }for(int i=0; i<n; i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+    public static void main(String args[]){
+        int arr[]={5,4,1,3,2,};
+        bubbleSort(arr);
+    }
+}
+
+
 
 
