@@ -1123,6 +1123,42 @@ public class JavaBasics{
     }
 }
 
+// Q.32 -> INSERTION SORT.
+
+import java.util.*;
+
+public class JavaBasics {
+    public static void Sort(int arr[]) {
+    
+        // Step 1: पहले एलिमेंट को सॉर्टेड मानकर 1st इंडेक्स से शुरू करें
+        for (int i = 1; i < arr.length; i++) {
+            int curr = arr[i]; // वर्तमान वैल्यू को सुरक्षित रखें
+            int prev = i - 1;
+
+            // Step 2: सही जगह ढूँढने के लिए पीछे के एलिमेंट्स से तुलना करें
+            while (prev >= 0 && arr[prev] > curr) {
+                arr[prev + 1] = arr[prev]; // बड़ी वैल्यू को आगे खिसकाएं
+                prev--;
+            }
+
+            // Step 3: सही खाली जगह पर 'curr' को रख दें
+            arr[prev + 1] = curr;
+        }
+
+        // आउटपुट प्रिंट करें
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+
+    public static void main(String args[]) {
+        int arr[] = {1, 4, 1, 3, 2, 4, 3, 7};
+        Sort(arr);
+    }
+}
+
+
+
 
 
 
