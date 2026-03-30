@@ -1330,13 +1330,13 @@ public class JavaBasics {
 import java.util.*;
 public class JavaBasics{
 
-    public static void largestInMatrix(int matrix [][]){
+    public static void smallestInMatrix(int matrix [][]){
         int smallest=Integer.MAX_VALUE;
         for(int i=0; i<matrix.length; i++){
             for(int j=0; j<matrix[0].length; j++){
                 smallest=Math.min(smallest,matrix[i][j]);
             }
-        }System.out.println("largest elt is "+smallest);
+        }System.out.println("smallest elt is "+smallest);
 
     }
     //TAKING INPUT IN MATRIX OR 2D ARRAY
@@ -1364,7 +1364,7 @@ public class JavaBasics{
         int m=sc.nextInt();
         int matrix[][]= new int [n][m];
         inputMatrix(matrix);
-        largestInMatrix(matrix);
+        smallestInMatrix(matrix);
     }
 }
 
