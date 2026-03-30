@@ -1237,6 +1237,139 @@ public class JavaBasics{
     }
 }
 
+// Q.34 -> FINDING LARGEST ELEMENT IN MATRIX OR 2D ARRAY.
+
+import java.util.*;
+public class JavaBasics{
+
+     //MAIN CODE FOR LARGEST ELT
+    public static void largestInMatrix(int matrix [][]){
+        int largest=Integer.MIN_VALUE;
+        for(int i=0; i<matrix.length; i++){
+            for(int j=0; j<matrix[0].length; j++){
+                largest=Math.max(largest,matrix[i][j]);
+            }
+        }System.out.println("largest elt is "+largest);
+
+    }
+    //TAKING INPUT IN MATRIX OR 2D ARRAY
+    public static void inputMatrix(int matrix[][]){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("enter matrix element:");
+        for(int i=0; i<matrix.length; i++){
+            for(int j=0; j<matrix[0].length; j++){
+                matrix[i][j]=sc.nextInt();
+            }
+        }
+        for(int i=0; i<matrix.length; i++){
+            for(int j=0; j<matrix[0].length; j++){
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        
+        }
+    }
+    public static void main(String args[]){
+        //TAKING SIZE OF MATRIX OR 2D ARRAY
+        Scanner sc= new Scanner(System.in);
+        System.out.print("enter size of matrix:");
+        int n=sc.nextInt(); 
+        int m=sc.nextInt();
+        int matrix[][]= new int [n][m];
+        inputMatrix(matrix);
+        largestInMatrix(matrix);
+    }
+}
+
+--------------------OR-------------------------
+
+import java.util.*;
+
+public class JavaBasics {
+
+    // Pass the Scanner as a parameter to avoid creating multiple instances
+    public static void inputMatrix(int[][] matrix, Scanner sc) {
+        System.out.println("Enter matrix elements:");
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                matrix[i][j] = sc.nextInt();
+            }
+        }
+    }
+
+    public static void largestInMatrix(int[][] matrix) {
+        // Correct logic: Start with the smallest possible integer
+        int largest = Integer.MIN_VALUE;
+        
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) { // Use matrix[i].length for safety
+                largest = Math.max(largest, matrix[i][j]);
+            }
+        }
+        System.out.println("Largest element is: " + largest);
+    }
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter size of matrix (rows and columns): ");
+        int n = sc.nextInt(); 
+        int m = sc.nextInt();
+        
+        int[][] matrix = new int[n][m];
+        
+        inputMatrix(matrix, sc);
+        largestInMatrix(matrix);
+        
+        sc.close(); // Good practice to close the scanner when done
+    }
+}
+
+// Q.35 -> FINDING SMALLEST ELEMENT IN MATRIX OR 2D ARRAY.
+
+import java.util.*;
+public class JavaBasics{
+
+    public static void largestInMatrix(int matrix [][]){
+        int smallest=Integer.MAX_VALUE;
+        for(int i=0; i<matrix.length; i++){
+            for(int j=0; j<matrix[0].length; j++){
+                smallest=Math.min(smallest,matrix[i][j]);
+            }
+        }System.out.println("largest elt is "+smallest);
+
+    }
+    //TAKING INPUT IN MATRIX OR 2D ARRAY
+    public static void inputMatrix(int matrix[][]){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("enter matrix element:");
+        for(int i=0; i<matrix.length; i++){
+            for(int j=0; j<matrix[0].length; j++){
+                matrix[i][j]=sc.nextInt();
+            }
+        }
+        for(int i=0; i<matrix.length; i++){
+            for(int j=0; j<matrix[0].length; j++){
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        
+        }
+    }
+    public static void main(String args[]){
+        //TAKING SIZE OF MATRIX OR 2D ARRAY
+        Scanner sc= new Scanner(System.in);
+        System.out.print("enter size of matrix:");
+        int n=sc.nextInt(); 
+        int m=sc.nextInt();
+        int matrix[][]= new int [n][m];
+        inputMatrix(matrix);
+        largestInMatrix(matrix);
+    }
+}
+
+
+
 
 
 
