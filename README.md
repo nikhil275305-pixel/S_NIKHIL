@@ -1416,7 +1416,7 @@ public class JavaBasics{
     }
 }
 
-// Q.36 -> DIAGONAL SUM OF MATRIX.                                           [ ASKED IN GOOGLE, AMAZON, ORACLE, MICROSOFT, APPLE, ADOBE etc. ] 
+// Q.37 -> DIAGONAL SUM OF MATRIX.                                           [ ASKED IN GOOGLE, AMAZON, ORACLE, MICROSOFT, APPLE, ADOBE etc. ] 
 
 
 ------------------BRUTE FORCE SOLUTION { T.C = O(n^2) }-------------------
