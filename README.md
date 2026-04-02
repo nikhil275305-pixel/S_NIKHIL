@@ -1189,7 +1189,7 @@ public class JavaBasics{
     }
 }
 
-// Q.33 -> TAKING SIZE, INPUT AND FINDING ELEMENT IN MATRIX OR 2D ARRAY.
+// Q.34 -> TAKING SIZE, INPUT AND FINDING ELEMENT IN MATRIX OR 2D ARRAY.
 
 import java.util.*;
 public class JavaBasics{
@@ -1237,7 +1237,7 @@ public class JavaBasics{
     }
 }
 
-// Q.34 -> FINDING LARGEST ELEMENT IN MATRIX OR 2D ARRAY.
+// Q.35 -> FINDING LARGEST ELEMENT IN MATRIX OR 2D ARRAY.
 
 import java.util.*;
 public class JavaBasics{
@@ -1325,7 +1325,7 @@ public class JavaBasics {
     }
 }
 
-// Q.35 -> FINDING SMALLEST ELEMENT IN MATRIX OR 2D ARRAY.
+// Q.36 -> FINDING SMALLEST ELEMENT IN MATRIX OR 2D ARRAY.
 
 import java.util.*;
 public class JavaBasics{
@@ -1368,7 +1368,7 @@ public class JavaBasics{
     }
 }
 
-// Q.36 -> SPIRAL MATRIX PROBLEM.                                      [ ASKED IN GOOGLE, AMAZON, ORACLE, MICROSOFT, APPLE, ADOBE etc. ]        -->     IMPORATANT QUESTION
+// Q.37 -> SPIRAL MATRIX PROBLEM.                                      [ ASKED IN GOOGLE, AMAZON, ORACLE, MICROSOFT, APPLE, ADOBE etc. ]        -->     IMPORATANT QUESTION
 
 import java.util.*;
 public class JavaBasics{
@@ -1416,7 +1416,7 @@ public class JavaBasics{
     }
 }
 
-// Q.37 -> DIAGONAL SUM OF MATRIX.                                           [ ASKED IN GOOGLE, AMAZON, ORACLE, MICROSOFT, APPLE, ADOBE etc. ] 
+// Q.38 -> DIAGONAL SUM OF MATRIX.                                           [ ASKED IN GOOGLE, AMAZON, ORACLE, MICROSOFT, APPLE, ADOBE etc. ] 
 
 
 ------------------BRUTE FORCE SOLUTION { T.C = O(n^2) }-------------------
