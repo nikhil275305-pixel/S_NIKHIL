@@ -1368,7 +1368,7 @@ public class JavaBasics{
     }
 }
 
-/ Q.36 -> SPIRAL MATRIX PROBLEM.                                      [ ASKED IN GOOGLE, AMAZON, ORACLE, MICROSOFT, APPLE, ADOBE etc. ]        -->     IMPORATANT QUESTION
+// Q.36 -> SPIRAL MATRIX PROBLEM.                                      [ ASKED IN GOOGLE, AMAZON, ORACLE, MICROSOFT, APPLE, ADOBE etc. ]        -->     IMPORATANT QUESTION
 
 import java.util.*;
 public class JavaBasics{
@@ -1415,6 +1415,66 @@ public class JavaBasics{
         spiralMatrix(matrix);               
     }
 }
+
+// Q.36 -> DIAGONAL SUM OF MATRIX.                                           [ ASKED IN GOOGLE, AMAZON, ORACLE, MICROSOFT, APPLE, ADOBE etc. ] 
+
+
+------------------BRUTE FORCE SOLUTION { T.C = O(n^2) }-------------------
+import java.util.*;
+public class JavaBasics{
+
+    public static void diagonalSum(int matrix[][]){
+        int PDsum=0;
+        int SDsum=0;
+        for(int i=0; i<matrix.length; i++){
+            for(int j=0; j<matrix[0].length; j++){
+                if(i==j){
+                    PDsum = PDsum + matrix[i][j];
+                }else if(i+j==matrix.length-1){
+                    SDsum = SDsum + matrix[i][j];
+                }
+            }
+        }System.out.println("\nPDsum,SDsum: "+PDsum+","+SDsum);
+        int totSum = PDsum + SDsum;
+        System.out.print("total diagonal sum: "+totSum);
+    }
+    public static void main(String args[]){
+        int matrix[][]={{0,1,2},
+                        {3,4,5},
+                        {6,7,8}};
+        diagonalSum(matrix);
+    }
+}
+
+-----------------------OPTIMISE SOLUTION { T.C = O(n) }------------------------
+
+import java.util.*;
+public class JavaBasics{
+
+    public static void diagonalSum(int matrix[][]){
+        int PDsum=0;
+        int SDsum=0;
+        for(int i=0; i<matrix.length; i++){
+            PDsum+=matrix[i][i];
+            if(i!=matrix.length-1-i){
+                //when i!=j then SDsum calculate karana hai, yha(j=matrix.length-1-i)
+                SDsum+=matrix[i][matrix.length-1-i];
+            }
+        }
+        System.out.println("\nPDsum,SDsum: "+PDsum+","+SDsum);
+        int totSum = PDsum + SDsum;
+        System.out.print("total diagonal sum: "+totSum);
+    }
+    public static void main(String args[]){
+        int matrix[][]={{0,1,2},
+                        {3,4,5},
+                        {6,7,8}};
+        diagonalSum(matrix);
+    }
+}
+
+
+
 
 
 
