@@ -1473,6 +1473,36 @@ public class JavaBasics{
     }
 }
 
+// Q.39 -> SEARCH ( FINDING ELEMENT ) IN SORTED MATRIX/2D ARRAY.
+
+import java.util.*;
+public class JavaBasics{
+
+    // TOP TO BOTTOM STAIRCASE SEARCH.
+    public static void staircaseSearchTB(int matrix[][], int key){
+        int i=0;
+        int j=matrix[0].length-1;
+        while(i<matrix.length && j>=0){
+            if(matrix[i][j]==key){
+                 System.out.print("key is at: ("+i+","+j+")");
+                 break;
+            }else if(matrix[i][j]>key){
+                j--;
+            }else if(matrix[i][j]<key){
+                i++;
+            }
+        }System.out.print("key is not found");   
+    }
+    public static void main(String args[]){
+        int matrix[][]={{10,20,30,40},
+                        {15,25,35,45},
+                        {27,29,37,48},
+                        {32,33,39,50}};
+        int key = 150;                
+        staircaseSearchTB(matrix,key);
+    }
+}
+
 
 
 
