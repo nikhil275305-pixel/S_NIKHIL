@@ -1237,7 +1237,33 @@ public class JavaBasics{
     }
 }
 
-// Q.35 -> FINDING LARGEST ELEMENT IN MATRIX OR 2D ARRAY.
+// Q.35 ->SEARCH ( FINDING ELEMENT ) IN MATRIX / 2D ARRAY (UNSORTED).
+
+import java.util.*;
+public class JavaBasics{
+
+    public static void searchMatrix(int matrix [][], int key){
+        for(int row=0; row<matrix.length; row++){
+            for(int col=0; col<matrix[0].length; col++){
+                if(matrix[row][col]==key){
+                    System.out.print("key is at: ("+row+","+col+")");
+                    return;
+                }
+            }
+        }
+    }
+    public static void main(String args[]){
+        int matrix[][]={{10,20,30,40},
+                        {15,25,35,45},
+                        {27,29,37,48},
+                        {32,33,39,50}};
+        int key = 25;                
+        searchMatrix(matrix,key);
+    }
+}
+
+
+// Q.36 -> FINDING LARGEST ELEMENT IN MATRIX OR 2D ARRAY.
 
 import java.util.*;
 public class JavaBasics{
@@ -1325,7 +1351,7 @@ public class JavaBasics {
     }
 }
 
-// Q.36 -> FINDING SMALLEST ELEMENT IN MATRIX OR 2D ARRAY.
+// Q.37 -> FINDING SMALLEST ELEMENT IN MATRIX OR 2D ARRAY.
 
 import java.util.*;
 public class JavaBasics{
@@ -1368,7 +1394,7 @@ public class JavaBasics{
     }
 }
 
-// Q.37 -> SPIRAL MATRIX PROBLEM.                                      [ ASKED IN GOOGLE, AMAZON, ORACLE, MICROSOFT, APPLE, ADOBE etc. ]        -->     IMPORATANT QUESTION
+// Q.38 -> SPIRAL MATRIX PROBLEM.                                      [ ASKED IN GOOGLE, AMAZON, ORACLE, MICROSOFT, APPLE, ADOBE etc. ]        -->     IMPORATANT QUESTION
 
 import java.util.*;
 public class JavaBasics{
@@ -1416,7 +1442,7 @@ public class JavaBasics{
     }
 }
 
-// Q.38 -> DIAGONAL SUM OF MATRIX.                                           [ ASKED IN GOOGLE, AMAZON, ORACLE, MICROSOFT, APPLE, ADOBE etc. ] 
+// Q.39 -> DIAGONAL SUM OF MATRIX.                                           [ ASKED IN GOOGLE, AMAZON, ORACLE, MICROSOFT, APPLE, ADOBE etc. ] 
 
 
 ------------------BRUTE FORCE SOLUTION { T.C = O(n^2) }-------------------
@@ -1473,7 +1499,7 @@ public class JavaBasics{
     }
 }
 
-// Q.39 -> SEARCH ( FINDING ELEMENT ) IN SORTED MATRIX/2D ARRAY.
+// Q.40 -> SEARCH ( FINDING ELEMENT ) IN SORTED MATRIX/2D ARRAY.                [ ASKED IN ORACLE ]  
 
 import java.util.*;
 public class JavaBasics{
