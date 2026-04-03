@@ -1480,16 +1480,16 @@ public class JavaBasics{
 
     // TOP TO BOTTOM STAIRCASE SEARCH.
     public static void staircaseSearchTB(int matrix[][], int key){
-        int i=0;
-        int j=matrix[0].length-1;
-        while(i<matrix.length && j>=0){
-            if(matrix[i][j]==key){
-                 System.out.print("key is at: ("+i+","+j+")");
-                 break;
-            }else if(matrix[i][j]>key){
-                j--;
-            }else if(matrix[i][j]<key){
-                i++;
+        int row=0;
+        int col=matrix[0].length-1;
+        while(row<matrix.length && col>=0){
+            if(matrix[row][col]==key){
+                 System.out.print("key is at: ("+row+","+col+")");
+                 return;
+            }else if(matrix[row][col]>key){
+                col--;
+            }else if(matrix[row][col]<key){
+                row++;
             }
         }System.out.print("key is not found");   
     }
@@ -1498,8 +1498,37 @@ public class JavaBasics{
                         {15,25,35,45},
                         {27,29,37,48},
                         {32,33,39,50}};
-        int key = 150;                
+        int key = 25;                
         staircaseSearchTB(matrix,key);
+    }
+}
+
+------------------SAME BUT DIFFERENT APPROCH-------------------
+import java.util.*;
+public class JavaBasics{
+
+    // BOTTOM TO TOP STAIRCASE SEARCH.
+    public static void staircaseSearchBT(int matrix[][], int key){
+        int row=matrix.length-1;
+        int col=0;
+        while( row>=0 && col<matrix[0].length){
+            if(matrix[row][col]==key){
+                 System.out.print("key is at: ("+row+","+col+")");
+                 return;
+            }else if(matrix[row][col]>key){
+                row--;
+            }else if(matrix[row][col]<key){
+                col++;
+            }
+        }System.out.print("key is not found");   
+    }
+    public static void main(String args[]){
+        int matrix[][]={{10,20,30,40},
+                        {15,25,35,45},
+                        {27,29,37,48},
+                        {32,33,39,50}};
+        int key = 10;                
+        staircaseSearchBT(matrix,key);
     }
 }
 
