@@ -1514,7 +1514,7 @@ public class JavaBasics{
                  return;
             }else if(matrix[row][col]>key){
                 col--;
-            }else if(matrix[row][col]<key){
+            }else {
                 row++;
             }
         }System.out.print("key is not found");   
@@ -1543,7 +1543,7 @@ public class JavaBasics{
                  return;
             }else if(matrix[row][col]>key){
                 row--;
-            }else if(matrix[row][col]<key){
+            }else {
                 col++;
             }
         }System.out.print("key is not found");   
