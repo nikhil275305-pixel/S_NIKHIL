@@ -1589,6 +1589,7 @@ public class JavaBasics{
 ---------------------------------ASSIGNMENT (PRACTICE QUESTIONS) ON 2D ARRAY/MATRIX----------------------------
 
 // COUNTING OF GIVEN NUMBER IN MATRIX.
+
 Question 1 :Print the number of 7’s that are in the 2d array.
 Example :
 Input - int[][] array = { {4,7,8},{8,8,7} };
@@ -1596,12 +1597,14 @@ Output - 2
 
 // SUM OF THE NUMBERS IN Nth ROW OF MATRIX.
 // SUM OF THE NUMBERS IN Nth COLUMN OF MATRIX.
+
 Question 2 :Print out the sum of the numbers in the second row of the “nums” array.
 Example :
 Input - int[][] nums = { {1,4,9},{11,4,3},{2,2,3} };
 Output - 18
 
 // TRANSPOSE OF MATRIX.
+
 Question 3 :Write a program to Find Transposeofa Matrix.What is Transpose?
 Transpose of a matrix is the process ofswapping therows to columns. 
 For a 2x3 matrix,
