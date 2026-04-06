@@ -1558,6 +1558,112 @@ public class JavaBasics{
     }
 }
 
+---------------------------------ASSIGNMENT (PRACTICE QUESTIONS) ON 2D ARRAY/MATRIX----------------------------
+
+Question 1 :Print the number of 7’s that are in the 2d array.
+Example :
+Input - int[][] array = { {4,7,8},{8,8,7} };
+Output - 2
+
+Question 2 :Print out the sum of the numbers in the second row of the “nums” array.
+Example :
+Input - int[][] nums = { {1,4,9},{11,4,3},{2,2,3} };
+Output - 18
+
+Question 3 :Write a program to Find Transposeofa Matrix.What is Transpose?
+Transpose of a matrix is the process ofswapping therows to columns. 
+For a 2x3 matrix,
+Matrix 
+a11    a12    a13 
+a21    a22    a23
+Transposed Matrix
+a11    a21
+a12    a22
+a13    a23
+
+
+import java.util.*;
+public class JavaBasics{
+
+    // COUNTING OF GIVEN NUMBER IN MATRIX.
+    public static void countNum(int matrix[][], int num){
+        int count=0;
+        for(int i=0; i<matrix.length; i++){
+            for(int j=0; j<matrix[0].length; j++){
+                if(matrix[i][j]==num){
+                    count++;
+                }
+            }
+        }System.out.println("number "+num+" is: "+count);
+    }
+
+    //SUM OF THE NUMBERS IN Nth ROW OF MATRIX.
+    public static void rowSum(int matrix[][], int row){
+        int rowSum=0;
+        for(int j=0; j<matrix[0].length; j++){
+                    rowSum+=matrix[row-1][j];
+        }System.out.println("sum of the numbers in "+row+" row is: "+rowSum);
+    } 
+
+    //SUM OF THE NUMBERS IN Nth COLUMN OF MATRIX.
+    public static void colSum(int matrix[][], int col){
+        int colSum=0;
+        for(int i=0; i<matrix.length; i++){
+                    colSum+=matrix[i][col-1];
+        }System.out.println("sum of the numbers in "+col+" row is: "+colSum);
+    } 
+
+    //TRANSPOSE OF MATRIX.
+    public static void transposeMatrix(int matrix[][]){
+        int row=matrix.length; //row of given matrix
+        int col=matrix[0].length; //col of given matrix
+        int transpose[][]=new int[col][row];
+        for(int i=0; i<matrix.length; i++){
+            for(int j=0; j<matrix[0].length; j++){
+                transpose[j][i]=matrix[i][j];
+            }                           
+        }printMatrix(transpose);
+    }
+
+    //PRINT MATRIX (2D ARRAY).
+    public static void printMatrix(int matrix[][]){
+        for(int i=0; i<matrix.length; i++){
+            for(int j=0; j<matrix[0].length; j++){
+                System.out.print(matrix[i][j]+" ");
+            }System.out.println();                           
+        }
+    }
+
+
+
+    public static void staircaseSearchBT(int matrix[][], int key){
+        int row=matrix.length-1;
+        int col=0;
+        while( row>=0 && col<matrix[0].length){
+            if(matrix[row][col]==key){
+                 System.out.print("key is at: ("+row+","+col+")");
+                 return;
+            }else if(matrix[row][col]>key){
+                row--;
+            }else {
+                col++;
+            }
+        }System.out.print("key is not found");   
+    }
+    public static void main(String args[]){
+        int matrix[][]={{1,5,9},
+                        {2,4,3}};
+        int key = 20;                
+        staircaseSearchBT(matrix,key);
+        int num = 7;
+        countNum(matrix,num);
+        int row = 2;
+        rowSum(matrix,row);
+        int col = 1;
+        colSum(matrix,col);
+        transposeMatrix(matrix);
+    }
+}
 
 
 
