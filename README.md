@@ -1676,6 +1676,52 @@ public class JavaBasics{
     }
 }
 
+// Q.41 -> CHECK IF STRING IS PALINDROME.
+
+----------------BRUTE FORCE-----------------
+import java.util.*;
+public class JavaBasics{
+
+    public static void Palindrome(String str){
+        String str1="";
+        for(int i=str.length()-1; i>=0; i--){
+            char str2=str.charAt(i);
+            str1=str1+str2;
+        }
+        if(str1.equals(str)){
+            System.out.println("String '"+str+"' is Palindrome.");
+        }else{
+            System.out.println("String '"+str+"' is not Palindrome.");
+        }
+    }
+    public static void main(String args[]){
+        String str="madam";
+        Palindrome(str);
+    }
+}
+
+-------------------OPTIMISED-------------------
+import java.util.*;
+public class JavaBasics{
+
+    public static boolean isPalindrome(String str){
+        for(int i=0; i<str.length()/2; i++){
+            int n=str.length();
+            if(str.charAt(i) != str.charAt(n-1-i)){
+                //not a palindrome
+                return false;
+            }
+        }return true;
+        
+    }
+    public static void main(String args[]){
+        String str="madam";
+        System.out.println(isPalindrome(str));;
+    }
+}
+
+
+
 
 
 
