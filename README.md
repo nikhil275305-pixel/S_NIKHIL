@@ -1597,7 +1597,7 @@ public class JavaBasics{
         }System.out.println("number "+num+" is: "+count);
     }
 
-    //SUM OF THE NUMBERS IN Nth ROW OF MATRIX.
+    // SUM OF THE NUMBERS IN Nth ROW OF MATRIX.
     public static void rowSum(int matrix[][], int row){
         int rowSum=0;
         for(int j=0; j<matrix[0].length; j++){
@@ -1605,7 +1605,7 @@ public class JavaBasics{
         }System.out.println("sum of the numbers in "+row+" row is: "+rowSum);
     } 
 
-    //SUM OF THE NUMBERS IN Nth COLUMN OF MATRIX.
+    // SUM OF THE NUMBERS IN Nth COLUMN OF MATRIX.
     public static void colSum(int matrix[][], int col){
         int colSum=0;
         for(int i=0; i<matrix.length; i++){
@@ -1613,7 +1613,7 @@ public class JavaBasics{
         }System.out.println("sum of the numbers in "+col+" row is: "+colSum);
     } 
 
-    //TRANSPOSE OF MATRIX.
+    // TRANSPOSE OF MATRIX.
     public static void transposeMatrix(int matrix[][]){
         int row=matrix.length; //row of given matrix
         int col=matrix[0].length; //col of given matrix
@@ -1625,7 +1625,7 @@ public class JavaBasics{
         }printMatrix(transpose);
     }
 
-    //PRINT MATRIX (2D ARRAY).
+    // PRINT MATRIX (2D ARRAY).
     public static void printMatrix(int matrix[][]){
         for(int i=0; i<matrix.length; i++){
             for(int j=0; j<matrix[0].length; j++){
@@ -1634,27 +1634,10 @@ public class JavaBasics{
         }
     }
 
-
-
-    public static void staircaseSearchBT(int matrix[][], int key){
-        int row=matrix.length-1;
-        int col=0;
-        while( row>=0 && col<matrix[0].length){
-            if(matrix[row][col]==key){
-                 System.out.print("key is at: ("+row+","+col+")");
-                 return;
-            }else if(matrix[row][col]>key){
-                row--;
-            }else {
-                col++;
-            }
-        }System.out.print("key is not found");   
-    }
+    
     public static void main(String args[]){
         int matrix[][]={{1,5,9},
                         {2,4,3}};
-        int key = 20;                
-        staircaseSearchBT(matrix,key);
         int num = 7;
         countNum(matrix,num);
         int row = 2;
