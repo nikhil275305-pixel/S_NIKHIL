@@ -1676,6 +1676,8 @@ public class JavaBasics{
     }
 }
 
+----------------------------------------STRINGS------------------------------------------------
+
 // Q.41 -> CHECK IF STRING IS PALINDROME.
 
 ----------------BRUTE FORCE-----------------
@@ -1719,6 +1721,38 @@ public class JavaBasics{
         System.out.println(isPalindrome(str));;
     }
 }
+
+// Q.42 -> SHORTEST PATH OF GIVEN ROUTE CONTAINING 4 DIRECTIONS (E,W,N,S).
+
+import java.util.*;
+public class JavaBasics{
+
+    public static double getShortestPath(String path, int x1, int y1){
+        //x1,y1 is starting point
+        int x=0, y=0;
+        for(int i=0; i<path.length(); i++){
+            char dir=path.charAt(i);
+            if(dir=='E'){
+                x++;
+            }else if(dir=='W'){
+                x--;
+            }else if(dir=='N'){
+                y++;
+            }else{
+                y--;
+            }
+        }double shortestPath = Math.sqrt((x-x1)*(x-x1) + (y-y1)*(y-y1));
+        return shortestPath;
+    }
+    public static void main(String args[]){
+        String path="NS";
+        //starting point
+        int x1=0,y1=0;
+        System.out.println("shortest path is: "+getShortestPath(path,x1,y1));
+    }
+}
+
+
 
 
 
