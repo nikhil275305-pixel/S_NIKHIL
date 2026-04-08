@@ -1752,6 +1752,27 @@ public class JavaBasics{
     }
 }
 
+// Q.43 -> SUBSTRING OF GIVEN STRING.
+
+-----INBUILT SUBSTRING FUNCTION { str.substring(si,ei) }---------
+import java.util.*;
+public class JavaBasics{
+
+    public static String substring(String str, int si, int ei){
+        String substr="";
+        for(int i=si; i<ei; i++){
+            substr+=str.charAt(i);
+        }
+        return substr;
+    }
+    public static void main(String args[]){
+        String str = "Hello World";
+        int si=3, ei=5;
+        System.out.print(substring(str,si,ei));
+    }
+}
+
+
 
 
 
