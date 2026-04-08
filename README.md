@@ -1781,7 +1781,7 @@ public class JavaBasics{
     public static String largestString(String str[]){
         String largest=str[0];
         for(int i=0; i<str.length -1; i++){
-            if(largest.compareTo(str[i+1])>0){
+            if(largest.compareTo(str[i])<0){
                 largest=str[i];
             }
         }return largest;
