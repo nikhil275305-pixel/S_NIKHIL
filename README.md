@@ -1772,6 +1772,27 @@ public class JavaBasics{
     }
 }
 
+// Q.44 -> PRINT LARGEST STRING FROM GIVEN SET OF STRING.
+
+import java.util.*;
+public class JavaBasics{
+
+    //USE str1.comparToIgnoreCase FOR 'A'='a' MEANS NO DIFFERENCE IN UPPER CASE AND LOWER CASE LETTERS
+    public static String largestString(String str[]){
+        String largest=str[0];
+        for(int i=0; i<str.length -1; i++){
+            if(largest.compareTo(str[i+1])>0){
+                largest=str[i];
+            }
+        }return largest;
+    }
+    public static void main(String args[]){
+        String str[] = {"apple","mango","banana"};
+        System.out.print(largestString(str));
+    }
+}
+
+
 
 
 
