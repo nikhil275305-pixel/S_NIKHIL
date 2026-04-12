@@ -1821,7 +1821,7 @@ public class JavaBasics{
 import java.util.*;
 public class JavaBasics{
 
-    //---------USING STRING BUILDER (OPTIMIZED)---------
+     //---------USING STRING BUILDER (OPTIMIZED)---------
     public static String compress(String str){
         StringBuilder newStr= new StringBuilder("");
         for(int i=0; i<str.length(); i++){
@@ -1836,12 +1836,28 @@ public class JavaBasics{
             }
         }return newStr.toString();
     }
+    
+    //---------WITHOUT STRING BUILDER---------
+    public static String Compress(String str){
+        String newStr= new String("");
+        for(int i=0; i<str.length(); i++){
+            Integer count=1;
+            while(i<str.length()-1 && str.charAt(i)==str.charAt(i+1)){
+                count++;
+                i++;
+            }
+            newStr+=str.charAt(i);
+            if(count > 1){
+                newStr+=count.toString();// you can use newStr+=count; it is safer for NULL handling but inefficient.
+            }
+        }return newStr;
+    }
     public static void main(String args[]){
         String str="aaabbcccdd";
         System.out.println(compress(str));
+        System.out.println(Compress(str));
     }
 }
-
 
 
 
