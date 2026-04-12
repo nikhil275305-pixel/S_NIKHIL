@@ -1873,13 +1873,13 @@ public class JavaBasics{
         }return count;
     }
     public static void main(String args[]){
-        Scanner sc= new Scanner(System.in);
         System.out.print("Enter your String: ");
-        String str=sc.nextLine();
+        String str= new Scanner(System.in).nextLine();
+        //Scanner sc= new Scanner(System.in);
+        //String str=sc.nextLine();
         System.out.println("no of vowel in your entered String is: "+countLowercaseVowel(str));
     }
 }
-
 
 
 
