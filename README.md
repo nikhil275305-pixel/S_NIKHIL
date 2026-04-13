@@ -1881,6 +1881,45 @@ public class JavaBasics{
     }
 }
 
+----------------STRING QUESTINS (ASSIGNMENT)-------------------
+
+// Q.47 -> CHECK ANAGRAMS.
+What are anagrams?
+If two strings contain the same characters but in a different order, they can be said to be anagrams.Consider race andc are.
+
+import java.util.*;
+public class JavaBasics{
+
+    public static void checkAnagrams(String str1, String str2){
+        str1 = str1.toLowerCase();
+        str2 = str2.toLowerCase();
+        if(str1.length()==str2.length()){
+            // String ko Array me convert kiya
+            char[] str1CharArray = str1.toCharArray();
+            char[] str2CharArray = str2.toCharArray();
+            // String Array ko sort kiya
+            Arrays.sort(str1CharArray);
+            Arrays.sort(str2CharArray);
+
+            boolean result = Arrays.equals(str1CharArray,str2CharArray);
+            if(result){
+                System.out.println(str1+" and "+str2+" are anagrams of eachother.");
+            }else{
+                System.out.println(str1+" and "+str2+" are not anagrams of eachother.");
+            }
+        }else{
+            System.out.println(str1+" and "+str2+" are not anagrams of eachother.");
+        }
+    }
+    public static void main(String args[]){
+        String str1="earth", str2="heart";
+        checkAnagrams(str1,str2);
+    }
+}
+
+
+
+
 
 
 
