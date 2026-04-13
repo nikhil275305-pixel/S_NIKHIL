@@ -1881,7 +1881,7 @@ public class JavaBasics{
     }
 }
 
-----------------STRING QUESTINS (ASSIGNMENT)-------------------
+----------------STRING QUESTIONS (ASSIGNMENT)-------------------
 
 // Q.47 -> CHECK ANAGRAMS.
 What are anagrams?
