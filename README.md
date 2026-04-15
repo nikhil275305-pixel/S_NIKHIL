@@ -1917,6 +1917,28 @@ public class JavaBasics{
     }
 }
 
+----------------------------------------BIT_MANIPULATION------------------------------------------------
+
+// Q.48 -> CHECK FOR ODD OR EVEN.
+
+import java.util.*;
+public class JavaBasics{
+
+    public static void oddOrEven(int n){
+        //int bitMask=1;
+        //if((n & bitMask)==0) you can also use this
+        if((n&1)==0){
+            System.out.println(n+" is Even number");
+        }else{
+            System.out.println(n+" is Odd number");
+        }
+    }
+    public static void main(String args[]){
+        System.out.print("Enter ur number: ");
+        int n = new Scanner(System.in).nextInt();
+        oddOrEven(n);
+    }
+}
 
 
 
