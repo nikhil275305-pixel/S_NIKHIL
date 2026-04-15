@@ -1940,6 +1940,27 @@ public class JavaBasics{
     }
 }
 
+// Q.49 -> GET iTH BIT.
+
+import java.util.*;
+public class JavaBasics{
+
+    public static int getIthBit(int n, int i){
+        int bitMask =1 << i;
+        if((n & bitMask)==0){
+            return 0;
+        }else{
+            return 1;
+        }
+    }
+    public static void main(String args[]){
+        System.out.print("Enter ur number: ");
+        int n = new Scanner(System.in).nextInt();
+        System.out.print("Enter ur i: ");
+        int i = new Scanner(System.in).nextInt();
+        System.out.print(i+"th bit is: "+getIthBit(n,i));
+    }
+}
 
 
 
