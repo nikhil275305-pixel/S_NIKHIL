@@ -1962,6 +1962,24 @@ public class JavaBasics{
     }
 }
 
+// Q.50 -> SET iTH BIT.
+
+import java.util.*;
+public class JavaBasics{
+
+    public static int setIthBit(int n, int i){
+        int bitMask =1 << i;
+        return (n | bitMask);
+    }
+    public static void main(String args[]){
+        System.out.print("Enter ur number: ");
+        int n = new Scanner(System.in).nextInt();
+        System.out.print("Enter ur i: ");
+        int i = new Scanner(System.in).nextInt();
+        System.out.print(i+"th bit is: "+setIthBit(n,i));
+    }
+}
+
 
 
 
