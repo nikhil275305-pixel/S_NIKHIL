@@ -2037,6 +2037,25 @@ public class JavaBasics{
         System.out.println(i+"th bit updated to: "+updateIthBit(n,i,newBit));
     }
 }
+
+// Q.53 -->  CLEAR I BITS.
+
+import java.util.*;
+public class JavaBasics{
+
+    public static int clearIBits(int n, int i){
+        int bitMask = (~0)<<i;
+        return n & bitMask;
+    }
+
+    public static void main(String args[]){
+        int n = 15;
+        int i = 2;
+        System.out.println(i+"th bit updated to: "+clearIBits(n,i));
+    }
+}
+   
+
    
 
 
