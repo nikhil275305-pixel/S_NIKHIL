@@ -1981,6 +1981,64 @@ public class JavaBasics{
 }
 
 
+// Q.51 --> UPDATE iTH BIT. { MORE ELEGENT }
+
+import java.util.*;
+public class JavaBasics{
+
+    public static int clearIthBit(int n, int i){
+        int bitMask = ~(1<<i);
+        return n & bitMask;
+    }
+
+    public static int updateIthBit(int n, int i, int newBit){
+        n = clearIthBit(n,i);
+        int BitMask = (newBit << i);
+        return n | BitMask;
+    }
+
+    public static void main(String args[]){
+        int n = 10;
+        int i = 2;
+        int newBit = 1;
+        System.out.println(i+"th bit updated to: "+updateIthBit(n,i,newBit));
+    }
+}
+
+
+// Q.52 --> SET, CLEAR, UPDATE iTH BIT.
+
+import java.util.*;
+public class JavaBasics{
+
+    public static int setIthBit(int n, int i){
+        int bitMask =(1 << i);
+        return (n | bitMask);
+    }
+
+    public static int clearIthBit(int n, int i){
+        int bitMask = ~(1<<i);
+        return n & bitMask;
+    }
+
+    public static int updateIthBit(int n, int i, int newBit){
+        if(newBit == 0){
+            return clearIthBit(n,i);
+        }else{
+            return setIthBit(n,i);
+        }
+    }
+    public static void main(String args[]){
+        int n = 10;
+        int i = 2;
+        int newBit = 0;
+        System.out.println(i+"th bit set to: "+setIthBit(n,i));
+        System.out.println(i+"th bit cleared to: "+clearIthBit(n,i));
+        System.out.println(i+"th bit updated to: "+updateIthBit(n,i,newBit));
+    }
+}
+   
+
 
 
 
