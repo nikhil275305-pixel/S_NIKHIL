@@ -2054,6 +2054,27 @@ public class JavaBasics{
         System.out.println(i+"th bit updated to: "+clearIBits(n,i));
     }
 }
+
+// Q.54 -->  CLEAR BITS IN RNAGE.
+
+import java.util.*;
+public class JavaBasics{
+
+    public static int clearBitsRange(int n, int i, int j){
+        int a = (~0)<<(j+1);
+        int b = (1<<i) -1;
+        int bitMask = a | b;
+        return n & bitMask;
+    }
+
+    public static void main(String args[]){
+        int n = 2515;
+        int i = 2;
+        int j = 7;
+        System.out.println("bits are cleared from "+i+" to "+j+" and ans is: "+clearBitsRange(n,i,j));
+    }
+}
+   
    
 
    
