@@ -2074,6 +2074,23 @@ public class JavaBasics{
         System.out.println("bits are cleared from "+i+" to "+j+" and ans is: "+clearBitsRange(n,i,j));
     }
 }
+
+// Q.55 --> NUMBER IS POWER OF TWO OR NOT.
+
+import java.util.*;
+public class JavaBasics{
+
+     public static boolean isPowerOfTwo(int n){
+        return (n & (n-1))==0;
+    }
+
+
+    public static void main(String args[]){
+        int n = 5;
+        System.out.println("is "+n+" Power Of Two: "+isPowerOfTwo(n));
+    }    
+}
+   
    
    
 
