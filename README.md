@@ -2114,7 +2114,7 @@ public class JavaBasics{
     }    
 }
 
-// Q.56 --> FAST EXPONENTIATION.
+// Q.57 --> FAST EXPONENTIATION.
 
 import java.util.*;
 public class JavaBasics{
@@ -2135,7 +2135,7 @@ public class JavaBasics{
     }
 }
 
-// Q.56 --> MODULAR EXPONENTIATION.             { ASKED IN GOOGLE }  
+// Q.58 --> MODULAR EXPONENTIATION.             { ASKED IN GOOGLE }  
 
 import java.util.*;
 public class JavaBasics{
@@ -2161,6 +2161,13 @@ public class JavaBasics{
     }
 
 }
+
+---------------------------------------BIT MANIPULATION QUESTIONS (ASSIGNMENT)--------------------------------------
+
+// Q.59 --> WHAT IS THE VALUE OF X^X FOR ANY VALUEOF X?
+
+THE VALUE OF X^X = 0.
+THINK ABOUT IT,XOR GIVES 0 WHEN THE BITS ARE THE SAME.IF WE COMPARE THE SAME NUMBER TO ITSELF, THE BITS WILL ALWAYS BE THE SAME. SO, THE ANSWER OF X^X WILL ALWAYS BE 0
 
 
    
