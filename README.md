@@ -2135,6 +2135,34 @@ public class JavaBasics{
     }
 }
 
+// Q.56 --> MODULAR EXPONENTIATION.             { ASKED IN GOOGLE }  
+
+import java.util.*;
+public class JavaBasics{
+
+    public static long modularExponentiation(long base, long exp, long mod) {
+       long res = 1;
+       base = base % mod; // Initial reduction
+       while (exp > 0) {
+            // If current bit is 1, multiply base to result
+             if ((exp & 1) == 1) res = (res * base) % mod;
+        
+            // Square the base for the next bit position
+             base = (base * base) % mod;
+        
+            // Move to the next bit in the exponent
+             exp >>= 1;
+        }
+        return res;
+    }
+
+    public static void main(String args[]){
+        System.out.println(modularExponentiation(3,5,5));
+    }
+
+}
+
+
    
    
    
