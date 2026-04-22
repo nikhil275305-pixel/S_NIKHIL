@@ -2189,7 +2189,7 @@ public class JavaBasics{
     }
 }
 
-// Q.62 --> ADD 1 TO AN INTEGER USING BIT MANIPULATION.(HINT: TRY USING BITWISE NOT OPERATOR).
+// Q.62 --> ADD 1 TO AN INTEGER USING BIT MANIPULATION.  (HINT: TRY USING BITWISE NOT OPERATOR).
 
 import java.util.*;
 public class JavaBasics{
@@ -2204,6 +2204,37 @@ public class JavaBasics{
     }
 }
 
+// Q.63 --> UPPERCASE TO LOWERCASE.
+
+import java.util.*;
+public class JavaBasics{
+
+    public static char UppercaseToLowercase(char ch){
+        char lowercase = ((char)(ch | ' '));
+        return lowercase;
+    }
+
+    public static void main(String args[]){
+        char ch = 'G';
+        System.out.println(UppercaseToLowercase(ch));    
+    }
+}
+
+// Q.64 --> LOWERCASE TO UPPERCASE.
+
+import java.util.*;
+public class JavaBasics{
+
+    public static char UppercaseToLowercase(char ch){
+        char lowercase = ((char)(ch & '_'));
+        return lowercase;
+    }
+
+    public static void main(String args[]){
+        char ch = 'g';
+        System.out.println(UppercaseToLowercase(ch));    
+    }
+}
    
    
    
