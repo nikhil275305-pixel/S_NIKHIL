@@ -1859,7 +1859,7 @@ public class JavaBasics{
     }
 }
 
-// Q.46 -> COUNT LOWERCASE VOWEL.
+// Q.47 -> COUNT LOWERCASE VOWEL.
 import java.util.*;
 public class JavaBasics{
 
@@ -1883,7 +1883,7 @@ public class JavaBasics{
 
 ----------------STRING QUESTIONS (ASSIGNMENT)-------------------
 
-// Q.47 -> CHECK ANAGRAMS.
+// Q.48 -> CHECK ANAGRAMS.
 What are anagrams?
 If two strings contain the same characters but in a different order, they can be said to be anagrams.Consider race andc are.
 
@@ -1919,7 +1919,7 @@ public class JavaBasics{
 
 ----------------------------------------BIT_MANIPULATION------------------------------------------------
 
-// Q.48 -> CHECK FOR ODD OR EVEN.
+// Q.49 -> CHECK FOR ODD OR EVEN.
 
 import java.util.*;
 public class JavaBasics{
@@ -1940,7 +1940,7 @@ public class JavaBasics{
     }
 }
 
-// Q.49 -> GET iTH BIT.
+// Q.50 -> GET iTH BIT.
 
 import java.util.*;
 public class JavaBasics{
@@ -1962,7 +1962,7 @@ public class JavaBasics{
     }
 }
 
-// Q.50 -> SET iTH BIT.
+// Q.51 -> SET iTH BIT.
 
 import java.util.*;
 public class JavaBasics{
@@ -1981,7 +1981,7 @@ public class JavaBasics{
 }
 
 
-// Q.51 --> UPDATE iTH BIT. { MORE ELEGENT }
+// Q.52 --> UPDATE iTH BIT. { MORE ELEGENT }
 
 import java.util.*;
 public class JavaBasics{
@@ -2006,7 +2006,7 @@ public class JavaBasics{
 }
 
 
-// Q.52 --> SET, CLEAR, UPDATE iTH BIT.
+// Q.53 --> SET, CLEAR, UPDATE iTH BIT.
 
 import java.util.*;
 public class JavaBasics{
@@ -2038,7 +2038,7 @@ public class JavaBasics{
     }
 }
 
-// Q.53 -->  CLEAR I BITS.
+// Q.54 -->  CLEAR I BITS.
 
 import java.util.*;
 public class JavaBasics{
@@ -2055,7 +2055,7 @@ public class JavaBasics{
     }
 }
 
-// Q.54 -->  CLEAR BITS IN RNAGE.
+// Q.55 -->  CLEAR BITS IN RNAGE.
 
 import java.util.*;
 public class JavaBasics{
@@ -2075,7 +2075,7 @@ public class JavaBasics{
     }
 }
 
-// Q.55 --> NUMBER IS POWER OF TWO OR NOT.
+// Q.56 --> NUMBER IS POWER OF TWO OR NOT.
 
 import java.util.*;
 public class JavaBasics{
@@ -2091,7 +2091,7 @@ public class JavaBasics{
     }    
 }
 
-// Q.56 --> COUNT SET BITS IN A NUMBER.
+// Q.57 --> COUNT SET BITS IN A NUMBER.
 
 import java.util.*;
 public class JavaBasics{
@@ -2114,7 +2114,7 @@ public class JavaBasics{
     }    
 }
 
-// Q.57 --> FAST EXPONENTIATION.
+// Q.58 --> FAST EXPONENTIATION.
 
 import java.util.*;
 public class JavaBasics{
@@ -2135,7 +2135,7 @@ public class JavaBasics{
     }
 }
 
-// Q.58 --> MODULAR EXPONENTIATION.             { ASKED IN GOOGLE }  
+// Q.59 --> MODULAR EXPONENTIATION.             { ASKED IN GOOGLE }  
 
 import java.util.*;
 public class JavaBasics{
@@ -2164,7 +2164,7 @@ public class JavaBasics{
 
 ---------------------------------------BIT MANIPULATION QUESTIONS (ASSIGNMENT)--------------------------------------
 
-// Q.59 --> WHAT IS THE VALUE OF X^X FOR ANY VALUEOF X?
+// Q.60 --> WHAT IS THE VALUE OF X^X FOR ANY VALUEOF X?
 
 THE VALUE OF X^X = 0.
 THINK ABOUT IT,XOR GIVES 0 WHEN THE BITS ARE THE SAME.IF WE COMPARE THE SAME NUMBER TO ITSELF, THE BITS WILL ALWAYS BE THE SAME. SO, THE ANSWER OF X^X WILL ALWAYS BE 0
