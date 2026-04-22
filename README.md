@@ -2170,6 +2170,25 @@ THE VALUE OF X^X = 0.
 THINK ABOUT IT,XOR GIVES 0 WHEN THE BITS ARE THE SAME.IF WE COMPARE THE SAME NUMBER TO ITSELF, THE BITS WILL ALWAYS BE THE SAME. SO, THE ANSWER OF X^X WILL ALWAYS BE 0
 
 
+// Q.61 --> SWAP TWO NUMBERS WITHOUT USING ANY THIRD VARIABLE.
+
+import java.util.*;
+public class JavaBasics{
+
+    public static void swapXor(int a, int b){
+        System.out.println("(a,b) before swaping: ("+a+","+b+")");
+        a = a^b;
+        b = a^b;
+        a = a^b;
+        System.out.println("(a,b) after swaping: ("+a+","+b+")");
+    }
+    public static void main(String args[]){
+        int a=2;
+        int b=5;
+        swapXor(a,b);
+    }
+}
+
    
    
    
