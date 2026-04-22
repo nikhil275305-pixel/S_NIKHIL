@@ -2209,6 +2209,7 @@ public class JavaBasics{
 import java.util.*;
 public class JavaBasics{
 
+    // USING BITWISE OPERATER 
     public static char UppercaseToLowercase(char ch){
         char lowercase = ((char)(ch | ' '));
         return lowercase;
@@ -2225,6 +2226,7 @@ public class JavaBasics{
 import java.util.*;
 public class JavaBasics{
 
+    // USING BITWISE OPERATER 
     public static char UppercaseToLowercase(char ch){
         char lowercase = ((char)(ch & '_'));
         return lowercase;
