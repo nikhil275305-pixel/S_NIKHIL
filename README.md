@@ -2189,6 +2189,21 @@ public class JavaBasics{
     }
 }
 
+// Q.62 --> ADD 1 TO AN INTEGER USING BIT MANIPULATION.(HINT: TRY USING BITWISE NOT OPERATOR).
+
+import java.util.*;
+public class JavaBasics{
+
+    public static int addOneBitwise(int n){
+        // -(~n)=n+1 bcz (~x = -x-1) 
+        return -~n;
+    } 
+    
+    public static void main(String args[]){
+        System.out.println(addOneBitwise(6));
+    }
+}
+
    
    
    
