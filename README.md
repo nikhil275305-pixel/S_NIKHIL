@@ -2237,6 +2237,10 @@ public class JavaBasics{
         System.out.println(UppercaseToLowercase(ch));    
     }
 }
+
+// Q.65 --> A GOOD READ OF HACKS USING BITS (YOUCAN CHECK THIS OUT IN YOUR FREE TIME) :
+
+https://graphics.stanford.edu/~seander/bithacks.html
    
    
    
