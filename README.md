@@ -2289,6 +2289,50 @@ class Deer extends Animal{
         System.out.println("eats grass");
     }
 }
+
+-----------------------ASSIGNMENT QUESTIONS {OOPS}--------------------------
+
+// Q.65 --> PRINT THE SUMM, DIFFERENCE AND PRODUCT OF TWO COMPLEX NUMBER BY CREATING A CLASS NAMED 'COMPLEX' WITH SEPERATE METHODS FOR EACH OPERATION WHOSE REAL AND IAMGINARY PART ARE ENETERED BY USER.
+
+---------------------BRUTE FORCE---------------------
+import java.util.*;
+public class OOPS{
+
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter ur real part of complex number: ");
+        double c =sc.nextDouble();
+        System.out.print("Enter ur imaginary part of complex number: ");
+        double d =sc.nextDouble();
+        System.out.print("Enter ur real part of complex number: ");
+        double e =sc.nextDouble();
+        System.out.print("Enter ur imaginary part of complex number: ");
+        double f =sc.nextDouble();
+        Complex cmplx= new Complex();
+        cmplx.sum(c,d,e,f);
+        cmplx.difference(c,d,e,f);
+        cmplx.product(c,d,e,f);
+    }
+}
+class Complex{
+
+    public void sum(double c, double d,double e, double f){
+        double a=c+e;
+        double b=d+f;
+        System.out.println(a+","+b+"i");
+    }
+    public void difference(double c, double d,double e, double f){
+        double a=c-e;
+        double b=d-f;
+        System.out.println(a+","+b+"i");
+    }
+    public void product(double c, double d,double e, double f){
+        double a = c*e - d*f;        
+        double b = c*f + d*e;
+        System.out.println(a+","+b+"i");
+    }
+}
+
    
    
    
