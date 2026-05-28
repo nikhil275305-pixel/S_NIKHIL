@@ -2475,6 +2475,10 @@ happens first. The instance initialization blocks are executed before the constr
 so 32 is outputted next. Finally, the class is loaded with the instance initialization
 blocks again being called before the constructor, outputting 45. The result is that
 13245 is printed, making Option C the correct answer.)
+
+
+// TASK --> READ UP ABOUT BASICS OF EXCEPTION HANDLING FROM HERE.
+https://www.w3schools.com/java/java_try_catch.asp
    
    
    
