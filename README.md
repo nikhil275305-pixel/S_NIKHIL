@@ -2432,8 +2432,49 @@ a. Only protected can be used.
 B. public and protected both can be used.
 C. public, protected, and private can be used.
 d. Only public can be used.
-// ANS-B (JAVA DOES NOT ALLOW TO REDUCE THE VISIBILITY OF THE INHERITED METHOD,  default AND private WILL REDUCE THE VISIBILITY OF THE INHERITED METHOD)
-   
+// ANS-B (JAVA DOES NOT ALLOW TO REDUCE THE VISIBILITY OF THE INHERITED METHOD,  default AND private WILL REDUCE THE VISIBILITY OF THE INHERITED METHOD).
+
+// Q.68 --> WHAT IS THE OUTPUT OF THE FOLLOWING PROGRAM?
+abstract class Car{
+
+    //satic initialization block
+    static{
+        System.out.println("1");
+    }
+    public Car(String name){
+        super();
+        System.out.println("2");
+    }
+    //instance initialization block
+    {
+        System.out.println("3");
+    }
+}
+public class BlueCar extends Car{
+
+    //instance initialization block
+    {
+        System.out.println("4");
+    }
+    public BlueCar(){
+        super("blue");
+        System.out.println("5");
+    }
+
+    public static void main(String gears[]){
+        new BlueCar();
+    }
+}
+A. 23451
+B. 12354
+C. 13245
+D. The code does not compile.
+//ANS-C (Theclass is loaded first,with the static initialization block called and 1 is outputted
+first. When the BlueCar is created in the main() method, the super class initialization
+happens first. The instance initialization blocks are executed before the constructor,
+so 32 is outputted next. Finally, the class is loaded with the instance initialization
+blocks again being called before the constructor, outputting 45. The result is that
+13245 is printed, making Option C the correct answer.)
    
    
    
