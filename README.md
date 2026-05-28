@@ -2381,6 +2381,39 @@ class Complex{
     }
 }
 
+// Q.66 --> WHAT IS THE OUTPUT OF THE FOLLOWING PROGRAM?
+
+A. Driving vehicle
+B. Driving electric car
+C. Driving car
+D. The code does not compile
+
+class Automobile{
+
+    private String drive(){
+        return "Driving vehicle";
+    }
+}
+class Car extends Automobile{
+
+    protected String drive(){
+        return "Driving vehicle";
+    }
+}
+public class ElectricCar extends Car{
+
+    public final String drive() {
+        return "Driving electric car";
+    }
+
+    public static void main(String[] wheels) {
+        final Car car = new ElectricCar();
+        System.out.print(car.drive());
+    }
+}
+
+//HAVE COMPILATION ERROR ->  FILE NAME = PUBLIC CLASS NAME ,ELSE PRINT -> (B) DRIVING ELECTRIC CAR
+
    
    
    
