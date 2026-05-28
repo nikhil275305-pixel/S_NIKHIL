@@ -2382,12 +2382,6 @@ class Complex{
 }
 
 // Q.66 --> WHAT IS THE OUTPUT OF THE FOLLOWING PROGRAM?
-
-A. Driving vehicle
-B. Driving electric car
-C. Driving car
-D. The code does not compile
-
 class Automobile{
 
     private String drive(){
@@ -2412,8 +2406,33 @@ public class ElectricCar extends Car{
     }
 }
 
+A. Driving vehicle
+B. Driving electric car
+C. Driving car
+D. The code does not compile
+
 //HAVE COMPILATION ERROR ->  FILE NAME = PUBLIC CLASS NAME ,ELSE PRINT -> (B) DRIVING ELECTRIC CAR
 
+// Q.67 -->  LOOK AT THE FOLLOWING CODE AND CHOOSETHE RIGHT OPTION FOR THE WORD:
+//Shape.java
+public class Shape{
+
+    protected void display(){
+        System.out.println("Display-base");
+    }
+}
+//Circle.java
+public class Circle extends Shape{
+
+     <access modifiers> void display(){
+        System.out.println("Display-base");
+    }
+}
+a. Only protected can be used.
+B. public and protected both can be used.
+C. public, protected, and private can be used.
+d. Only public can be used.
+// ANS-B (JAVA DOES NOT ALLOW TO REDUCE THE VISIBILITY OF THE INHERITED METHOD,  default AND private WILL REDUCE THE VISIBILITY OF THE INHERITED METHOD)
    
    
    
