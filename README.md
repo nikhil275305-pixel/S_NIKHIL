@@ -2242,6 +2242,9 @@ public class JavaBasics{
 
 https://graphics.stanford.edu/~seander/bithacks.html
 
+
+-------------------------------------------OOPS------------------------------------------------
+
 // Q. --> METHOD OVERLOADING.
 
 public class OOPS{
@@ -2479,6 +2482,26 @@ blocks again being called before the constructor, outputting 45. The result is t
 
 // TASK --> READ UP ABOUT BASICS OF EXCEPTION HANDLING FROM HERE.
 https://www.w3schools.com/java/java_try_catch.asp
+
+-------------------------------------------RECURSION BASICS (PART 1)-------------------------------------------
+
+// Q.69 --> PRINT NUMBER SFROM N TO 1 (DECREASING ORDER) USING RECURSION.
+
+public class RecursionBsics{
+          
+    public static void printDecreasing(int n){
+    if(n==1){
+      System.out.print(n);
+      return;
+    }
+    System.out.print(n+" ");
+    printDecreasing(n-1);
+    }
+  
+    public static void main(String args[]){
+    printDecreasing(5);
+    }
+}
    
    
    
