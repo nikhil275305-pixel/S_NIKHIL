@@ -2535,6 +2535,21 @@ public class RecursionBasics{
     }
 }
 
+// Q.72 --> PRINT SUM OF FIRST N NATURAL NUMBERS USING RECURSIN.
+
+public class RecursionBasics{
+
+    public static int printFNNsum(int n){
+        if(n==1){
+            return 1;
+        }
+        return n+printFNNsum(n-1);
+    }
+    public static void main(String args[]){
+        System.out.print(printFNNsum(6));
+    }
+}
+
    
    
    
