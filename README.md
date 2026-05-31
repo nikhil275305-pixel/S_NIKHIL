@@ -2487,36 +2487,51 @@ https://www.w3schools.com/java/java_try_catch.asp
 
 // Q.69 --> PRINT NUMBER SFROM N TO 1 (DECREASING ORDER) USING RECURSION.
 
-public class RecursionBsics{
+public class RecursionBasics{
           
     public static void printDecreasing(int n){
-    if(n==1){
-      System.out.print(n);
-      return;
-    }
-    System.out.print(n+" ");
-    printDecreasing(n-1);
+        if(n==1){
+            System.out.print(n);
+            return;
+        }
+        System.out.print(n+" ");
+        printDecreasing(n-1);
     }
   
     public static void main(String args[]){
-    printDecreasing(5);
+        printDecreasing(5);
     }
 }
 
-// Q.69 --> PRINT NUMBER SFROM 1 TO N (INCREASING ORDER) USING RECURSION.
+// Q.70 --> PRINT NUMBER SFROM 1 TO N (INCREASING ORDER) USING RECURSION.
 
 public class RecursionBasics{
 
     public static void printIncreasing(int n){
-    if(n==1){
-      System.out.print(n+" ");
-      return;
-    }
-    printIncreasing(n-1);
-    System.out.print(n+" ");
+        if(n==1){
+            System.out.print(n+" ");
+            return;
+        }
+        printIncreasing(n-1);
+        System.out.print(n+" ");
     }
     public static void main(String args[]){
-      printIncreasing(5);
+        printIncreasing(5);
+    }
+}
+
+// Q.71 --> PRINT FACTORIAL OF A NUMBER N USING RECURSIN.
+
+public class RecursionBasics{
+
+    public static int factorial(int n){
+        if(n==0){
+          return 1;
+        }
+        return n*factorial(n-1);
+    }
+    public static void main(String args[]){
+        System.out.println(factorial(5));
     }
 }
 
