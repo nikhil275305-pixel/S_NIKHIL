@@ -2589,12 +2589,13 @@ public class RecursionBasics{
 public class RecursionBasics{
 
     public static int firstOccurence(int arr[], int target,int i){
-        if(arr[i]==target){
-            return i;
-        }
-        if(i==arr.length-1){
+
+        if(i==arr.length){
             System.out.println("element not found");
             return -1;
+        }
+        if(arr[i]==target){
+            return i;
         }
         return firstOccurence(arr,target,i+1);
     }
