@@ -2550,6 +2550,40 @@ public class RecursionBasics{
     }
 }
 
+// Q.73 --> PRINT Nth FIBONACCI NUMBER USING RECURSION.
+
+public class RecursionBasics{
+
+    public static int printNthFibonacci(int n){
+        if(n==0 || n==1){
+            return n;
+        }
+        return printNthFibonacci(n-1)+printNthFibonacci(n-2);
+    }
+    public static void main(String args[]){
+        System.out.println(printNthFibonacci(5));
+    }
+}
+
+// Q.74 --> CHECK IF A GIVEN ARRAY IS SORTED (ASCENDING ORDER) OR NOT USING RECURSION.
+
+public class RecursionBasics{
+
+    public static boolean isSorted(int arr[],int i){
+        if(i == arr.length-1){
+            return true;
+        }
+        if(arr[i] > arr[i+1]){
+            return false;
+        }
+        return isSorted(arr,i+1);
+    }
+    public static void main(String args[]){
+        int arr[]={1,2,3,3,4,5};
+        System.out.println(isSorted(arr,0));
+    }
+}
+
    
    
    
