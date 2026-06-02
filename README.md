@@ -2584,6 +2584,27 @@ public class RecursionBasics{
     }
 }
 
+// Q.75 --> WAF TO FIND THE FIRST OCCURENCE OF AN ELEMENT IN AN ARRAY USING RECURSION.
+
+public class RecursionBasics{
+
+    public static int firstOccurence(int arr[], int target,int i){
+        if(arr[i]==target){
+            return i;
+        }
+        if(i==arr.length-1){
+            System.out.println("element not found");
+            return -1;
+        }
+        return firstOccurence(arr,target,i+1);
+    }
+    public static void main(String args[]){
+        int arr[]={1,2,3,4,4,5};
+        System.out.println("element is at position "+firstOccurence(arr,5,0)+" at first occurence");
+    }
+}
+
+
    
    
    
