@@ -2605,6 +2605,25 @@ public class RecursionBasics{
     }
 }
 
+// Q.76 --> WAF TO FIND THE LAST OCCURENCE OF AN ELEMENT IN AN ARRAY USING RECURSION.
+
+// Q.77 --> WAF TO CALCULATE POWER OF NUMBER USING RECURSION.
+
+public class RecursionBasics{
+
+    public static int power(int x,int n){
+        if(n==1){
+            return x;
+        }
+        return x*power(x,n-1);
+    }
+
+    public static void main(String args[]){
+        System.out.println(power(2,5));
+    }
+}
+
+
 
    
    
