@@ -2625,7 +2625,7 @@ public class RecursionBasics{
     }
 }
 
-// Q.77 --> WAF TO CALCULATE POWER OF NUMBER USING RECURSION.
+// Q.77 --> WAF TO CALCULATE POWER OF A NUMBER USING RECURSION.
 
 public class RecursionBasics{
 
@@ -2638,6 +2638,28 @@ public class RecursionBasics{
 
     public static void main(String args[]){
         System.out.println(power(2,5));
+    }
+}
+
+// Q.78 --> WAF TO CALCULATE POWER OF NUMBER IN O(logn) USING RECURSION.
+
+public class RecursionBasics{
+
+    // T.C = O(logn)
+    public static int power(int base, int pow){
+        if(pow==0){
+            return 1;
+        }
+        // agr {int halfPowerSq = power(n,pow/2)*power(n,pow/2);} --> T.C=O(n) dega
+        int halfPower=power(base,pow/2);
+        int halfPowerSq = halfPower*halfPower;
+        if(pow%2!=0){
+            halfPowerSq = base*halfPowerSq;
+        }
+        return halfPowerSq;
+    }
+    public static void main(String args[]){
+        System.out.println(power(2,10));
     }
 }
 
