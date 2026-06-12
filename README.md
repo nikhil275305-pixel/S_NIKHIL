@@ -2663,6 +2663,27 @@ public class RecursionBasics{
     }
 }
 
+// Q.78 --> Tiling Problem
+Given a "2 x n" floor and tiles of size "2 x 1", count the number of
+ways to tile the given floor using the 2 x 1 tiles.
+(A tile can either be placed horizontally or vertically. )
+
+public class RecursionBasics{
+
+    public static int tilingProblem(int n){
+        if(n==0 || n==1){
+            return 1;
+        }
+        //verticle ways
+        int fnm1=tilingProblem(n-1);
+        //horizontal ways
+        int fnm2=tilingProblem(n-2);
+        return fnm1+fnm2;
+    }
+    public static void main(String args[]){
+        System.out.println(tilingProblem(3));
+    }
+}
 
 
    
