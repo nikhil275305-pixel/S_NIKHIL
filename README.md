@@ -2663,7 +2663,7 @@ public class RecursionBasics{
     }
 }
 
-// Q.78 --> Tiling Problem
+// Q.79 --> Tiling Problem
 Given a "2 x n" floor and tiles of size "2 x 1", count the number of
 ways to tile the given floor using the 2 x 1 tiles.
 (A tile can either be placed horizontally or vertically. )
@@ -2684,6 +2684,30 @@ public class RecursionBasics{
         System.out.println(tilingProblem(3));
     }
 }
+
+// Q.80 --> WAF TO REMOVE DUPLICATES IN A STRING USING RECURSION.
+
+public class RecursionBasics{
+
+    public static void removeDuplicates(String str,int index, StringBuilder newStr, boolean map[]){
+        if(index==str.length()){
+            System.out.println(newStr);
+            return;
+        }
+        char currChar = str.charAt(index);
+        if(map[currChar-'a'] == true){
+            //duplicate found
+            removeDuplicates(str,index+1,newStr,map);
+        }else{
+            map[currChar-'a'] = true;
+            removeDuplicates(str,index+1,newStr.append(currChar),map);
+        }
+    }
+    public static void main(String args[]){
+        removeDuplicates("appnnacollege",0,new StringBuilder(""),new boolean[26]);
+    }
+}
+
 
 
    
