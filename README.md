@@ -1795,8 +1795,8 @@ public class JavaBasics{
 // Q.45 -> CONVERT EACH FIRST LETTER OF EACH WORD TO UPPER CASE.           { ASKED IN <CODE_NATION> }
 import java.util.*;
 public class JavaBasics{
+
     public static String toUpperCase(String str){
-    
         StringBuilder sb = new StringBuilder("");
         char ch = Character.toUpperCase(str.charAt(0));
         sb.append(ch);
