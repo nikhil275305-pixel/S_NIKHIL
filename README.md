@@ -2763,7 +2763,151 @@ public class RecursionBasics{
     }
 }
 
+--------------------------------------ASSIGNMENT QUESTIONS (RECURSION BASICS)-------------------------------------
 
+Question 1 : For a given integer array of size N. You have to find all the occurrences
+(indices) of a given element (Key) and print them. Use a recursive function to solve this
+problem.
+Sample Input : arr[ ] = {3, 2, 4, 5, 6, 2, 7, 2, 2}, key = 2
+Sample Output : 1 5 7 8
+
+public class RecursionBasics{
+
+    public static void allOccurence(int arr[],int i,int key){
+        if(i==arr.length){
+            System.out.println("\nif it is empty then the key is not in the array");
+            return;
+        }
+        if(arr[i]==key){
+            System.out.print(i+" ");
+        }
+        allOccurence(arr,i+1,key);
+    }
+    public static void main(String args[]){
+        int arr[] = {3, 2, 4, 5, 6, 2, 7, 2, 2};
+        allOccurence(arr,0,9);
+        System.out.println();
+    }
+}
+---------------------------0R-----------------------------
+
+public class RecursionBasics{
+
+    //(USER CENTRIC)
+    public static boolean allOccurence(int arr[],int i,int key,boolean found){
+        if(i==arr.length){
+            return found;
+        }
+        if(arr[i]==key){
+            System.out.print(i+" ");
+            found=true;
+        }
+        return allOccurence(arr,i+1,key,found);
+    }
+    public static void main(String args[]){
+        int arr[] = {3, 2, 4, 5, 6, 2, 7, 2, 2};
+        boolean isFound=allOccurence(arr,0,9,false);
+        if(!isFound){
+            System.out.print("-1 ");
+        }
+        System.out.println();
+    }
+}
+
+Question 2 :
+You are given a number (eg -  2019), convert it into a String of english like
+“two zero one nine”.  Use a recursive function to solve this problem.
+NOTE- The digits of the number will only be in the range 0-9 and the last digit of a number
+can’t be 0.
+Sample Input : 1947
+Sample Output : “one nine four seven”
+
+public class RecursionBasics{
+
+    //NUMBER TO STRING(MY SOLUTION)
+    public static void numToString(int n){
+        if(n==0){
+            return;
+        }
+        numToString(n/10);
+        System.out.print(getString(n%10)+" ");
+    }
+    public static String getString(int n){
+        switch(n){
+            case 0:return "zero";
+            case 1:return "one";
+            case 2:return "two";
+            case 3:return "three";
+            case 4:return "four";
+            case 5:return "five";
+            case 6:return "six";
+            case 7:return "seven";
+            case 8:return "eight";
+            case 9:return "nine";
+            default:return "NA";
+        }
+    }
+    public static void main(String args[]){
+        numToString(2019);
+    }
+}
+--------------------------------OR--------------------------------
+
+public class RecursionBasics{
+    
+    //ANOTHER SOLUTION (NOT MINE)
+    static String digits[]={"zero","one","two","three","four","five","six","seven","eight","nine"};
+    public static void numToString(int n){
+        if(n==0){
+            return;
+        }
+        numToString(n/10);
+        System.out.print(digits[n%10]+" ");
+    }
+
+    public static void main(String args[]){
+        numToString(2019);
+    }
+}
+
+Question 3 : Write a program to find Length of a String using Recursion.
+
+public class RecursionBasics{
+
+    //LENGTH OF STRING(MY SOLUTION)
+    public static int stringLength(String str,int i){
+        if(i==str.length()){
+            return i;
+        }
+        return stringLength(str,i+1);
+    }
+    public static void main(String args[]){
+        System.out.println(stringLength("Nikhil",0));
+    }
+}
+----------------------OR-----------------------
+
+public class RecursionBasics{
+
+    //LENGTH OF STRING(NOT MINE)
+    public static int stringLength(String str){
+        if(str.length()==0){
+            return 0;
+        }
+        return stringLength(str.substring(1))+1;
+    }
+    public static void main(String args[]){
+        System.out.println(stringLength("Nikhil"));
+    }
+}
+
+
+
+    
+
+
+
+    
    
    
    
