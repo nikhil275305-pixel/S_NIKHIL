@@ -3125,8 +3125,8 @@ public class DividenConquer{
 }
 
 // Q.84 --> Search in Rotated Sorted Array                                                    { IMPORTANT FOR INTERVIEVS }
-input : sorted, rotated array with distinct numbers (in ascending order)
-It is rotated at a pivot point. Find the index of given element.
+// input : sorted, rotated array with distinct numbers (in ascending order)
+// It is rotated at a pivot point. Find the index of given element.
 
 public class DividenConquer{
 
@@ -3164,6 +3164,208 @@ public class DividenConquer{
         int arr[]={4,5,6,7,0,1,2};
         int tar=0;
         System.out.println(search(arr,tar,0,arr.length-1));
+    }
+}
+
+--------------------------------------ASSIGNMENT QUESTIONS (DIVIDE & CONQUER)-------------------------------------
+
+// Question1:Apply Merge sort to sort an array of Strings.(Assume that all the characters in
+// all the Strings are in lowercase). (EASY)
+// Sample Input 1: arr = { "sun", "earth", "mars", "mercury"}
+// Sample Output 1: arr = { "earth", "mars", "mercury", "sun"}
+
+//-----------------------MY BRUTE FORCE SOLn WITH BUGS BUT WORK FOR THIS PARTICULAR QUESTION-----------------------
+public class DividenConquer{
+
+    public static void stringMergeSort(String str[],int si,int ei){
+        if(si>=ei){
+            return;
+        }
+        int mid=si+(ei-si)/2;
+        stringMergeSort(str,si,mid);
+        stringMergeSort(str,mid+1,ei);
+        merge(str,si,mid,ei);
+    }
+    
+    public static void merge(String str[],int si ,int mid,int ei){
+        String temp[]=new String[ei-si+1];
+        int i=si;
+        int j=mid+1;
+        int k=0;
+        int l=1;
+
+        while(i<=mid && j<=ei){
+            int m=Math.min(str[i].length()-1,str[j].length()-1);
+            if(str[i].charAt(0)==str[j].charAt(0)){
+                    while(l<m){
+                        if(str[i].charAt(l)>str[j].charAt(l)){
+                            temp[k]=str[j];
+                            j++;
+                            break;
+                        }
+                        l++;
+                    }
+                }
+            if(str[i].charAt(0)<=str[j].charAt(0)){
+                temp[k]=str[i];
+                i++;
+            }else{
+                temp[k]=str[j];
+                j++;
+            }
+            k++;
+        }
+        while(i<=mid){
+            temp[k++]=str[i++];
+        }
+        while(j<=ei){
+            temp[k++]=str[j++];
+        }
+        for(k=0, i=si;k<temp.length;k++,i++){
+            str[i]=temp[k];
+        }
+    }
+    public static void printArr(String str[]){
+        System.out.print("{ ");
+        for(int i=0;i<str.length;i++){
+            System.out.print(str[i]+", ");
+        }
+        System.out.print("}");
+    }
+
+
+    public static void main(String args[]){
+        String str[] = { "sun", "earth", "mars", "mercury"};
+        stringMergeSort(str,0,str.length-1);
+        printArr(str);
+    }
+}
+
+//---------------------GEMINI CORRECTED MY SOLn USING .compareTo()-----------------------
+public class DividenConquer {
+
+    // The divide stage remains perfectly correct!
+    public static void stringMergeSort(String str[], int si, int ei) {
+        if (si >= ei) {
+            return;
+        }
+        int mid = si + (ei - si) / 2;
+        stringMergeSort(str, si, mid);
+        stringMergeSort(str, mid + 1, ei);
+        merge(str, si, mid, ei);
+    }
+    
+    // The simplified and correct merge function
+    public static void merge(String str[], int si, int mid, int ei) {
+        String temp[] = new String[ei - si + 1];
+        int i = si;      // Pointer for left half
+        int j = mid + 1; // Pointer for right half
+        int k = 0;       // Pointer for temp array
+
+        // Merge elements into temp array in sorted order
+        while (i <= mid && j <= ei) {
+            // compareTo returns a value < 0 if str[i] comes before str[j] alphabetically
+            if (str[i].compareTo(str[j]) <= 0) {
+                temp[k] = str[i];
+                i++;
+            } else {
+                temp[k] = str[j];
+                j++;
+            }
+            k++;
+        }
+        
+        // Copy any remaining elements from the left subarray
+        while (i <= mid) {
+            temp[k++] = str[i++];
+        }
+        
+        // Copy any remaining elements from the right subarray
+        while (j <= ei) {
+            temp[k++] = str[j++];
+        }
+        
+        // Transfer elements from temp back to the original array
+        for (k = 0, i = si; k < temp.length; k++, i++) {
+            str[i] = temp[k];
+        }
+    }
+
+    public static void printArr(String str[]) {
+        System.out.print("{ ");
+        for (int i = 0; i < str.length; i++) {
+            System.out.print("\"" + str[i] + "\"" + (i < str.length - 1 ? ", " : ""));
+        }
+        System.out.println(" }");
+    }
+
+    public static void main(String args[]) {
+        String str[] = { "sun", "earth", "mars", "mercury" };
+        stringMergeSort(str, 0, str.length - 1);
+        printArr(str);
+    }
+}
+-------------------------OR--------------------------------
+
+public class DividenConquer {
+
+    //function to mergeSort 2 arrays
+    public static String[] mergeSort(String[] arr, int lo, int hi) {
+        if (lo == hi) {
+            String[] A = { arr[lo] };
+            return A;
+        }
+
+        int mid = lo + (hi-lo) / 2;
+        String[] arr1 = mergeSort(arr, lo, mid);
+        String[] arr2 = mergeSort(arr, mid + 1, hi);
+        String[] arr3 = merge(arr1, arr2);
+        return arr3;
+    }
+    static String[] merge(String[] arr1, String[] arr2) {
+        int m = arr1.length;
+        int n = arr2.length;
+        String[] arr3 = new String[m + n];
+        int idx = 0;
+        int i = 0;
+        int j = 0;
+        while (i < m && j < n) {
+            if (isAlphabeticallySmaller(arr1[i], arr2[j])) {
+                arr3[idx] = arr1[i];
+                i++;
+                idx++;
+            }
+            else {
+                arr3[idx] = arr2[j];
+                j++;
+                idx++;
+            }
+        }
+        while (i < m) {
+            arr3[idx] = arr1[i];
+            i++;
+            idx++;
+        }
+        while (j < n) {
+            arr3[idx] = arr2[j];
+            j++;
+            idx++;
+        }
+        return arr3;
+    }
+    // Return true if str1 appears before str2 in alphabetical order
+    static boolean isAlphabeticallySmaller(String str1, String str2) {
+        if (str1.compareTo(str2) < 0) {
+            return true;
+        }
+        return false;
+    }
+    public static void main(String[] args) {
+        String[] arr = { "sun", "earth", "mars", "mercury" };
+        String[] a = mergeSort(arr, 0, arr.length-1);
+        for (int i = 0; i < a.length; i++) {
+            System.out.println(a[i]);
+        }
     }
 }
 
