@@ -3381,7 +3381,7 @@ public class DividenConquer {
 // ● 1 <= n <= 5 * 104
 // ●-109 <= nums[i] <= 109
 
-//---------------------MY BRUTE FORCE SOLn-----------------------
+//---------------------MY BRUTE FORCE SOLn -> (n2)-----------------------
 public class DividenConquer{
 
     public static int majorityElt(int nums[]){
@@ -3410,7 +3410,7 @@ public class DividenConquer{
     }
 }
 
--------------------------USING (DIVIDE & CONQUER)------------------------------
+-------------------------USING (DIVIDE & CONQUER) -> (nlogn)------------------------
 public class DividenConquer {
 
     // Helper method to count occurrences of a target number in a specific range
