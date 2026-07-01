@@ -3369,6 +3369,97 @@ public class DividenConquer {
     }
 }
 
+// Question 2 : Given an array nums of size n, return the majority element. (MEDIUM)
+// The majority element is the element that appears more than ⌊n/2⌋ times.You may assume
+// that the majority element always exists in the array.
+// Sample Input 1: nums = [3,2,3]
+// Sample Output 1: 3
+// Sample Input 2: nums = [2,2,1,1,1,2,2]
+// Sample Output 2: 2
+// Constraints(extra Conditions):
+// ● n == nums.length
+// ● 1 <= n <= 5 * 104
+// ●-109 <= nums[i] <= 109
+
+//---------------------MY BRUTE FORCE SOLn-----------------------
+public class DividenConquer{
+
+    public static int majorityElt(int nums[]){
+        int big=0;
+        int num=0;
+        for(int i=0;i<nums.length;i++){
+            int count=0;
+            for(int j=0;j<nums.length;j++){
+                if(nums[i]==nums[j]){
+                    count++;
+                }
+            }
+            if(count>big){
+                big=count;
+                num=nums[i];
+            }
+        }
+        return num;
+    }
+    public static void main(String args[]){
+        int nums[] = {3,2,3};   
+        for(int i=0;i<nums.length;i++){
+            System.out.print(nums[i]+" ");
+        }System.out.println();
+        System.out.println(majorityElt(nums));
+    }
+}
+
+-------------------------USING (DIVIDE & CONQUER)------------------------------
+public class DividenConquer {
+
+    // Helper method to count occurrences of a target number in a specific range
+    private static int countInRange(int[] nums, int num, int lo, int hi) {
+        int count = 0;
+        for (int i = lo; i <= hi; i++) {
+            if (nums[i] == num) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    private static int majorityEltRec(int[] nums, int lo, int hi) {
+        // Base case: single element array range
+        if (lo == hi) {
+            return nums[lo];
+        }
+
+        // Divide
+        int mid = lo + (hi - lo) / 2;
+        
+        // Conquer
+        int leftMajority = majorityEltRec(nums, lo, mid);
+        int rightMajority = majorityEltRec(nums, mid + 1, hi);
+
+        // Combine
+        if (leftMajority == rightMajority) {
+            return leftMajority;
+        }
+
+        // If they disagree, count both candidates in the full current range
+        int leftCount = countInRange(nums, leftMajority, lo, hi);
+        int rightCount = countInRange(nums, rightMajority, lo, hi);
+
+        return leftCount > rightCount ? leftMajority : rightMajority;
+    }
+
+    public static int majorityElt(int[] nums) {
+        return majorityEltRec(nums, 0, nums.length - 1);
+    }
+
+    public static void main(String args[]) {
+        int nums[] = {3, 2, 3};   
+        System.out.println("Majority Element (Divide & Conquer): " + majorityElt(nums));
+    }
+}
+
+    
 
 
 
