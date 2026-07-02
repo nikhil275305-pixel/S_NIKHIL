@@ -3457,6 +3457,47 @@ public class DividenConquer {
     }
 }
 
+// Question 3 : Given an array of integers. Find the Inversion Count in the array. (HARD)
+
+// Inversion Count:Foranarray, inversion count indicate show far(or close)the array is from
+// being  sorted. If thearray is already sorted then the inversion count is 0. If an array is
+// sorted in the reverse order then the inversion count is the maximum.
+// Formally, two elements a[i] and a[j] form an inversion if a[i] > a[j] and i < j.
+
+// Sample Input 1: N = 5, arr[ ] = {2, 4, 1, 3, 5}
+// Sample Output 1: 3, because it has 3 inversions -(2, 1), (4, 1), (4, 3).
+
+// Sample Input 2 : N = 5, arr[ ] = {2, 3, 4, 5, 6}
+// Sample Output 2 : 0, because the array is already sorted
+
+// Sample Input 3 : N = 3, arr[] = {5, 5, 5}
+// Sample Output 3 : 0, because all the elements of the array are the same & already in a sorted
+// manner.
+
+// (Hint : A sorting algorithm will be used to solve this question.)
+// Note- This question is important. Even if you are not able to come up with the approach,
+// please understand the solution.
+
+//-----------MY BRUTE FORCE SOLn -> (n2)-----------
+public class DividenConquer{
+
+    public static int countInversion(int arr[]){
+        int count =0;
+        for(int i =0; i<arr.length; i++){
+            for(int j=i+1; j<arr.length; j++){
+                if(arr[j]<arr[i]){
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+    public static void main(String args[]){
+        int arr[] = {5, 5, 5};
+        System.out.println("Inversion count is: "+countInversion(arr));
+    }
+}
+
     
 
 
