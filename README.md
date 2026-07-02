@@ -3408,7 +3408,7 @@ public class DividenConquer{
     }
 }
 
--------------------------USING (DIVIDE & CONQUER) -> (nlogn)------------------------
+//-----------------------USING (DIVIDE & CONQUER) -> (nlogn)-------------------
 public class DividenConquer {
 
     // Helper method to count occurrences of a target number in a specific range
@@ -3498,6 +3498,59 @@ public class DividenConquer{
     }
 }
 
+//-----------GEMINI CORRECTED MY SOLn WITH count += (mid - i + 1)-------------
+public class DividenConquer {
+
+    static int count = 0;
+
+    public static void countInversion(int arr[], int si, int ei) {
+        if (si >= ei) {
+            return;
+        }
+        int mid = si + (ei - si) / 2;
+        countInversion(arr, si, mid);
+        countInversion(arr, mid + 1, ei);
+        merge(arr, si, mid, ei);
+    }
+
+    public static void merge(int arr[], int si, int mid, int ei) {
+        int temp[] = new int[ei - si + 1];
+        int i = si;
+        int j = mid + 1;
+        int k = 0;
+
+        while (i <= mid && j <= ei) {
+            if (arr[i] <= arr[j]) {
+                temp[k] = arr[i];
+                i++;
+            } else {
+                temp[k] = arr[j];
+                j++;
+                // All remaining elements in left subarray are inversions
+                count += (mid - i + 1); 
+            }
+            k++;
+        }
+
+        while (i <= mid) {
+            temp[k++] = arr[i++];
+        }
+        while (j <= ei) {
+            temp[k++] = arr[j++];
+        }
+        for (k = 0, i = si; k < temp.length; k++, i++) {
+            arr[i] = temp[k];
+        }
+    }
+
+    public static void main(String args[]) {
+        int arr[] = {2, 4, 1, 3, 5};
+        countInversion(arr, 0, arr.length - 1);
+        System.out.println("Inversion count is: " + count); 
+    }
+}
+
+-------------------------OR--------------------------------
     
 
 
