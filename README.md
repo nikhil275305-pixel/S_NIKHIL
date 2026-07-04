@@ -3498,10 +3498,13 @@ public class DividenConquer{
     }
 }
 
-//-----------GEMINI CORRECTED MY SOLn WITH count += (mid - i + 1)-------------
+//-----------GEMINI CORRECTED MY SOLn WITH count += (mid - i + 1), BUT IT IS NOT BEST SOLn BECAUSE HERE STATIC VARIABLE IS USED-------------
 public class DividenConquer {
 
     static int count = 0;
+    //Using a static global variable for tracking state is generally considered poor programming practice because:
+    It isn't reusable: If you call countInversion() a second time in your main method on a different array, it won't start from 0; it will keep adding to the previous total unless you manually reset it.
+    It isn't thread-safe: If multiple parts of a program try to count inversions at the same time, they will corrupt each other's counts.
 
     public static void countInversion(int arr[], int si, int ei) {
         if (si >= ei) {
@@ -3550,7 +3553,63 @@ public class DividenConquer {
     }
 }
 
--------------------------OR--------------------------------
+-------------------------BEST SOLn--------------------------------
+
+public class DividenConquer {
+
+    // 1. Clean, safe entry point that returns the value directly
+    public static int getInversions(int arr[]) {
+        return mergeSortAndCount(arr, 0, arr.length - 1);
+    }
+
+    // 2. Pure recursive function (No global variables)
+    private static int mergeSortAndCount(int arr[], int si, int ei) {
+        int count = 0;
+        if (si < ei) {
+            int mid = si + (ei - si) / 2;
+
+            count += mergeSortAndCount(arr, si, mid);
+            count += mergeSortAndCount(arr, mid + 1, ei);
+            count += mergeAndCount(arr, si, mid, ei);
+        }
+        return count;
+    }
+
+    // 3. Clean, readable standard merge logic
+    private static int mergeAndCount(int arr[], int si, int mid, int ei) {
+        int temp[] = new int[ei - si + 1];
+        int i = si;
+        int j = mid + 1;
+        int k = 0;
+        int count = 0;
+
+        while (i <= mid && j <= ei) {
+            if (arr[i] <= arr[j]) {
+                temp[k++] = arr[i++];
+            } else {
+                temp[k++] = arr[j++];
+                count += (mid - i + 1); // Clean standard formula
+            }
+        }
+
+        while (i <= mid) {
+            temp[k++] = arr[i++];
+        }
+        while (j <= ei) {
+            temp[k++] = arr[j++];
+        }
+
+        for (k = 0, i = si; k < temp.length; k++, i++) {
+            arr[i] = temp[k];
+        }
+        return count;
+    }
+
+    public static void main(String args[]) {
+        int arr[] = {2, 4, 1, 3, 5};
+        System.out.println("Inversion count is: " + getInversions(arr)); // Output: 3
+    }
+}
     
 
 
