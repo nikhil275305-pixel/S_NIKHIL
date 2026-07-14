@@ -3177,6 +3177,7 @@ public class DividenConquer{
 // Sample Output 1: arr = { "earth", "mars", "mercury", "sun"}
 
 //-----------------------MY BRUTE FORCE SOLn WITH BUGS BUT WORK FOR THIS PARTICULAR QUESTION-----------------------
+
 public class DividenConquer{
 
     public static void stringMergeSort(String str[],int si,int ei){
@@ -3244,6 +3245,7 @@ public class DividenConquer{
 }
 
 //---------------------GEMINI CORRECTED MY SOLn USING .compareTo()-----------------------
+
 public class DividenConquer {
 
     // The divide stage remains perfectly correct!
@@ -3385,6 +3387,7 @@ public class DividenConquer {
 // ●-109 <= nums[i] <= 109
 
 //---------------------MY BRUTE FORCE SOLn -> (n2)-----------------------
+
 public class DividenConquer{
 
     public static int majorityElt(int nums[]){
@@ -3412,6 +3415,7 @@ public class DividenConquer{
 }
 
 //-----------------------USING (DIVIDE & CONQUER) -> (nlogn)-------------------
+
 public class DividenConquer {
 
     // Helper method to count occurrences of a target number in a specific range
@@ -3503,6 +3507,7 @@ public class DividenConquer{
 }
 
 //-----------GEMINI CORRECTED MY SOLn WITH count += (mid - i + 1), BUT IT IS NOT BEST SOLn BECAUSE HERE STATIC VARIABLE IS USED-------------
+
 public class DividenConquer {
 
     static int count = 0;
@@ -3619,7 +3624,8 @@ public class DividenConquer {
     
 ------------------------------------------------BACKTRACKING----------------------------------------------------
 
-// Q. --> BACKTRACKING ARRAYS -- ONLY FOR UNDERSTANDING
+// Q. --> BACKTRACKING ARRAYS -- ONLY FOR UNDERSTANDING.
+
 public class Backtracking {
 
     public static void changeArr(int arr[], int i, int val){
@@ -3647,6 +3653,7 @@ public class Backtracking {
 }
 
 // Q.88 --> FIND & PRINT ALL SUBSETS OF A GIVEN STRING.
+
 public class Backtracking {
 
     public static void findSubsets(String str,String ans,int i){
@@ -3671,6 +3678,7 @@ public class Backtracking {
 }
 
 // Q.89 --> FIND & PRINT ALL PERMUTATIONS OF A STRING.
+
 public class Backtracking {
 
     public static void findPermutations(String str, String ans){
@@ -3693,6 +3701,7 @@ public class Backtracking {
 }
 
 // Q.90 --> N-QUEENS PROBLEM { FIND & PRINT ALL POSSIBLE SOLn }.
+
 public class Backtracking {
 
     public static boolean isSafe(char board[][],int row, int col){
