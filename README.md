@@ -3926,6 +3926,27 @@ public class Backtracking{
     }
 }
 
+-------------OPTIMIZED O(N+M)--------------
+
+public class Backtracking{
+
+    //USING MATH TRICK --> PERMUTATION
+    public static int gridWays(int n,int m,int d,int r){
+        if(d==n-1 && r==m-1){
+            return 1;
+        }else if(d==n || r==m){
+            return 0;
+        }
+        int w1 = gridWays(n,m,d+1,r);
+        int w2 = gridWays(n,m,d,r+1);
+        return w1 + w2;
+    }
+    public static void main(String args[]){
+        int n=3,m=2;
+        System.out.println(gridWays(n,m,0,0));
+    }
+}
+
 
 
     
