@@ -3882,6 +3882,50 @@ public class Backtracking {
     }
 }
 
+// Q.93 --> FIND NUMBER OF WAYS TO REACH FROM (0,0) TO (N-1,M-1) IN A NxM GRID.
+            ALLOWS MOVES --> RIGHT OR DOWN.
+
+public class Backtracking{
+
+    public static int gridWays(int grid[][],int d,int r){
+        int n=grid.length;//rows
+        int m=grid[0].length;//columns
+
+        if(d==n-1 && r==m-1){
+            return 1;
+        }else if(d==n || r==m){
+            return 0;
+        }
+
+        return gridWays(grid,d+1,r) + gridWays(grid,d,r+1);
+    }
+    public static void main(String args[]){
+        int n=3,m=2;
+        int grid[][]=new int[n][m];
+        System.out.println(gridWays(grid,0,0));
+    }
+}
+
+-------------OR-------------
+
+public class Backtracking{
+
+    public static int gridWays(int n,int m,int d,int r){
+        if(d==n-1 && r==m-1){
+            return 1;
+        }else if(d==n || r==m){
+            return 0;
+        }
+        int w1 = gridWays(n,m,d+1,r);
+        int w2 = gridWays(n,m,d,r+1);
+        return w1 + w2;
+    }
+    public static void main(String args[]){
+        int n=3,m=2;
+        System.out.println(gridWays(n,m,0,0));
+    }
+}
+
 
 
     
