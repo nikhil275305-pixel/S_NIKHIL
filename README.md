@@ -4026,7 +4026,165 @@ public class Backtracking{
     }
 }
 
+-------------------------------ASSIGNMENT QUESTION {BACKTRACKING}-----------------------------------
 
+Question 1 :
+Rat in a Maze
+You are given a starting position for a rat which is stuck in a maze at an initial point (0, 0) (the
+maze can be thought of as a 2-dimensional plane). The maze would be given in the form of a
+square matrix of order N * N where the cells with value 0 represent the maze’s blocked
+locations while value 1 is the open/available path that the rat can take to reach its destination.
+The rat's destination is at (N - 1, N - 1).
+Your task is to find all the possible paths that the rat can take to reach from source to
+destination in the maze.
+The possible directions that it can take to move in the maze are 'U'(up) i.e. (x, y- 1) , 'D'(down)
+i.e. (x, y + 1) , 'L' (left) i.e. (x - 1, y), 'R' (right) i.e. (x + 1, y).
+(This problem is similar to Grid ways.)
+<img width="767" height="436" alt="image" src="https://github.com/user-attachments/assets/dba8eb2d-5938-4855-a941-88491ec77bb7" />
+
+Sample Input : int maze[][] = 
+{ { 1, 0, 0, 0 },
+{ 1, 1, 0, 1 },
+{ 0, 1, 0, 0 },
+{ 1, 1, 1, 1 } };
+
+Sample Output : 
+1  0  0  0
+1  1  0  0
+0  1  0  0
+0  1  1  1
+
+public class Backtracking{
+
+    public static boolean isSafe(int maze[][],int x, int y){
+        return (x>=0 && x<maze.length && y>=0 && y<maze[0].length && maze[x][y]==1);
+    }
+
+
+    public static boolean solveMaze(int maze[][], int x, int y) {
+        int rows = maze.length;
+        int cols = maze[0].length;
+    
+        int sol[][] = new int[rows][cols]; 
+    
+        if (solveMazeUtil(maze, x, y, sol) == false) { 
+            System.out.println("Soln does not exist");
+            return false;
+        }
+    
+        printMaze(sol);
+        return true;
+    }
+
+    public static boolean solveMazeUtil(int maze[][],int x, int y,int sol[][]){
+        if(x==maze.length-1 && y==maze[0].length-1 && maze[x][y]==1){
+            sol[x][y]=1;
+            return true;
+        }
+
+        //check if maze is valid or not
+        if(isSafe(maze,x,y)){
+            if(sol[x][y]==1){
+                return false;
+            }
+            sol[x][y]=1;
+            if(solveMazeUtil(maze,x+1,y,sol)){
+                return true;
+            }
+            if(solveMazeUtil(maze,x,y+1,sol)){
+                return true;
+            }
+            if(solveMazeUtil(maze,x,y-1,sol)){
+                return true;
+            }
+            if(solveMazeUtil(maze,x-1,y,sol)){
+                return true;
+            }
+            sol[x][y]=0;
+            return false;
+        }
+        return false;
+    }
+    public static void printMaze(int maze[][]){
+        for(int i=0; i<maze.length; i++){
+            for(int j=0; j<maze[0].length; j++){
+               System.out.print(maze[i][j]+" ");
+            }System.out.println();
+        }
+    }
+    public static void main(String args[]){
+
+        int maze[][] = {  { 1, 1, 1, 1 },
+                          { 0, 1, 0, 1 },
+                          { 1, 1, 1, 1 },
+                          { 1, 0, 1, 1 } 
+                        };
+        printMaze(maze);
+        solveMaze(maze,0,0);              
+    }
+}
+----------------TO PRINT ALL POSSIBLE SOLn-----------------
+
+public class Backtracking {
+
+    public static boolean isSafe(int maze[][], int x, int y, int sol[][]) {
+        return (x >= 0 && x < maze.length && 
+                y >= 0 && y < maze[0].length && 
+                maze[x][y] == 1 && sol[x][y] == 0);
+    }
+
+    public static void solveMaze(int maze[][], int x, int y) {
+        int rows = maze.length;
+        int cols = maze[0].length;
+        int sol[][] = new int[rows][cols]; 
+        
+        System.out.println("--- Finding All Solutions ---");
+        solveMazeUtil(maze, x, y, sol);
+    }
+
+    public static void solveMazeUtil(int maze[][], int x, int y, int sol[][]) {
+        // Base Case: Reached the end
+        if (x == maze.length - 1 && y == maze[0].length - 1 && maze[x][y] == 1) {
+            sol[x][y] = 1;
+            System.out.println("Solution Found:");
+            printMaze(sol);
+            System.out.println();
+            sol[x][y] = 0; // Backtrack the final step
+            return;
+        }
+
+        if (isSafe(maze, x, y, sol)) {
+            sol[x][y] = 1; // Mark current cell in path
+
+            solveMazeUtil(maze, x + 1, y, sol); // Down
+            solveMazeUtil(maze, x, y + 1, sol); // Right
+            solveMazeUtil(maze, x, y - 1, sol); // Left
+            solveMazeUtil(maze, x - 1, y, sol); // Up
+
+            sol[x][y] = 0; // Backtrack completely to try new paths
+        }
+    }
+
+    public static void printMaze(int maze[][]) {
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze[0].length; j++) {
+                System.out.print(maze[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String args[]) {
+        int maze[][] = {  
+            { 1, 1, 1, 1 },
+            { 0, 1, 0, 1 },
+            { 1, 1, 1, 1 },
+            { 1, 0, 1, 1 } 
+        };
+        
+        solveMaze(maze, 0, 0);
+    }
+}
     
 
 
