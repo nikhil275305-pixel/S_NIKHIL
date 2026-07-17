@@ -4178,8 +4178,11 @@ public class Backtracking {
     }
 }
     
-(https://github.com/user-attachments/assets/525994a4-c246-4b3e-80a7-9e69b0356b95)
-(https://github.com/user-attachments/assets/2f0799ac-e283-4ef5-a321-08aaf803fa72)
+<img width="566" height="667" alt="image" src="https://github.com/user-attachments/assets/73a40c1a-1fed-4dd8-8ce0-5ceba948ec3c" />
+<img width="1321" height="670" alt="image" src="https://github.com/user-attachments/assets/d9c28c92-0dd5-4dd8-984e-e2c6393cabe2" />
+
+
+
 
 
 
