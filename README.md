@@ -4027,7 +4027,7 @@ public class Backtracking{
 }
 
 -------------------------------ASSIGNMENT QUESTION {BACKTRACKING}-----------------------------------
-
+// Q.95 -->
 Question 1 :
 Rat in a Maze
 You are given a starting position for a rat which is stuck in a maze at an initial point (0, 0) (the
@@ -4180,7 +4180,99 @@ public class Backtracking {
     
 <img width="566" height="667" alt="image" src="https://github.com/user-attachments/assets/73a40c1a-1fed-4dd8-8ce0-5ceba948ec3c" /> <img width="1321" height="670" alt="image" src="https://github.com/user-attachments/assets/d9c28c92-0dd5-4dd8-984e-e2c6393cabe2" />
 
+// Q.96 -->
+Question 2 :
+**Keypad Combinations**
+Given a string containing digits from 2-9 inclusive, print all possible letter combinations that
+the number could represent. You can print the answer in any order.
+A mapping of digits to letters (just like on the telephone buttons) is given below.Note that 1
+does not map to any letters.
 
+<img width="400" height="270" alt="image" src="https://github.com/user-attachments/assets/4d0cc85f-69dc-41ce-999d-5c4c0fd33a6a" />
+
+Sample Input 1: digits = "23"
+Sample Output 1: "ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"
+
+Sample Input 2: digits = "2"
+Sample Output 2: "a", "b", "c"
+
+Sample Input 3: digits = ""
+Sample Output 3: ””
+
+------------------------------MY SOLn IMPROVED BY GEMENI-----------------------------
+public class Backtracking{
+
+    static String str[]={"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
+    public static void keypadStringCombinations(String digits,String ans,int i){
+        if(i==digits.length()){
+            if(ans.isEmpty()){
+                System.out.println("\nnull");
+            }else{
+                System.out.print(ans+" ");
+            }
+            return;
+        }
+        //digits.charAt(i) gives character like '2','3' but not any integer
+        int digitIndex = helper(digits.charAt(i));
+        if(digitIndex ==-1){
+            keypadStringCombinations(digits,ans,i+1);
+            return;
+        }
+        String curr =str[digitIndex];
+        for(int j=0; j<curr.length(); j++){
+            Character ch=curr.charAt(j);
+            keypadStringCombinations(digits,ans+ch,i+1);
+        }
+    }
+
+    public static int helper(Character ch){
+        switch(ch){
+            case '2':return 2;
+            case '3':return 3;
+            case '4':return 4;
+            case '5':return 5;
+            case '6':return 6;
+            case '7':return 7;
+            case '8':return 8;
+            case '9':return 9;
+            default:return -1;
+        }
+    }
+    public static void main(String args[]){
+        keypadStringCombinations("23","",0);
+    }
+}
+-----------------OR-------------------
+
+public class Backtracking{
+
+    static String str[]={"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
+    public static void keypadStringCombinations(String digits,String ans,int i){
+        if(i==digits.length()){
+            if(ans.isEmpty()){
+                System.out.println("\nnull");
+            }else{
+                System.out.print(ans+" ");
+            }
+            return;
+        }
+        // Convert char to int directly (e.g., '2' - '0' = 2)
+        int digitIndex = digits.charAt(i) - '0';
+        if(digitIndex < 2 || digitIndex > 9){
+            keypadStringCombinations(digits,ans,i+1);
+            return;
+        }
+        String curr =str[digitIndex];
+        for(int j=0; j<curr.length(); j++){
+            Character ch=curr.charAt(j);
+            keypadStringCombinations(digits,ans+ch,i+1);
+        }
+    }
+
+    public static void main(String args[]){
+        keypadStringCombinations("23","",0);
+    }
+}
 
 
 
