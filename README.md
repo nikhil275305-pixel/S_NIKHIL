@@ -4274,6 +4274,49 @@ public class Backtracking{
     }
 }
 
+--------------STRUCTURED & GOOD SOLN------------------
+
+public class Backtracking {
+
+    final static char[][] L = { {},{},{'a','b','c'},{'d','e','f'},{'g','h','i'},
+                                {'j','k','l'},{'m','n','o'},{'p','q','r','s'},
+                                {'t','u','v'},{'w','x','y','z'}
+                              };
+
+    public static void letterCombinations(String D) {
+        if (D == null || D.isEmpty()) {
+            System.out.println("null");
+            return;
+        }
+        // Pass a single StringBuilder instance down the stack
+        dfs(0, new StringBuilder(), D);
+    }
+
+    public static void dfs(int pos, StringBuilder sb, String D) {
+        if (pos == D.length()) {
+            System.out.print(sb.toString() + " ");
+            return;
+        }
+
+        int digit = Character.getNumericValue(D.charAt(pos));
+        // Safety check for 0, 1, or non-digits
+        if (digit < 2 || digit > 9) {
+            dfs(pos + 1, sb, D);
+            return;
+        }
+
+        char[] letters = L[digit];
+        for (int i = 0; i < letters.length; i++) {
+            sb.append(letters[i]);       // 1. Choose: Add the letter
+            dfs(pos + 1, sb, D);         // 2. Explore: Go deeper
+            sb.deleteCharAt(sb.length() - 1); // 3. Un-choose: Backtrack (remove the letter)
+        }
+    }
+
+    public static void main(String args[]) {
+        letterCombinations("23");
+    }
+}
 
 
 
