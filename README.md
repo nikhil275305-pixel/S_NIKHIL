@@ -4318,7 +4318,74 @@ public class Backtracking {
     }
 }
 
+// Q.97 -->
+Question 3 :
+Knight’s Tour
+Given a N*N board with the Knight placed on the first block of an empty board. Moving
+according to the rules of chess, knights must visit each square exactly once. Print the order of
+each cell in which they are visited.
 
+Sample Input 1 : N = 8
+Sample Output 1 :
+0  59  38  33  30  17   8  63
+37  34  31  60   9  62  29  16
+58   1  36  39  32  27  18   7
+35  48  41  26  61  10  15  28
+42  57   2  49  40  23   6  19
+47  50  45  54  25  20  11  14
+56  43  52   3  22  13  24   5
+51  46  55  44  53   4  21  12
+
+(Hint : Similar to N Queens
+
+//CONTINUING THE DSA AFTER 18 DAYS BCZ OF SOME REASONS AND SOMETIME NOT WILLING TO START, PLAYING GAMES BGMI, POKEMON AND WATCHED MOVIES.
+public class Backtracking {
+
+    public static boolean isSafe(int board[][],int row, int col){
+        return (row>=0 && row<board.length && 
+                col>=0 && col<board[0].length && 
+                board[row][col]==0);
+    } 
+    public static boolean nKnight(int board[][],int row,int col,int moveNum){
+        if(moveNum==board.length*board[0].length){
+            board[row][col]=moveNum;
+            printBoard(board);
+            return true;
+        }
+        board[row][col]=moveNum;
+        // upto N=6 U can make array of xMove & yMove in any order like commented array
+        //but Backtrecking uses the DFS so according to that non commented array
+        //is Good and take less time
+        // int xMove[]={2,2,1,1,-2,-2,-1,-1};
+        // int yMove[]={1,-1,2,-2,1,-1,2,-2};
+        int xMove[] = { 2, 1, -1, -2, -2, -1,  1,  2 };
+        int yMove[] = { 1, 2,  2,  1, -1, -2, -2, -1 };
+        for(int i=0; i<8; i++){
+            int nextRow=row +xMove[i];
+            int nextCol=col +yMove[i];
+            if(isSafe(board,nextRow,nextCol)){
+                if(nKnight(board,nextRow,nextCol,moveNum+1)){
+                    return true;
+                }
+            }
+        }
+        board[row][col]=0;
+        return false;
+    }
+
+    public static void printBoard(int board[][]){
+        for(int i=0; i<board.length; i++){
+            for(int j=0; j<board[0].length; j++){
+                System.out.printf("%2d ", board[i][j]);
+            }System.out.println();
+        }System.out.println();
+    }
+    public static void main(String args[]) {
+        int N=8;
+        int board[][]=new int[N][N];
+        nKnight(board,0,0,1);
+    }
+}
 
     
    
