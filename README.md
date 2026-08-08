@@ -4387,7 +4387,98 @@ public class Backtracking {
     }
 }
 
+------------------------------------------------ARRAYLIST (VECTOR)----------------------------------------------------
+
+// Q. --> OPERATION IN ARAYLIST.
+
+import java.util.ArrayList;
+public class ClassRoom {
+
+    public static void main(String args[]){
+        ArrayList<Integer> list=new ArrayList<>();
+        //add elt in ArrayList --> add operation
+        list.add(2);
+        list.add(5);
+        list.add(9);
+        list.add(3);
+        list.add(6);
+
+        //print list
+        System.out.println(list);
+
+        //get elt from list --> get operation
+        System.out.println(list.get(2));
+
+        //remove elt from list --> remove operation
+        list.remove(2);
+        System.out.println(list);
+
+        //set (repalace) elt in list --> set operation
+        list.set(2,10);
+        System.out.println(list);
+
+        //check elt in list --> contain operation
+        System.out.println(list.contains(11));
+
+        //add elt at an index --> add operation
+        list.add(2,3);
+        System.out.println(list);
+
+        //size of Arraylist
+        System.out.println(list.size());
+
+        //print all elt of ArrayList like Array
+        for(int i=0; i<list.size(); i++){
+            System.out.print(list.get(i)+" ");
+        }System.out.println();
+
+        //Print in reverse order
+        for(int i=list.size()-1; i>=0; i--){
+            System.out.print(list.get(i)+" ");
+        }System.out.println();
+
+        //Find max in ArrayList
+        int maxVal=Integer.MIN_VALUE;
+        for(int i=0; i<list.size(); i++){
+            maxVal=Math.max(maxVal,list.get(i));
+        }System.out.println(maxVal);
+        
+        //swap elt in ArrayList
+        int idx1=1,idx2=3;
+        int temp=list.get(idx1);
+        list.set(idx1,list.get(idx2));
+        list.set(idx2,temp);
+        
+        System.out.println(list);
+    }
     
+}
+
+// Q. --> WRITE A FUNCTION TO SWAP ELT IN ARRAYLIST.
+
+import java.util.ArrayList;
+public class ClassRoom {
+
+    public static void swap(ArrayList<Integer> list,int idx1, int idx2){
+        int temp=list.get(idx1);
+        list.set(idx1,list.get(idx2));
+        list.set(idx2,temp);
+    }
+    public static void main(String args[]){
+    
+        ArrayList<Integer> list=new ArrayList<>();
+        list.add(2);
+        list.add(5);
+        list.add(9);
+        list.add(3);
+        list.add(6);
+        System.out.println(list);
+        swap(list,1,3);
+        System.out.println(list);
+    }
+    
+}
+
    
    
    
