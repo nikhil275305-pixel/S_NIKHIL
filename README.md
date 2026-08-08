@@ -4479,7 +4479,7 @@ public class ClassRoom {
     
 }
 
-// Q. --> SORT AN ARRYAYLIST.
+// Q. --> SORT AN ARRYAYLIST ( BOTH IN ASCENDING AND DESCENDING ).
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -4495,14 +4495,19 @@ public class ClassRoom {
         list.add(6);
 
         System.out.println(list);
-        
+
         //sorting ArrayList 
         Collections.sort(list);
+        System.out.println(list);
+        
+        //sorting in reverse order
+        Collections.sort(list, Collections.reverseOrder());
         System.out.println(list);
 
     }
     
 }
+
 
 
    
