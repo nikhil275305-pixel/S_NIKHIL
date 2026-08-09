@@ -4675,16 +4675,16 @@ import java.util.ArrayList;
 public class ClassRoom{
 
     public static boolean pairSum2(ArrayList<Integer> list, int target){
-        int lp=0;
-        int rp=0;
+        int bp=-1;
         int n=list.size();
         for(int i=0; i<list.size()-1; i++){
             if(list.get(i)>list.get(i+1)){
-                rp=i;
-                lp=i+1;
+                bp=i;
                 break;
             }
         }
+        int lp=bp+1;
+        int rp=bp;
         while(lp != rp){
             if(list.get(lp) + list.get(rp)==target){
                 return true;
@@ -4708,25 +4708,3 @@ public class ClassRoom{
         System.out.println(pairSum2(list,10));
     }
 }
-
-
-
-   
-   
-   
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
