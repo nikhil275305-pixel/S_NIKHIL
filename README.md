@@ -4583,6 +4583,7 @@ public class ClassRoom{
 }
 
 // Q.99 --> PAIR SUM 1
+
 FIND IF ANY PAIR IN A SORTED ARRAYLIST HAS A TARGET SUM.
 list={1,2,3,4,5}, target=5
 
