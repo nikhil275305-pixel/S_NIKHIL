@@ -4640,6 +4640,77 @@ public class ClassRoom{
     }
 }
 
+// Q.100 --> PAIR SUM 2
+
+FIND IF ANY PAIR IN A SORTED & ROTATED ARRAYLIST HAS A TARGET SUM.
+list={11,15,6,8,9,10}, target=16
+
+import java.util.ArrayList;
+public class ClassRoom{
+
+    //BruteForce
+    public static boolean pairSum1(ArrayList<Integer> list, int target){
+        for(int i=0; i<list.size(); i++){
+            for(int j=i+1; j<list.size(); j++){
+                if(list.get(i)+list.get(j)==target){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    public static void main(String args[]){
+        ArrayList<Integer> list= new ArrayList<>();
+        for(int i=1; i<=5; i++){
+            list.add(i);
+        } 
+        System.out.println(list);
+        System.out.println(pairSum1(list,5));
+    }
+}
+
+----------------------2 POINTER APPROACH WITH MODULO ARITHMETIC --> O(n)-------------------------                                { IMP, MUST REMEMBER THIS }
+
+import java.util.ArrayList;
+public class ClassRoom{
+
+    public static boolean pairSum2(ArrayList<Integer> list, int target){
+        int lp=0;
+        int rp=0;
+        int n=list.size();
+        for(int i=0; i<list.size()-1; i++){
+            if(list.get(i)>list.get(i+1)){
+                rp=i;
+                lp=i+1;
+                break;
+            }
+        }
+        while(lp != rp){
+            if(list.get(lp) + list.get(rp)==target){
+                return true;
+            }else if(list.get(lp) + list.get(rp)<target){
+                lp=(lp+1)%n;
+            }else{
+                rp=(n+rp-1)%n;
+            }
+        }
+        return false;
+    }
+    public static void main(String args[]){
+        ArrayList<Integer> list= new ArrayList<>();
+        list.add(11);
+        list.add(15);
+        list.add(6);
+        list.add(8);
+        list.add(9);
+        list.add(10); 
+        System.out.println(list);
+        System.out.println(pairSum2(list,10));
+    }
+}
+
+
+
    
    
    
