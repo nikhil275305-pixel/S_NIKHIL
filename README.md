@@ -4508,6 +4508,39 @@ public class ClassRoom {
     
 }
 
+// Q.98 --> FOR GIVEN N LINES ON X-AXIS, USE 2 LINES TO FORM A CONTAINER SUCH THAT IT HOLDS MAXIMUM WATER.            { AKSED IN -- FLIPKART, DUNZO }    
+ height = {1,8,6,2,5,4,8,3,7}
+ <img width="842" height="502" alt="image" src="https://github.com/user-attachments/assets/2e7e6829-2356-4f05-9b84-248b9d6eda28" />
+
+ import java.util.ArrayList;
+public class ClassRoom{
+
+    public static int maxWater(ArrayList<Integer> height){
+        int area=0;
+        for(int i=0; i<height.size(); i++){
+            for(int j=i+1; j<height.size(); j++){
+                area=Math.max(area,(Math.min(height.get(i),height.get(j))*(j-i)));
+            }
+        }
+        return area;
+    }
+    public static void main(String args[]){
+        ArrayList<Integer> height =new ArrayList<>();
+        //1 8 6 2 5 4 8 3 7
+        height.add(1);
+        height.add(8);
+        height.add(6);
+        height.add(2);
+        height.add(5);
+        height.add(4);
+        height.add(8);
+        height.add(3);
+        height.add(7);
+        System.out.println(height);
+        System.out.println(maxWater(height));
+    }
+}
+
 
 
    
