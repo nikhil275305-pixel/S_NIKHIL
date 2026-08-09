@@ -4611,6 +4611,35 @@ public class ClassRoom{
     }
 }
 
+----------------------2 POINTER APPROACH --> O(n)-------------------------
+
+import java.util.ArrayList;
+public class ClassRoom{
+
+    public static boolean pairSum1(ArrayList<Integer> list, int target){
+        int lp=0;
+        int rp=list.size()-1;
+        while(lp < rp){
+            if(list.get(lp)+list.get(rp) ==target){
+                return true;
+            }else if(list.get(lp)+list.get(rp) >target){
+                rp--;
+            }else{
+                lp++;
+            }
+        }
+        return false;
+    }
+    public static void main(String args[]){
+        ArrayList<Integer> list= new ArrayList<>();
+        for(int i=1; i<=5; i++){
+            list.add(i);
+        } 
+        System.out.println(list);
+        System.out.println(pairSum1(list,5));
+    }
+}
+
    
    
    
