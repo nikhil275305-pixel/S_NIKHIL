@@ -4788,7 +4788,7 @@ import java.util.Collections;
 public class ClassRoom{
 
     //O(nlogn)
-    public static ArrayList<Integer> lonelyNum(ArrayList<Integer> nums){
+    public static ArrayList<Integer> findLonelyNum(ArrayList<Integer> nums){
         ArrayList<Integer> soln=new ArrayList<>();
         if(nums==null || nums.isEmpty()){
             return soln;
@@ -4826,6 +4826,6 @@ public class ClassRoom{
         nums.add(5);
         nums.add(8);
         System.out.println(nums);
-        System.out.println(lonelyNum(nums));
+        System.out.println(findLonelyNum(nums));
     }
 }
