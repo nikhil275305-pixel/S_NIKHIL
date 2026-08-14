@@ -4955,3 +4955,28 @@ public class ClassRoom{
         System.out.println(beautifulArrayList(n));
     }
 }
+
+-------------------------------OR----------------------------------
+
+import java.util.ArrayList;
+public class ClassRoom{ 
+
+    public ArrayList<Integer> beautifulArrayList(int n){
+        ArrayList<Integer> res = new ArrayList<>(); 
+        divideConquer(1, 1, res, n);
+        return res;
+    }
+
+    private void divideConquer(int start, int increment, ArrayList<Integer> res, int n){
+        if(start + increment >n){
+            res.add(start);
+            return;
+        }
+        divideConquer(start ,2*increment, res, n);
+        divideConquer(start + increment, 2*increment, res, n);
+    }
+    public static void main(String args[]){
+        int n=4;
+        System.out.println(new ClassRoom().beautifulArrayList(n));
+    }
+}
