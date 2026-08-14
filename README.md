@@ -4903,3 +4903,55 @@ public class ClassRoom{
         System.out.println("Most frequent number is: "+mostFreqNumFollKey(nums,key));
     }
 }
+
+// Q.104 -->
+Question 4 :
+Beautiful ArrayList (MEDIUM)
+An Arraylist nums of size n is beautiful if:
+
+Sample Input 1 : n = 4
+Sample Output 1 :  [2,1,4,3]
+
+nums is a permutation of the integers in the range [1, n].
+For every 0 <= i < j < n, there is no index k with i < k < j where 2 * nums.get(k) == nums.get(i) +
+nums.get(j).
+Given the integer n, return any beautiful arraylist nums of size n. There will be at least one valid
+answer for the given n.
+
+Sample Input 2 : n = 5
+Sample Output 2 :  [3,1,2,5,4]
+
+Constraints :
+● 1 <= n <= 1000
+
+//I WAS UNABLE TO SOLVE AND UNDERSTAND THE SOLUTION AT THIS TIME DON'T KNOW WHY...., AFTER GIVING TWO DAYS AND SEEING THE SOLUTIN.
+import java.util.ArrayList;
+public class ClassRoom{ 
+
+    public static ArrayList<Integer> beautifulArrayList(int n){
+        ArrayList<Integer> ans = new ArrayList<>(); 
+        ans.add(1);
+        
+        while(ans.size() < 4){
+            ArrayList<Integer> temp =new ArrayList<>();
+            //odd elt
+            for(int x:ans){
+                if(2*x-1 <= n){
+                    temp.add(2*x-1);
+                }
+            }
+            //even elt
+            for(int x:ans){
+                if(2*x <=n){
+                    temp.add(2*x);
+                }
+            }
+            ans=temp;
+        }
+        return ans;
+    }
+    public static void main(String args[]){
+        int n=4;
+        System.out.println(beautifulArrayList(n));
+    }
+}
