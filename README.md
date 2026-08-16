@@ -5024,7 +5024,7 @@ public class LinkedList {
     }
 
     //T.C --> O(n)
-    public void printLL(){
+    public void print(){
         Node temp = head;
         while(temp != null){
             System.out.print(temp.data+" --> ");
@@ -5090,23 +5090,23 @@ public class LinkedList {
     }
     public static void main(String args[]){
         LinkedList ll =new LinkedList();
-        //ll.printLL();
+        //ll.print();
         ll.addFirst(2);
-        //ll.printLL();
+        //ll.print();
         ll.addFirst(1);
-        //ll.printLL();
+        //ll.print();
         ll.addLast(3);
-        //ll.printLL();
+        //ll.print();
         ll.addLast(4);
-        ll.printLL();
+        //ll.print();
         ll.add(2,9);
-        ll.printLL();
+        //ll.print();
         System.out.println(ll.size);
         ll.removeFirst();
-        ll.printLL();
+        ll.print();
         System.out.println(ll.size);
         ll.removeLast();
-        ll.printLL();
+        ll.print();
         System.out.println(ll.size);
     }
 }
