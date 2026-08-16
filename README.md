@@ -5352,16 +5352,24 @@ public class LinkedList {
         return val;
     }
 
-    public int recSearch(Node temp,int key,int i){
-        if(i == size){
+    public int helper(Node head, int key){
+        if(head == null){
             return -1;
         }
-        if(temp.data == key){
-            return i;
-        }else{
-            return recSearch(temp.next,key,i+1);
-        } 
+        if(head.data == key){
+            return 0;
+        }
+        int idx = helper(head.next,key);
+        if(idx == -1){
+            return -1;
+        }
+        return idx + 1;
     }
+
+    public int recSearch(int key){
+        return helper(head,key);
+    }
+    
     public static void main(String args[]){
         LinkedList ll =new LinkedList(); 
         ll.addFirst(2);      
@@ -5375,8 +5383,9 @@ public class LinkedList {
         ll.addLast(4);
         ll.addLast(5);
         ll.print();
-        System.out.println("Key is at idx: "+ll.recSearch(head,9,0));
+        System.out.println("Key is at idx: "+ll.recSearch(9));
     }
 }
+
 
 
