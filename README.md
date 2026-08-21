@@ -5959,17 +5959,17 @@ public class LinkedList{
     public static int size;
 
     public static boolean isCycle(){
-    Node slow = head;
-    Node fast = head;
-    while(fast != null && fast.next != null){
-        slow = slow.next;
-        fast = fast.next.next;
-        if(fast == slow){
-            return true;
+        Node slow = head;
+        Node fast = head;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(fast == slow){
+                return true;
+            }
         }
+        return false;
     }
-    return false;
-}
 
     public static void removeCycle(){
 
@@ -6020,7 +6020,7 @@ public class LinkedList{
         head.next.next.next.next = temp;
         System.out.println(head.next.next.next.next.data);
 
-        
+
         System.out.println("isCycle: "+isCycle());
         if(isCycle()){
             removeCycle();
@@ -6028,4 +6028,3 @@ public class LinkedList{
         }
     }
 }
-
