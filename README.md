@@ -5941,4 +5941,91 @@ public class LinkedList{
     }
 }
 
+// Q.110 -->  REMOVE A LOOP/CYCLE IN A LINKED LIST.
+
+public class LinkedList{
+
+    public static class Node{
+        int data;
+        Node next;
+
+        public Node(int data){
+            this.data = data;
+            this.next = null;
+        }
+    }
+    public static Node head;
+    public static Node tail;
+    public static int size;
+
+    public static boolean isCycle(){
+    Node slow = head;
+    Node fast = head;
+    while(fast != null && fast.next != null){
+        slow = slow.next;
+        fast = fast.next.next;
+        if(fast == slow){
+            return true;
+        }
+    }
+    return false;
+}
+
+    public static void removeCycle(){
+
+        //detect cycle
+        Node slow = head;
+        Node fast = head;
+        boolean cycle = false;
+        while(fast != null && fast.next != null){
+            slow = slow.next; //+1
+            fast = fast.next.next; //+2
+            if(fast == slow){
+                cycle = true;
+                break;
+            }
+        }
+
+        if(cycle == false){
+            return;
+        }
+
+        //find meeting point
+        slow = head;
+        Node prev = fast;
+        while(fast != slow){
+            slow = slow.next; //+1
+            prev = fast;
+            fast = fast.next; //+1
+        }
+
+        //remove cycle
+        prev.next = null;
+    }
+
+    public static void main(String args[]){
+        head = new Node(1);
+        System.out.print(head.data+" --> ");
+
+        head.next = new Node(2);
+        System.out.print(head.next.data+" --> ");
+
+        Node temp = new Node(3);
+        System.out.print(temp.data+" --> ");
+
+        head.next.next = temp;
+        head.next.next.next = new Node(4);
+        System.out.print(head.next.next.next.data+" --> ");
+
+        head.next.next.next.next = temp;
+        System.out.println(head.next.next.next.next.data);
+
+        
+        System.out.println("isCycle: "+isCycle());
+        if(isCycle()){
+            removeCycle();
+            System.out.println("isCycle: "+isCycle());
+        }
+    }
+}
 
