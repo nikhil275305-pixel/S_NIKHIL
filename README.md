@@ -6119,4 +6119,128 @@ public class LinkedList{
         }
 }
 
+//Q.112 --> ZIG-ZAG LINKED LIST.
+FOR A LNKEDLIST OF THE FORM: L(1)->L(2)->L(3)->L(4)....L(n-1)->L(n). CONVERT IT INTO ZIG-ZAG FORM i.e L(1)->L(n)->L(2)->L(n-1)->L(3)-L(n-2)......
+<img width="647" height="307" alt="image" src="https://github.com/user-attachments/assets/cbcce606-c1ec-49ae-9a78-2fd0be4ef47b" />
+
+public class LinkedList{
+
+    //MY APPROACH
+    public static class Node{
+        int data;
+        Node next;
+
+        public Node(int data){
+            this.data = data;
+            this.next = null;
+        }
+    }
+    public static Node head;
+    public static Node tail;
+    public static int size;
+
+        public void addLast(int data){
+            Node newNode = new Node(data);
+            size++;
+            if(head == null){
+                head = tail = newNode;
+                return;
+            }
+            tail.next = newNode;
+            tail = newNode;
+        }
+
+        public void print(){
+            System.out.println();
+            Node temp = head;
+            while(temp != null){
+                System.out.print(temp.data+" --> ");
+                temp = temp.next;
+            }System.out.println("null");
+        }
+
+        public Node reverse(Node head){
+            Node curr = head;
+            Node prev = null;
+            Node next;
+
+            while(curr != null){
+                next = curr.next;
+                curr.next = prev;
+                prev = curr;
+                curr = next;
+            }
+            head = prev;
+
+            return head;
+        }
+
+        private Node findMid(Node head){
+            Node slow = head;
+            Node fast = head.next;
+
+            while(fast != null && fast.next != null){
+                slow = slow.next;
+                fast = fast.next.next;
+            }
+
+            return slow;
+        }
+
+        public Node zigZagLL(Node head){
+            if( head == null || head.next == null){
+                return head;
+            }
+
+            Node mid = findMid(head);
+            Node rightHead = mid.next;
+            mid.next = null;
+            
+            Node leftLL = head;
+            Node rightLL = reverse(rightHead);
+
+            return zigZag(leftLL, rightLL);
+        }
+
+        public Node zigZag(Node head1, Node head2){
+            Node mergedLL = new Node(-1);
+            Node temp = mergedLL;
+
+            while(head1 != null && head2 != null){
+                temp.next = head1;
+                head1 = head1.next;
+                temp = temp.next;
+
+                temp.next = head2;
+                head2 = head2.next;
+                temp = temp.next;
+            }
+
+            if(head1 != null){
+                temp.next = head1;
+                temp = temp.next;
+            }
+            
+            tail = temp;
+
+            return mergedLL.next;
+        }
+            
+
+        public static void main(String args[]){
+            LinkedList ll = new LinkedList();
+            ll.addLast(1);
+            ll.addLast(2);
+            ll.addLast(3);
+            ll.addLast(4);
+            ll.addLast(5);
+            ll.print();
+            //ll.head = ll.reverse(ll.head);
+            ll.head = ll.zigZagLL(ll.head);
+            ll.print();
+        }
+}
+
+
+
 
