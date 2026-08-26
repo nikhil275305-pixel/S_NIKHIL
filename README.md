@@ -6246,7 +6246,6 @@ public class LinkedList{
 
 public class LinkedList{
 
-    //MY APPROACH -> CORRECT SAHI H
     public static class Node{
         int data;
         Node next;
