@@ -6200,10 +6200,10 @@ public class LinkedList{
             Node leftLL = head;
             Node rightLL = reverse(rightHead);
 
-            return zigZag(leftLL, rightLL);
+            return alternateMergingleftLL, rightLL);
         }
 
-        public Node zigZag(Node head1, Node head2){
+        public Node alternateMerging(Node head1, Node head2){
             Node mergedLL = new Node(-1);
             Node temp = mergedLL;
 
