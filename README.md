@@ -6121,6 +6121,7 @@ public class LinkedList{
 
 //Q.112 --> ZIG-ZAG LINKED LIST.
 FOR A LNKEDLIST OF THE FORM: L(1)->L(2)->L(3)->L(4)....L(n-1)->L(n). CONVERT IT INTO ZIG-ZAG FORM i.e L(1)->L(n)->L(2)->L(n-1)->L(3)-L(n-2)......
+
 <img width="647" height="307" alt="image" src="https://github.com/user-attachments/assets/cbcce606-c1ec-49ae-9a78-2fd0be4ef47b" />
 
 public class LinkedList{
