@@ -6126,7 +6126,7 @@ FOR A LNKEDLIST OF THE FORM: L(1)->L(2)->L(3)->L(4)....L(n-1)->L(n). CONVERT IT 
 
 public class LinkedList{
 
-    //MY APPROACH
+    //MY APPROACH -> CORRECT SAHI H
     public static class Node{
         int data;
         Node next;
@@ -6200,7 +6200,7 @@ public class LinkedList{
             Node leftLL = head;
             Node rightLL = reverse(rightHead);
 
-            return alternateMergingleftLL, rightLL);
+            return alternateMerging(leftLL, rightLL);
         }
 
         public Node alternateMerging(Node head1, Node head2){
