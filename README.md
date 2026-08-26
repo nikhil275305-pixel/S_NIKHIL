@@ -6242,6 +6242,110 @@ public class LinkedList{
         }
 }
 
+----------------------DEDICATED FOR ZIG-ZAG LL---------------------------
+
+public class LinkedList{
+
+    //MY APPROACH -> CORRECT SAHI H
+    public static class Node{
+        int data;
+        Node next;
+
+        public Node(int data){
+            this.data = data;
+            this.next = null;
+        }
+    }
+    public static Node head;
+    public static Node tail;
+    public static int size;
+
+    public void addLast(int data){
+        Node newNode = new Node(data);
+        size++;
+        if(head == null){
+            head = tail = newNode;
+            return;
+        }
+        tail.next = newNode;
+        tail = newNode;
+    }
+
+    public void print(){
+        System.out.println();
+        Node temp = head;
+        while(temp != null){
+            System.out.print(temp.data+" --> ");
+            temp = temp.next;
+        }System.out.println("null");
+    }
+
+    public Node reverse(Node head){
+        Node curr = head;
+        Node prev = null;
+        Node next;
+
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+
+        return head;
+    }
+
+    private Node findMid(Node head){
+        Node slow = head;
+        Node fast = head.next;
+
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;
+    }
+
+    public void zigZagLL(){
+        //find mid
+        Node mid = findMid(head);
+        //2nd half
+        Node rightHead = mid.next;
+        mid.next = null;
+        
+        Node leftHd = head;
+        Node rightHd = reverse(rightHead);
+
+        //Alternate Merging
+        Node nextL,nextR;
+        while(leftHd != null && rightHd != null){
+            nextL = leftHd.next;
+            leftHd.next = rightHd;
+            nextR = rightHd.next;
+            rightHd.next = nextL;
+
+            leftHd = nextL;
+            rightHd = nextR;
+        }
+    }
+        
+
+    public static void main(String args[]){
+        LinkedList ll = new LinkedList();
+        ll.addLast(1);
+        ll.addLast(2);
+        ll.addLast(3);
+        ll.addLast(4);
+        ll.addLast(5);
+        ll.print();
+        //ll.head = ll.reverse(ll.head);
+        ll.zigZagLL();
+        ll.print();
+    }
+}
+
 
 
 
