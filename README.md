@@ -6394,18 +6394,26 @@ public class LinkedList{
         tail = newNode;
     }
 
-    public void print(){
-        if (head == null) {
-            System.out.println("null");
-            return;
-        }
-        Node temp = head;
-        System.out.print("null <--> ");
-        while(temp != null){
-            System.out.print(temp.data+" <--> ");
-            temp = temp.next;
-        }System.out.println("null");
+    public void print() {
+    if (head == null) {
+        System.out.println("null");
+        return;
     }
+
+    Node temp = head;
+    System.out.print("null <-- ");
+    
+    while (temp != null) {
+        System.out.print(temp.data);
+        if (temp.next != null) {
+            System.out.print(" <--> ");
+        } else {
+            System.out.print(" --> null");
+        }
+        temp = temp.next;
+    }
+    System.out.println();
+}
 
     public int removeFirst(){
         if(head == null){
@@ -6466,7 +6474,3 @@ public class LinkedList{
         System.out.println("size: "+dll.size);
     }
 }
-
-
-
-
