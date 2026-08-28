@@ -6563,3 +6563,59 @@ public class LinkedList{
         dll.print();
     }
 }
+
+//Q. --> CREATION OF SINGLE CIRCULAR LINKED LIST.
+
+public class LinkedList{
+
+    // CREATED BY MYSELF
+    public class Node{
+        int data;
+        Node next;
+
+        public Node(int data){
+            this.data = data;
+            this.next = null;
+        }
+    }
+    public static Node head;
+    public static Node tail;
+    public static int size;
+
+    public void addFirst(int data){
+        Node newNode = new Node(data);
+        size++;
+        if(head == null){
+            head = tail = newNode;
+            tail.next = head;
+            return;
+        }
+        newNode.next = head;
+        head = newNode;
+        tail.next = head;
+    }
+
+    public void print(){
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        System.out.print(head.data+" --> ");
+        Node temp = head.next;
+        while(temp != head){
+            System.out.print(temp.data+" --> ");
+            temp = temp.next;
+        }System.out.println(head.data);
+    }
+
+    public static void main(String args[]){
+        LinkedList dCll = new LinkedList();
+        dCll.addFirst(4);
+        dCll.addFirst(3);
+        dCll.addFirst(2);
+        dCll.addFirst(1);
+        dCll.print();
+        System.out.println(size);
+        System.out.println(tail.next.data);
+    }
+}
