@@ -6605,7 +6605,7 @@ public class LinkedList{
         while(temp != head){
             System.out.print(temp.data+" --> ");
             temp = temp.next;
-        }System.out.println(head.data);
+        }System.out.println(tail.next.data);
     }
 
     public static void main(String args[]){
@@ -6616,6 +6616,73 @@ public class LinkedList{
         dCll.addFirst(1);
         dCll.print();
         System.out.println(size);
-        System.out.println(tail.next.data);
+        System.out.println("tail.next: "+tail.next.data);
     }
 }
+
+//Q. --> CREATION OF DOUBLE CIRCULAR LINKED LIST.
+
+public class LinkedList{
+
+    // CREATED BY MYSELF
+    public class Node{
+        int data;
+        Node next;
+        Node prev;
+
+        public Node(int data){
+            this.data = data;
+            this.next = null;
+            this.prev = null;
+        }
+    }
+    public static Node head;
+    public static Node tail;
+    public static int size;
+
+    public void addFirst(int data){
+        Node newNode = new Node(data);
+        size++;
+        if(head == null){
+            head = tail = newNode;
+            tail.next = head;
+            head.prev = tail;
+            return;
+        }
+        newNode.next = head;
+        head = newNode;
+        head.prev = tail;
+        tail.next = head;
+    }
+
+    public void print(){
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        System.out.print(head.prev.data+" <-- ");
+        System.out.print(head.data+" <--> ");
+        Node temp = head.next;
+        while(temp != head){
+            if(temp.next == head){
+                System.out.print(temp.data+" --> ");
+            }else{
+                System.out.print(temp.data+" <--> ");
+            }
+            temp = temp.next;
+        }System.out.println(tail.next.data);
+    }
+
+    public static void main(String args[]){
+        LinkedList dCll = new LinkedList();
+        dCll.addFirst(4);
+        dCll.addFirst(3);
+        dCll.addFirst(2);
+        dCll.addFirst(1);
+        dCll.print();
+        System.out.println(size);
+        System.out.println("tail.next: "+tail.next.data);
+        System.out.println("head.prev: "+head.prev.data);
+    }
+}
+
