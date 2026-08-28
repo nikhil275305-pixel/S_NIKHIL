@@ -6395,25 +6395,23 @@ public class LinkedList{
     }
 
     public void print() {
-    if (head == null) {
-        System.out.println("null");
-        return;
-    }
-
-    Node temp = head;
-    System.out.print("null <-- ");
-    
-    while (temp != null) {
-        System.out.print(temp.data);
-        if (temp.next != null) {
-            System.out.print(" <--> ");
-        } else {
-            System.out.print(" --> null");
+        if (head == null) {
+            System.out.println("null");
+            return;
         }
-        temp = temp.next;
+        Node temp = head;
+        System.out.print("null <-- ");
+        while (temp != null) {
+            System.out.print(temp.data);
+            if (temp.next != null) {
+                System.out.print(" <--> ");
+            } else {
+                System.out.print(" --> null");
+            }
+            temp = temp.next;
+        }
+        System.out.println();
     }
-    System.out.println();
-}
 
     public int removeFirst(){
         if(head == null){
@@ -6497,12 +6495,10 @@ public class LinkedList{
     public void addFirst(int data){
         Node newNode = new Node(data);
         size++;
-
         if(head == null){
             head = tail = newNode;
             return;
         }
-
         newNode.next = head;
         head.prev = newNode;
         head = newNode;
@@ -6511,37 +6507,33 @@ public class LinkedList{
     public void addLast(int data){
         Node newNode = new Node(data);
         size++;
-
         if(head == null){
             head = tail = newNode;
             return;
         }
-
         tail.next = newNode;
         newNode.prev = tail;
         tail = newNode;
     }
 
     public void print() {
-    if (head == null) {
-        System.out.println("null");
-        return;
-    }
-    Node temp = head;
-    System.out.print("null <-- ");
-    while (temp != null) {
-        System.out.print(temp.data);
-        if (temp.next != null) {
-            System.out.print(" <--> ");
-        } else {
-            System.out.print(" --> null");
+        if (head == null) {
+            System.out.println("null");
+            return;
         }
-        temp = temp.next;
+        Node temp = head;
+        System.out.print("null <-- ");
+        while (temp != null) {
+            System.out.print(temp.data);
+            if (temp.next != null) {
+                System.out.print(" <--> ");
+            } else {
+                System.out.print(" --> null");
+            }
+            temp = temp.next;
+        }
+        System.out.println();
     }
-    System.out.println();
-}
-
-
 
     public void reverse(){
         Node curr = head;
