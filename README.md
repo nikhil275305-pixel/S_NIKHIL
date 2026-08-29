@@ -6686,4 +6686,229 @@ public class LinkedList{
     }
 }
 
+-------------------------------ASSIGNMENT QUESTION {LINKEDLIST}-----------------------------------
+
+//Q.113 --> 
+Question 1 :
+Intersection of Two Linked Lists
+In a system there are two singly linked list. By some programming error, the end node of one
+of the linked lists got linked to the second list, forming an inverted Y-shaped list. Write a
+program to get the point where two linked lists merge.
+<img width="415" height="600" alt="image" src="https://github.com/user-attachments/assets/efe5d955-f6e9-40d6-8151-6f8790e3d3c3" />
+We have to find the intersection part in this system.
+
+public class LinkedList{
+
+    public static class Node{
+        int data;
+        Node next;
+
+        public Node(int data){
+            this.data = data;
+            this.next = null;
+        }
+    }
+    public static Node head;
+    public static Node tail;
+    public static int size;
+
+    public void addFirst(int data){
+        Node newNode = new Node(data);
+        size++;
+        if(head == null){
+            head = tail = newNode;
+            return;
+        }
+        newNode.next = head;
+        head = newNode;
+    }
+
+    public void addLast(int data){
+        Node newNode = new Node(data);
+        size++;
+        if(head == null){
+            head = tail = newNode;
+            return;
+        }
+        tail.next = newNode;
+        tail = newNode;
+    }
+
+    public void add(int idx, int data){
+        Node newNode = new Node(data);
+        size++;
+        if(head == null){
+            head = tail = newNode;
+            return;
+        }
+        Node prev = head;
+        int i=0;
+        while(i < idx-1){
+            prev = prev.next;
+            i++;
+        }
+        newNode.next = prev.next;
+        prev.next = newNode;
+    }
+
+    public void print(Node head){
+        Node temp = head;
+        while(temp != null){
+            System.out.print(temp.data+" --> ");
+            temp = temp.next;
+        }System.out.println("null");
+    }
+
+    //O(N*M)
+    public int mergePoint(Node head1, Node head2){
+        Node tp2 = head2;
+        while(tp2 != null){
+            Node tp1 = head1;
+            int i=0;
+            while(tp1 != null){
+                if(tp1 == tp2){
+                    return i;
+                }
+                i++;
+                tp1 = tp1.next;
+            }
+            tp2 = tp2.next;
+        }
+        return -1;
+    }
+
+    public static void main(String args[]){
+        LinkedList ll = new LinkedList();
+        Node nd1 = new Node(1);
+        Node nd2 = new Node(2);
+        Node nd3 = new Node(3);
+        Node nd4 = new Node(4);
+        Node nd5 = new Node(5);
+        Node nd6 = new Node(6);
+        Node nd7 = new Node(7);
+
+        nd6.next = nd7;
+
+        Node head1 = nd1;
+        nd1.next = nd2;
+        nd2.next = nd3;
+        nd3.next = nd6;
+
+        Node head2 = nd4;
+        nd4.next = nd5;
+        nd5.next = nd6;
+
+        ll.print(head1);
+        ll.print(head2);
+        System.out.println(ll.mergePoint(head1,head2));
+    }
+}
+
+-------------------------OPTIMIZED (2 POINTER APPROACH)-------------------------
+
+public class LinkedList{
+
+    public static class Node{
+        int data;
+        Node next;
+
+        public Node(int data){
+            this.data = data;
+            this.next = null;
+        }
+    }
+    public static Node head;
+    public static Node tail;
+    public static int size;
+
+    public void addFirst(int data){
+        Node newNode = new Node(data);
+        size++;
+        if(head == null){
+            head = tail = newNode;
+            return;
+        }
+        newNode.next = head;
+        head = newNode;
+    }
+
+    public void addLast(int data){
+        Node newNode = new Node(data);
+        size++;
+        if(head == null){
+            head = tail = newNode;
+            return;
+        }
+        tail.next = newNode;
+        tail = newNode;
+    }
+
+    public void add(int idx, int data){
+        Node newNode = new Node(data);
+        size++;
+        if(head == null){
+            head = tail = newNode;
+            return;
+        }
+        Node prev = head;
+        int i=0;
+        while(i < idx-1){
+            prev = prev.next;
+            i++;
+        }
+        newNode.next = prev.next;
+        prev.next = newNode;
+    }
+
+    public void print(Node head){
+        Node temp = head;
+        while(temp != null){
+            System.out.print(temp.data+" --> ");
+            temp = temp.next;
+        }System.out.println("null");
+    }
+
+    //O(N+M)
+    public int mergePoint(Node head1, Node head2){
+        if(head1 == null || head2 == null){
+            return -1;
+        }
+        Node ptr1 = head1;
+        Node ptr2 = head2;
+
+        while(ptr1 != ptr2){
+            ptr1 = (ptr1 == null) ? head2 : ptr1.next;
+            ptr2 = (ptr2 == null) ? head1 : ptr2.next;
+        }
+
+        return (ptr1 != null) ? ptr1.data : -1;
+    }
+
+    public static void main(String args[]){
+        LinkedList ll = new LinkedList();
+        Node nd1 = new Node(1);
+        Node nd2 = new Node(2);
+        Node nd3 = new Node(3);
+        Node nd4 = new Node(4);
+        Node nd5 = new Node(5);
+        Node nd6 = new Node(6);
+        Node nd7 = new Node(7);
+
+        nd6.next = nd7;
+
+        Node head1 = nd1;
+        nd1.next = nd2;
+        nd2.next = nd3;
+        nd3.next = nd6;
+
+        Node head2 = nd4;
+        nd4.next = nd5;
+        nd5.next = nd6;
+
+        ll.print(head1);
+        ll.print(head2);
+        System.out.println(ll.mergePoint(head1,head2));
+    }
+}
+
 
