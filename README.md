@@ -6694,7 +6694,9 @@ Intersection of Two Linked Lists
 In a system there are two singly linked list. By some programming error, the end node of one
 of the linked lists got linked to the second list, forming an inverted Y-shaped list. Write a
 program to get the point where two linked lists merge.
+
 <img width="415" height="600" alt="image" src="https://github.com/user-attachments/assets/efe5d955-f6e9-40d6-8151-6f8790e3d3c3" />
+
 We have to find the intersection part in this system.
 
 public class LinkedList{
