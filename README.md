@@ -6914,13 +6914,17 @@ public class LinkedList{
 }
 
 //Q.114 --> 
+
 Question 2 :
 Delete N Nodes After M Nodes of a Linked List
+
 We have a linked list and two integers M and N. Traverse the linked list such that you retain M
 nodes then delete next N nodes, continue the same till end of the linked list. Difficulty Level:
 Rookie.
+
 Sample Input 1 : M=2 N=2    LL: 1->2->3->4->5->6->7->8
 Sample Output 1 : 1->2->5->6
+
 Sample Input 2 : M=3 N=2    LL: 1->2->3->4->5->6->7->8->9->10
 Sample Output 2 : 1->2->3->6->7->8
 
@@ -7027,6 +7031,130 @@ public class LinkedList{
         ll.addLast(10);
         ll.print();
         ll.skipMdeleteN(3,2);
+        ll.print();
+    }
+}
+
+//Q.115 -->
+
+Question 3 :
+Swapping Nodes in a Linked List
+
+We have a linked list and two keys in it, swap nodes for two given keys. Nodes should be
+swapped by changing links. Swapping data of nodes may be expensive in many situations when
+data contains many fields. It may be assumed that all keys in the linked list are distinct.
+
+Sample Input 1 : 1->2->3->4,  x = 2, y = 4
+Sample Output 1 : 1->4->3->2
+
+public class LinkedList{
+
+    public static class Node{
+        int data;
+        Node next;
+
+        public Node(int data){
+            this.data = data;
+            this.next = null;
+        }
+    }
+    public static Node head;
+    public static Node tail;
+    public static int size;
+
+    public void addFirst(int data){
+        Node newNode = new Node(data);
+        size++;
+        if(head == null){
+            head = tail = newNode;
+            return;
+        }
+        newNode.next = head;
+        head = newNode;
+    }
+
+    public void addLast(int data){
+        Node newNode = new Node(data);
+        size++;
+        if(head == null){
+            head = tail = newNode;
+            return;
+        }
+        tail.next = newNode;
+        tail = newNode;
+    }
+
+    public void add(int idx, int data){
+        Node newNode = new Node(data);
+        size++;
+        if(head == null){
+            head = tail = newNode;
+            return;
+        }
+        Node prev = head;
+        int i=0;
+        while(i < idx-1){
+            prev = prev.next;
+            i++;
+        }
+        newNode.next = prev.next;
+        prev.next = newNode;
+    }
+
+    public void print(){
+        Node temp = head;
+        while(temp != null){
+            System.out.print(temp.data+" --> ");
+            temp = temp.next;
+        }System.out.println("null");
+    }
+
+    public void swap(int x,int y){
+        if(head == null || x==y){
+            return;
+        }
+        Node currX = head;
+        Node prevX = null;
+        while(currX != null && currX.data != x){
+            prevX = currX;
+            currX = currX.next;
+        }
+        Node currY = head;
+        Node prevY = null;
+        while(currY != null && currY.data != y){
+            prevY = currY;
+            currY = currY.next;
+        }
+
+        if( currX == null || currY == null){
+            return;
+        }
+
+        if(prevX != null){
+            prevX.next = currY;
+        }else{
+            head = currY;
+        }
+
+        if(prevY != null){
+            prevY.next = currX;
+        }else{
+            head = currX;
+        }
+
+        Node temp = currX.next;
+        currX.next = currY.next;
+        currY.next = temp;
+    }
+
+    public static void main(String args[]){
+        LinkedList ll = new LinkedList();
+        ll.addLast(1);
+        ll.addLast(2);
+        ll.addLast(3);
+        ll.addLast(4);
+        ll.print();
+        ll.swap(2,4);
         ll.print();
     }
 }
