@@ -6913,4 +6913,122 @@ public class LinkedList{
     }
 }
 
+//Q.114 --> 
+Question 2 :
+Delete N Nodes After M Nodes of a Linked List
+We have a linked list and two integers M and N. Traverse the linked list such that you retain M
+nodes then delete next N nodes, continue the same till end of the linked list. Difficulty Level:
+Rookie.
+Sample Input 1 : M=2 N=2    LL: 1->2->3->4->5->6->7->8
+Sample Output 1 : 1->2->5->6
+Sample Input 2 : M=3 N=2    LL: 1->2->3->4->5->6->7->8->9->10
+Sample Output 2 : 1->2->3->6->7->8
+
+public class LinkedList{
+
+    public static class Node{
+        int data;
+        Node next;
+
+        public Node(int data){
+            this.data = data;
+            this.next = null;
+        }
+    }
+    public static Node head;
+    public static Node tail;
+    public static int size;
+
+    public void addFirst(int data){
+        Node newNode = new Node(data);
+        size++;
+        if(head == null){
+            head = tail = newNode;
+            return;
+        }
+        newNode.next = head;
+        head = newNode;
+    }
+
+    public void addLast(int data){
+        Node newNode = new Node(data);
+        size++;
+        if(head == null){
+            head = tail = newNode;
+            return;
+        }
+        tail.next = newNode;
+        tail = newNode;
+    }
+
+    public void add(int idx, int data){
+        Node newNode = new Node(data);
+        size++;
+        if(head == null){
+            head = tail = newNode;
+            return;
+        }
+        Node prev = head;
+        int i=0;
+        while(i < idx-1){
+            prev = prev.next;
+            i++;
+        }
+        newNode.next = prev.next;
+        prev.next = newNode;
+    }
+
+    public void print(){
+        Node temp = head;
+        while(temp != null){
+            System.out.print(temp.data+" --> ");
+            temp = temp.next;
+        }System.out.println("null");
+    }
+
+    public void skipMdeleteN(int M,int N){
+        if(head == null || M <= 0 || N<= 0){
+            return;
+        }
+
+        Node curr = head;
+        while( curr != null){
+            //skipping M Nodes
+            for(int i=1; i<M && curr != null; i++){
+                curr = curr.next;
+            }
+
+            if(curr == null){
+                return;
+            }
+            Node t = curr.next;
+            //going to N node ahead via another variable 't'
+            for(int j=0; j<N && t != null; j++){
+                t = t.next;
+            }
+            //Unlinking\deleting step
+            curr.next = t;
+            //updating to next node after deletion
+            curr = t;
+        }
+    }
+
+    public static void main(String args[]){
+        LinkedList ll = new LinkedList();
+        ll.addLast(1);
+        ll.addLast(2);
+        ll.addLast(3);
+        ll.addLast(4);
+        ll.addLast(5);
+        ll.addLast(6);
+        ll.addLast(7);
+        ll.addLast(8);
+        ll.addLast(9);
+        ll.addLast(10);
+        ll.print();
+        ll.skipMdeleteN(3,2);
+        ll.print();
+    }
+}
+
 
