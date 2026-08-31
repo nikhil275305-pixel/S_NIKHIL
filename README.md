@@ -7161,4 +7161,141 @@ public class LinkedList{
     }
 }
 
+//Q.116 -->
+
+Question 4 :
+Odd Even Linked List
+
+We have a Linked List of integers, write a function to modify the linked list such that all even
+numbers appear before all the odd numbers in the modified linked list. Also, keep the order of
+even and odd numbers same.
+
+Sample Input 1 : 8->12->10->5->4->1->6->NULL
+Sample Output 1 : 8->12->10->4->6->5->1->NULL
+
+Sample Input 2 : 1->3->5->7->NULL
+Sample Output 2 : 1->3->5->7->NULL
+
+public class LinkedList{
+
+    public static class Node{
+        int data;
+        Node next;
+
+        public Node(int data){
+            this.data = data;
+            this.next = null;
+        }
+    }
+    public static Node head;
+    public static Node tail;
+    public static int size;
+
+    public void addFirst(int data){
+        Node newNode = new Node(data);
+        size++;
+        if(head == null){
+            head = tail = newNode;
+            return;
+        }
+        newNode.next = head;
+        head = newNode;
+    }
+
+    public void addLast(int data){
+        Node newNode = new Node(data);
+        size++;
+        if(head == null){
+            head = tail = newNode;
+            return;
+        }
+        tail.next = newNode;
+        tail = newNode;
+    }
+
+    public void add(int idx, int data){
+        Node newNode = new Node(data);
+        size++;
+        if(head == null){
+            head = tail = newNode;
+            return;
+        }
+        Node prev = head;
+        int i=0;
+        while(i < idx-1){
+            prev = prev.next;
+            i++;
+        }
+        newNode.next = prev.next;
+        prev.next = newNode;
+    }
+
+    public void print(){
+        Node temp = head;
+        while(temp != null){
+            System.out.print(temp.data+" --> ");
+            temp = temp.next;
+        }System.out.println("null");
+    }
+
+    public void oddEvenLL(){
+        if(head == null || head.next == null){
+            return;
+        }
+
+        Node evenHead = new Node(-1);
+        Node oddHead = new Node(-1);
+
+        Node evenTail = evenHead;
+        Node oddTail = oddHead;
+
+        //seperating even and odd
+        Node curr = head;
+        while(curr != null){
+            if(curr.data % 2 == 0){
+                evenTail.next = curr;
+                evenTail = evenTail.next;
+            }else{
+                oddTail.next = curr;
+                oddTail = oddTail.next;
+            }
+            curr = curr.next;
+        }
+
+        //reconnecting even and odd
+        if(evenHead.next != null){
+            head = evenHead.next;
+            evenTail.next = oddHead.next;
+        }else{
+            head = oddHead.next;
+        }
+
+        //Update class static tail and terminate list
+        if(oddHead != oddTail){
+            tail = oddTail;
+        }else{
+            tail = evenTail;
+        }
+
+        tail.next = null; //Prevent cycles
+    }
+
+    public static void main(String args[]){
+        LinkedList ll = new LinkedList();
+        // ll.addLast(8);
+        // ll.addLast(12);
+        // ll.addLast(10);
+        // ll.addLast(5);
+        // ll.addLast(4);
+        // ll.addLast(1);
+        // ll.addLast(6);
+        ll.addLast(1);
+        ll.addLast(5);
+        ll.addLast(3);
+        ll.print();
+        ll.oddEvenLL();
+        ll.print();
+    }
+}
+
 
