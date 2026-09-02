@@ -7298,5 +7298,156 @@ public class LinkedList{
         ll.print();
     }
 }
+//Q.117 -->
+
+Question 5 :
+Merge k Sorted Lists
+
+We have K sorted linked lists of size N each, merge them and print the sorted output.
+
+Sample Input 1 : k = 2, n =  2
+l1 = 1->3->NULL
+l2 = 6->8->NULL
+l3 = 9->10->NULL
+
+Sample Output 1 : 1>3->6->8->9->10->NULL
+
+import java.util.Scanner;
+public class LinkedList{
+
+    public static class Node{
+        int data;
+        Node next;
+
+        public Node(int data){
+            this.data = data;
+            this.next = null;
+        }
+    }
+    public static Node head;
+    public static Node tail;
+    public static int size;
+
+    public void addFirst(int data){
+        Node newNode = new Node(data);
+        size++;
+        if(head == null){
+            head = tail = newNode;
+            return;
+        }
+        newNode.next = head;
+        head = newNode;
+    }
+
+    public void addLast(int data){
+        Node newNode = new Node(data);
+        size++;
+        if(head == null){
+            head = tail = newNode;
+            return;
+        }
+        tail.next = newNode;
+        tail = newNode;
+    }
+
+    public void add(int idx, int data){
+        Node newNode = new Node(data);
+        size++;
+        if(head == null){
+            head = tail = newNode;
+            return;
+        }
+        Node prev = head;
+        int i=0;
+        while(i < idx-1){
+            prev = prev.next;
+            i++;
+        }
+        newNode.next = prev.next;
+        prev.next = newNode;
+    }
+
+    public static void print(Node head){
+        Node temp = head;
+        while(temp != null){
+            System.out.print(temp.data+" --> ");
+            temp = temp.next;
+        }System.out.println("null");
+    }
+
+    public static Node sortedMerge(Node a, Node b){
+        Node result = null;
+        if(a == null){
+            return b;
+        }else if(b == null){
+            return a;
+        }
+
+        if(a.data <= b.data){
+            result = a;
+            result.next =  sortedMerge(a.next,b);
+        }else{
+            result = b;
+            result.next =  sortedMerge(a,b.next);
+        }
+
+        return result;
+    }
+
+    public static Node mergeKlists(Node arr[], int last){
+        while(last != 0){
+            int i=0, j=last;
+            while(i < j){
+                arr[i] = sortedMerge(arr[i],arr[j]);
+                i++;
+                j--;
+                if(i >= j){
+                    last = j;
+                }
+            }
+        }
+        return arr[0];
+    }
+
+    public static void main(String args[]){
+        int k = 3;
+        int n = 4;
+        Node arr[] = new Node[k];
+        // arr[0] = new Node(1);
+        // arr[0].next = new Node(3);
+        // arr[0].next.next = new Node(5);
+        // arr[0].next.next.next = new Node(7);
+
+        // arr[1] = new Node(2);
+        // arr[1].next = new Node(4);
+        // arr[1].next.next = new Node(6);
+        // arr[1].next.next.next = new Node(8);
+
+        // arr[2] = new Node(0);
+        // arr[2].next = new Node(9);
+        // arr[2].next.next = new Node(10);
+        // arr[2].next.next.next = new Node(11);
+        Scanner sc = new Scanner(System.in);
+
+        for(int i=0; i<k; i++){
+            Node temp = null;
+            for(int j=0; j<n-1; j++){
+                if(j == 0){
+                    System.out.print("Enter ur "+i+"th head :");
+                    arr[i] = new Node(sc.nextInt());
+                    temp = arr[i];
+                }
+                temp.next = new Node(sc.nextInt());
+                temp = temp.next;
+            }
+        }
+        print(arr[0]);
+        print(arr[1]);
+        print(arr[2]);
+        Node head = mergeKlists(arr,k-1);
+        print(head);
+    }
+}
+
 
 
