@@ -7582,7 +7582,7 @@ public class StackB{
     } 
 }
 
-//Q.118 --> PUSH AT THE BOTTOM OF STACK.
+//Q.118 --> PUSH AT THE BOTTOM OF STACK.                                                   { AKSKED IN AMAZON }
 
 import java.util.*;
 public class StackB{
