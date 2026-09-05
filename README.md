@@ -7629,6 +7629,7 @@ public class StackB{
         while(!s.isEmpty()){
             char curr = s.pop();
             result.append(curr);
+            //result.append(s.pop());
         }
         return result.toString();
     }
