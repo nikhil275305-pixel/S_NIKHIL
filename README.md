@@ -7728,6 +7728,79 @@ public class StackB{
     } 
 }
 
+//Q.122 --> NEXT GREATER ELEMENT.                                                                       
+The next greater element of some element x in an array is the 'first greater' element that is to the 'right of x' in the same array.
+arr = [6,8,0,1,3]
+next Greater = [8,-1,1,3,-1]
+
+import java.util.*;
+public class StackB{
+
+    //BruteForce --> O(n2)
+    public static void nextGreater(int arr[]){
+        int nextG[] = new int[arr.length];
+        for(int i=0; i<arr.length; i++){
+            for(int j=i+1; j<arr.length; j++){
+                if(arr[i] < arr[j]){
+                    nextG[i] = arr[j];
+                    break;
+                }
+            }
+            if(nextG[i] == 0){
+                nextG[i] = -1;
+            }
+        }
+        printArr(nextG);
+    }
+
+    public static void printArr(int arr[]){
+        for(int i=0; i<arr.length ; i++){
+            System.out.print(arr[i]+" ");
+        }System.out.println();
+    }
+
+    public static void main(String args[]){
+        int arr[] = {6,8,0,1,3};
+        printArr(arr);
+        nextGreater(arr);
+    } 
+}
+
+-----------------------------OPTIMIZED O(n)---------------------------------
+
+import java.util.*;
+public class StackB{
+
+    public static void nextGreater(int arr[]){
+        Stack<Integer> s = new Stack<>();
+        int nextG[] = new int[arr.length];
+        for(int i=arr.length-1; i>=0; i--){
+            while(!s.isEmpty() && arr[i] <= arr[s.peek()]){
+                s.pop();
+            }
+
+            if(s.isEmpty()){
+                nextG[i] = -1;
+            }else{
+                nextG[i] = arr[s.peek()];
+            }
+            s.push(i);
+        }
+        printArr(nextG);
+    }
+
+    public static void printArr(int arr[]){
+        for(int i=0; i<arr.length ; i++){
+            System.out.print(arr[i]+" ");
+        }System.out.println();
+    }
+
+    public static void main(String args[]){
+        int arr[] = {6,8,0,1,3};
+        printArr(arr);
+        nextGreater(arr);
+    } 
+}
 
 
 
