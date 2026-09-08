@@ -7683,6 +7683,52 @@ public class StackB{
     } 
 }
 
+//Q.121 --> STOCK SPAN PROBLEM.                                                   { ASKED IN - MICROSOFT, FLIPKART, ORACLE, AMAZON }
+
+import java.util.*;
+public class StackB{
+
+    public static void stockSpan(int stocks[]){
+        Stack<Integer> s = new Stack<>();
+        int span[] = new int[stocks.length];
+        s.push(0);
+        span[0] = 1;
+        int idx = 1;
+        while(idx < stocks.length){
+            int currPrice = stocks[idx];
+            while(!s.isEmpty() && currPrice > stocks[s.peek()]){
+                s.pop();
+            }
+            if(s.isEmpty()){
+                span[idx] = idx + 1;
+            }else{
+                int prevHigh = s.peek();
+                if(stocks[idx] == stocks[prevHigh]){
+                    span[idx] = idx - prevHigh + 1;
+                }else{
+                    span[idx] = idx - prevHigh;
+                }
+            }
+            s.push(idx);
+            idx++;
+        }
+        printArr(span);
+    }
+
+    public static void printArr(int arr[]){
+        for(int i=0; i<arr.length ; i++){
+            System.out.print(arr[i]+" ");
+        }System.out.println();
+    }
+
+    public static void main(String args[]){
+        int stocks[] = {100,80,60,70,60,85,100};
+        printArr(stocks);
+        stockSpan(stocks);
+    } 
+}
+
+
 
 
 
