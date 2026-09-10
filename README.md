@@ -7846,6 +7846,51 @@ public class StackB{
     } 
 }
 
+//Q.124 --> DUPLICATE PARENTHESES.                                                       { ASKED IN -- MICROSPFT, GOOGLE }
 
+Given a balanced expression, find if it contains duplicate parentheses or not. A set of
+parentheses are duplicate if the same subexpression is surrounded by multiple
+parentheses.
+
+Return a true if it contains duplicates else return false.
+
+example : (((a+(b)))+(c+d)) --> true
+
+example : ((((a)+(b))+c+d)) --> true
+
+example : ((a+ b) + (c+d ) ) --> false
+
+example : (((a+ b))+c) --> true
+
+import java.util.*;
+public class StackB{
+
+    public static boolean findDuplicate(String str){
+        Stack<Character> s = new Stack<>();
+        for(int i=0; i<str.length(); i++){
+            char ch = str.charAt(i);
+            if(ch == ')'){
+                s.pop();
+                int count = 0;
+                while(s.peek() != '('){
+                    count++;
+                    s.pop();
+                }
+                if(count < 1){
+                    return true;
+                }
+                s.pop();
+            }else{
+                s.push(ch);
+            }
+        }
+        return false;
+    }
+
+    public static void main(String args[]){
+        String str = "(((a+b))+c)";
+        System.out.println(findDuplicate(str));
+    } 
+}
 
 
