@@ -7893,4 +7893,66 @@ public class StackB{
     } 
 }
 
+//Q.125 --> MAX AREA IN HISTOGRAM.
+Given an array of integers heights representing the histogram's bar height where the
+width of each bar is 1, return the area of the largest rectangle in the histogram.
+heights = [2,1,5,6,2,3]
+
+<img width="422" height="361" alt="image" src="https://github.com/user-attachments/assets/e748a25f-d7c8-4ee4-81ec-ec871e36de90" />
+
+import java.util.*;
+public class StackB{
+    
+    public static int maxAreaHisto(int arr[]){
+        int NSL[] = new int[arr.length];
+        int NSR[] = new int[arr.length];
+        Stack<Integer> s = new Stack<>();
+        //Next Smaller elt left
+        for(int i=0; i<arr.length; i++){
+            while(!s.isEmpty() && arr[s.peek()] >= arr[i]){
+                s.pop();
+            }
+            if(s.isEmpty()){
+                NSL[i] = -1; 
+            }else{
+                NSL[i] = s.peek();
+            }
+            s.push(i);
+        }
+        s = new Stack<>();
+        //Next Smaller elt Right
+        for(int i=arr.length-1; i>=0; i--){
+            while(!s.isEmpty() && arr[s.peek()] >= arr[i]){
+                s.pop();
+            }
+            if(s.isEmpty()){
+                NSR[i] = arr.length;; 
+            }else{
+                NSR[i] = s.peek();
+            }
+            s.push(i);
+        }
+        printArr(NSL);
+        printArr(NSR);
+        int maxArea = 0;
+        for(int i=0; i<arr.length; i++){
+            int width = NSR[i] - NSL[i] - 1;
+            maxArea = Math.max(maxArea,arr[i]*width);
+        }
+        
+        return maxArea;
+    }
+
+    public static void printArr(int arr[]){
+        for(int i= 0; i<arr.length; i++){
+            System.out.print(arr[i]+" ");
+        }System.out.println();
+    }
+    public static void main(String args[]){
+        int arr[] = {2,1,5,6,2,3};
+        System.out.print(maxAreaHisto(arr));
+    }
+}
+
+
 
