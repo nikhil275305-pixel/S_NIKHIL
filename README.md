@@ -7501,7 +7501,7 @@ public class StackB {
 }
 
 
-//Q. --> IMPLEMENTATION OF STACK USING LINKED LIST.                                { IMP -- AKSKED IN AMAZON, OYO }
+//Q. --> IMPLEMENTATION OF STACK USING LINKED LIST.                                { IMP <- AKSKED IN -- AMAZON, OYO }
 
 public class StackB {
 
@@ -7582,7 +7582,7 @@ public class StackB{
     } 
 }
 
-//Q.118 --> PUSH AT THE BOTTOM OF STACK.                                                   { AKSKED IN AMAZON }
+//Q.118 --> PUSH AT THE BOTTOM OF STACK.                                                   { AKSKED IN -- AMAZON }
 
 import java.util.*;
 public class StackB{
@@ -7612,7 +7612,7 @@ public class StackB{
     } 
 }
 
-//Q.119 --> REVERSE A STRING USING A STACK.                                                   { AKSKED IN PAYTM, FLIPKART, ORACLE, MICROSOFT }
+//Q.119 --> REVERSE A STRING USING A STACK.                                                   { AKSKED IN -- PAYTM, FLIPKART, ORACLE, MICROSOFT }
 
 import java.util.*;
 public class StackB{
@@ -7953,6 +7953,47 @@ public class StackB{
         System.out.print(maxAreaHisto(arr));
     }
 }
+
+-------------------------------ASSIGNMENT QUESTION {STACK}-----------------------------------
+
+//Q.126 -->
+Question 1 : Palindrome Linked List.
+We have a singly linked list of characters, write a function that returns true if the given list is a
+palindrome, else false.
+
+<img width="788" height="101" alt="image" src="https://github.com/user-attachments/assets/c426ec57-e5de-426f-a38f-85168163ad51" />
+
+
+Input : A->B->C->B->A
+Output : Yes It is Palindrome.
+
+import java.util.*;
+import java.util.LinkedList;
+public class StackB{
+
+    public static boolean isPalindrome(LinkedList<Character> ll){
+        Stack<Character> s = new Stack<>();
+        for(char ch: ll){ // for each elt inside the ll run the loop
+            s.push(ch);
+        }
+        for(char ch: ll){ // for each elt inside the ll run the loop
+            if(ch != s.pop()){
+                return false;
+            }
+        }
+        return true;
+    }
+    public static void main(String args[]){
+        LinkedList<Character> ll = new LinkedList<>();
+        ll.addLast('A');
+        ll.addLast('B');
+        ll.addLast('C');
+        ll.addLast('B');
+        ll.addLast('A');
+        System.out.print(isPalindrome(ll));
+    }
+}
+
 
 
 
