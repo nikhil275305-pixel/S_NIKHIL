@@ -7996,6 +7996,71 @@ public class StackB{
     }
 }
 
+//Q.127 -->
+
+Question 2 : Simplify Path.
+
+We hava an absolute path for a file (Unix-style), simplify it. Note that absolute path always begin
+with ‘/’ ( root directory ), a dot in path represent current directory and double dot represents
+parent directory.
+
+Sample Input 1 : /apnacollege/
+Sample Output 1 : /apnacollege
+
+Sample Input 1 : /a/..
+Sample Output 1 : /
+
+import java.util.*;
+public class StackB{
+
+    public static String simplifyPath(String str){
+        Stack<String> s = new Stack<>();
+        String res = "";
+        res += "/";
+        for(int i=0; i<str.length(); i++){
+            String dir = "";
+            while(i < str.length() && str.charAt(i) == '/'){
+                i++;
+            }
+            while(i < str.length() && str.charAt(i) != '/'){
+                dir += str.charAt(i);
+                i++;
+            }
+            if(dir.equals("..") == true){
+                if(!s.isEmpty()){
+                    s.pop();
+                }
+                continue;
+            }
+            if(dir.equals(".") == true){
+                continue;
+            }
+            if(dir.length() != 0){
+                s.push(dir);
+            }
+        }
+
+        Stack<String> nS = new Stack<>();
+        while(!s.isEmpty()){
+            nS.push(s.pop());
+        }
+        while(!nS.isEmpty()){
+            if(nS.size() != 1){
+                res += nS.pop()+"/";
+            }else{
+                res += nS.pop();
+            }
+        }
+        return res;
+    }
+    public static void main(String args[]){
+        String s = "/.../a/../b/c/../d/./";
+        String str = "/home//foo/";
+        String ss = "/home/user/Documents/../Picturs";
+        System.out.println(simplifyPath(s));
+    }
+}
+
 
 
 
