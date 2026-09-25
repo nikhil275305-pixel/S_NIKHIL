@@ -8114,6 +8114,54 @@ public class StackB{
     }
 }
 
+//Q.129 -->
+
+Question 4 : Trapping Rain Water
+
+We have an array of N non-negative integers arr[] representing an elevation map where the
+width of each bar is 1, compute how much water it is able to trap after raining.
+
+Note: We have already solved this Question using Arrays but you have to now solve this using
+a Stack.
+
+<img width="732" height="545" alt="image" src="https://github.com/user-attachments/assets/1a71631d-b83e-4083-9460-69c98ab8d94d" />
+
+Sample Input 1 : [7 0 4 2 5 0 6 4 0 5]
+Sample Output 1 : 25
+
+import java.util.*;
+public class StackB{
+
+    // SOLVED BY ME WITHOUT ANY HELP OR HINT.
+    static int trapedRain(int arr[]){
+        Stack<Integer> s = new Stack<>();
+        s.push(arr.length-1);
+        for(int i=arr.length-2; i>=0; i--){
+            if(arr[i] > arr[s.peek()]){
+                s.push(i);
+            }else{
+                s.push(s.peek());
+            }
+        }
+        int width = 1;
+        int currMax=arr[0];
+        int WL = Math.min(currMax,arr[s.pop()]);
+        int trapedW = (WL - arr[0])*width;
+        for(int i=1; i<arr.length; i++){
+            currMax = Math.max(currMax,arr[i]);
+            WL = Math.min(currMax,arr[s.pop()]);
+            trapedW += (WL - arr[i])*width;
+        }
+        return trapedW;
+    }
+    public static void main(String args[]){
+        int elevation[] = {7,0,4,2,5,0,6,4,0,5};
+        System.out.print(trapedRain(elevation));
+    }
+}
+
+
+
 
 
 
