@@ -8061,6 +8061,59 @@ public class StackB{
     }
 }
 
+//Q.128 -->
+
+Question 3 : Decode a string
+
+We have an encoded string s and the task is to decode it. The pattern in which the strings are
+encoded is as follows.
+
+Sample Input 1 : 2[cv]
+Sample Output 1 : cvcv
+
+Sample Input 2 : 3[b2[v]]L
+Sample Output 2 : bvvbvvbvv
+
+import java.util.*;
+public class StackB{
+
+    static String strDecoder(String str){
+
+        Stack<Integer> countStk = new Stack<>();
+        Stack<String> strStk = new Stack<>();
+        String currStr = "";
+        int count =0;
+        for(int i=0; i<str.length(); i++){
+            char ch = str.charAt(i);
+            if(Character.isDigit(ch)){
+                count = count*10 + (ch - '0');
+            }else if(ch == '['){
+                countStk.push(count);
+                strStk.push(currStr);
+                currStr = "";
+                count = 0;
+            }else if(ch == ']'){
+                String decodeStr = strStk.pop();
+                int currCount = countStk.pop();
+                for(int j=0; j<currCount; j++){
+                    decodeStr += currStr;
+                }
+                currStr = decodeStr;
+            }else{
+                currStr += ch;
+            }
+        }
+        return currStr;
+    }
+
+    public static void main(String args[]){
+        String str = "2[cv]"; 
+        // op --> cvcv
+        String str1 = "3[b2[v]]L";
+        System.out.println(strDecoder(str));
+    }
+}
+
 
 
 
