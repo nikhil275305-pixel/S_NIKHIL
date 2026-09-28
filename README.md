@@ -8160,6 +8160,46 @@ public class StackB{
     }
 }
 
+---------------------------------- HASHING ------------------------------------
+
+CREATION AND OPERATION ON HASHMAP.
+
+import java.util.HashMap;
+public class ClassRoom{
+
+    public static void main(String args[]){
+        //creation 
+        HashMap<String,Integer> hm = new HashMap<>();
+
+        //insertion - O(1)
+        hm.put("India",100);
+        hm.put("China",150);
+        hm.put("Nepal",5);
+
+        System.out.println(hm);
+
+        //get - O(1)
+        System.out.println(hm.get("US"));
+
+        //contains - O(1)
+        System.out.println(hm.containsKey("India"));
+
+        //remove - O(1)
+        hm.remove("China");
+
+        System.out.println(hm);
+
+        //size
+        System.out.println(hm.size());
+
+        //isEmpty
+        System.out.println(hm.isEmpty());
+
+        //clear
+        hm.clear();
+        System.out.println(hm.isEmpty());
+    }
+}
 
 
 
