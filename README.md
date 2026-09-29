@@ -8413,12 +8413,18 @@ public class ClassRoom{
 
     static void majorityElt(int arr[]){
         HashMap<Integer,Integer> hm = new HashMap<>();
+        
+        // for(int i=0; i<arr.length; i++){
+        //     if(hm.containsKey(arr[i])){
+        //         hm.put(arr[i],hm.get(arr[i])+1);
+        //     }else{
+        //         hm.put(arr[i],1);
+        //     }
+        // }
+
+        // instead of above if else we use a shortcut
         for(int i=0; i<arr.length; i++){
-            if(hm.containsKey(arr[i])){
-                hm.put(arr[i],hm.get(arr[i])+1);
-            }else{
-                hm.put(arr[i],1);
-            }
+            hm.put(arr[i],hm.getOrDefault(arr[i],0)+1);
         }
         for(int keys: hm.keySet()){
             if(hm.get(keys) > arr.length/3){
@@ -8426,10 +8432,58 @@ public class ClassRoom{
             }
         }
     }
+    
     public static void main(String args[]){
         int nums[] = {1,3,2,5,1,3,1,5,1};
         int nums1[] = {1,2};
         majorityElt(nums);
+    }
+}
+
+//Q.131 --> VALID ANAGRAMS.
+
+Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
+typically using all the original letters exactly once.
+
+s = "race" t="care" -- TRUE
+
+S = "heart" t="earth" -- TRUE
+
+s = "tulip" t = "lipid" -- FALSE
+
+import java.util.*;
+public class ClassRoom{
+
+    static boolean isAnagram(String s, String t){
+        if(s.length() != t.length()){
+            return false;
+        }
+        HashMap<Character,Integer> hm = new HashMap<>();
+        for(int i=0; i<s.length(); i++){
+            hm.put(s.charAt(i),hm.getOrDefault(s.charAt(i),0)+1);
+        }
+        for(int i=0; i<t.length(); i++){
+            char ch = t.charAt(i);
+            if(hm.get(ch) != null){ // or --> hm.containsKey(ch) == true
+                if(hm.get(ch) == 1){
+                    hm.remove(ch);
+                }else{
+                    hm.put(ch,hm.get(ch)-1);
+                }
+            }else{
+                return false;
+            }
+        }
+
+        return hm.isEmpty();
+    }
+
+    
+    public static void main(String args[]){
+        String s = "tulip";
+        String t = "lipid";
+        System.out.print(isAnagram(s,t));
     }
 }
 
