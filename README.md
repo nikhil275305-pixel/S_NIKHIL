@@ -8160,9 +8160,9 @@ public class StackB{
     }
 }
 
----------------------------------- HASHING ------------------------------------
+----------------------------------------------- HASHING --------------------------------------------------------
 
-CREATION AND OPERATION ON HASHMAP.
+//Q. --> CREATION AND OPERATION ON HASHMAP.
 
 import java.util.HashMap;
 public class ClassRoom{
