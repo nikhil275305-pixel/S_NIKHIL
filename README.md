@@ -8347,6 +8347,60 @@ public class HashMapCode {
     }
 }
 
+//Q. --> LINKED HASHMAP.
+
+import java.util.*;
+//import java.util.LinkedHashMap;
+//import java.util.HashMap;
+public class ClassRoom{
+
+    public static void main(String args[]){
+        // LinkedMap --> keys are in insertion order
+        LinkedHashMap<String,Integer> lhm = new LinkedHashMap<>();
+        lhm.put("India",100);
+        lhm.put("China",150);
+        lhm.put("US",50);
+        lhm.put("Nepal",5);
+
+        // HashMap --> keys are random
+        HashMap<String,Integer> hm = new HashMap<>();
+        hm.put("India",100);
+        hm.put("China",150);
+        hm.put("US",50);
+        hm.put("Nepal",5);
+
+        System.out.println(lhm);
+        System.out.println(hm);
+    }
+}
+
+//Q. --> TREE HASHMAP.
+
+import java.util.*;
+//import java.util.TreeMap;
+//import java.util.HashMap;
+public class ClassRoom{
+
+    public static void main(String args[]){
+        // TreeMap --> kets are sorted (alphabetically)
+        TreeMap<String,Integer> tm = new TreeMap<>();
+        tm.put("India",100);
+        tm.put("China",150);
+        tm.put("US",50);
+        tm.put("Nepal",5);
+
+        // HashMap --> keys are random
+        HashMap<String,Integer> hm = new HashMap<>();
+        hm.put("India",100);
+        hm.put("China",150);
+        hm.put("US",50);
+        hm.put("Nepal",5);
+
+        System.out.println(tm);
+        System.out.println(hm);
+    }
+}
+
 
 
 
