@@ -8401,6 +8401,38 @@ public class ClassRoom{
     }
 }
 
+//Q.130 --> MAJORITY ELEMENT.
+
+Given an integer array of size n, find all elements that appear more than |_ n/3 _| times.
+
+nums[] = {1,3,2,5,1,3,1,5,1}; -- o/p : 1,
+nums[] = {1,2}; -- o/p : 1,2.
+
+import java.util.*;
+public class ClassRoom{
+
+    static void majorityElt(int arr[]){
+        HashMap<Integer,Integer> hm = new HashMap<>();
+        for(int i=0; i<arr.length; i++){
+            if(hm.containsKey(arr[i])){
+                hm.put(arr[i],hm.get(arr[i])+1);
+            }else{
+                hm.put(arr[i],1);
+            }
+        }
+        for(int keys: hm.keySet()){
+            if(hm.get(keys) > arr.length/3){
+                System.out.print(keys+" ");
+            }
+        }
+    }
+    public static void main(String args[]){
+        int nums[] = {1,3,2,5,1,3,1,5,1};
+        int nums1[] = {1,2};
+        majorityElt(nums);
+    }
+}
+
 
 
 
