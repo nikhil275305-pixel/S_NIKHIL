@@ -8382,7 +8382,7 @@ import java.util.*;
 public class ClassRoom{
 
     public static void main(String args[]){
-        // TreeMap --> kets are sorted (alphabetically)
+        // TreeMap --> kets are sorted (alphabetically -- on the basis of key)
         TreeMap<String,Integer> tm = new TreeMap<>();
         tm.put("India",100);
         tm.put("China",150);
