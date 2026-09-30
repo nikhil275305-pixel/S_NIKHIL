@@ -8487,6 +8487,44 @@ public class ClassRoom{
     }
 }
 
+//Q. --> CREATION AND OPERATION ON HASHSET.
+
+import java.util.HashSet;
+public class ClassRoom{
+
+    public static void main(String args[]){
+        // Creation 
+        HashSet<Integer> hs = new HashSet<>();
+
+        // insertion
+        hs.add(1);
+        hs.add(2);
+        hs.add(3);
+        hs.add(2);
+        hs.add(1);
+
+        // print
+        System.out.println(hs);
+
+        // removal
+        hs.remove(2);
+        System.out.println(hs);
+
+        // contains
+        System.out.println(hs.contains(10));
+
+        // size
+        System.out.println(hs.size());
+
+        // isEmpty
+        System.out.println(hs.isEmpty());
+
+        // clear
+        hs.clear();
+        System.out.println(hs.isEmpty());
+    }
+}
+
 
 
 
