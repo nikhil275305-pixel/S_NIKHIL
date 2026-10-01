@@ -8579,6 +8579,59 @@ public class ClassRoom{
     }
 }
 
+//Q. --> ITERATION ON LINKED HASHSET.
+
+import java.util.LinkedHashSet;
+import java.util.Iterator;
+public class ClassRoom{
+
+    public static void main(String args[]){
+        LinkedHashSet<String> cities = new LinkedHashSet<>();
+        cities.add("Delhi");
+        cities.add("Mumbai");
+        cities.add("Kolkata");
+        cities.add("Bengluru");
+        cities.add("LuckNow");
+        cities.add("Ahemdabad");
+
+        // Iteration on HashSet
+        Iterator it = cities.iterator();
+        while(it.hasNext()){
+            System.out.print(it.next()+" ");
+        }System.out.println();
+
+        for(String city: cities){
+            System.out.print(city+" ");
+        }
+    }
+}
+
+//Q. --> ITERATION ON TREESET.
+
+import java.util.TreeSet;
+import java.util.Iterator;
+public class ClassRoom{
+
+    public static void main(String args[]){
+        TreeSet<String> cities = new TreeSet<>();
+        cities.add("Delhi");
+        cities.add("Mumbai");
+        cities.add("Kolkata");
+        cities.add("Bengluru");
+        cities.add("LuckNow");
+        cities.add("Ahemdabad");
+
+        // Iteration on HashSet
+        Iterator it = cities.iterator();
+        while(it.hasNext()){
+            System.out.print(it.next()+" ");
+        }System.out.println();
+
+        for(String city: cities){
+            System.out.print(city+" ");
+        }
+    }
+}
 
 
 
