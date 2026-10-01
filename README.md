@@ -8633,6 +8633,27 @@ public class ClassRoom{
     }
 }
 
+//Q.132 --> COUNT DISTINCT ELEMENTS.
+
+nums[] = {4,3,2,5,6,7,3,4,2,1} ----> ans = 7
+
+import java.util.HashSet;
+public class ClassRoom{
+
+    public static void main(String args[]){
+        int nums[] = {4,3,2,5,6,7,3,4,2,1};
+        HashSet<Integer> hs = new HashSet<>();
+        for(int i: nums){
+            hs.add(i);  // hs.add(nums[i]) is wrong. 
+        }               // bcz in this case u r taking elt as index. 
+
+        // for(int i=0; i<nums.length; i++){
+        //     hs.add(nums[i]);
+        // }
+        System.out.println("Total distinct elts are: "+hs.size()); // o/p --> 7
+    }
+}
+
 
 
 
