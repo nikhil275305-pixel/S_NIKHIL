@@ -8737,6 +8737,33 @@ public class ClassRoom{
     }
 }
 
+//Q.135 --> LARGEST SUB ARRAY WITH SUM AS ZERO.
+
+arr[] = {15,-2,2,-8,1,7,10}; -- O/P (5)
+
+arr[] = {3,4,5}; -- O/P (0)
+
+import java.util.HashMap;
+public class ClassRoom{
+
+    public static void main(String args[]){ 
+        // T.C --> O(n)
+        int arr[] = {15,-2,2,-8,1,7,10};
+        HashMap<Integer,Integer> hm = new HashMap<>();
+        int sum = 0;
+        int len = 0;
+        for(int j=0; j < arr.length; j++){
+            sum += arr[j];
+            if(hm.containsKey(sum)){
+                len = Math.max(len,j - hm.get(sum));
+            }else{
+                hm.put(sum,j);
+            }
+        }
+        System.out.println("Largest subArray with sum as 0: "+len);
+    }
+}
+
 
 
 
