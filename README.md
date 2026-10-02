@@ -8695,6 +8695,48 @@ public class ClassRoom{
     }
 }
 
+//Q.134 --> FIND ITINERARY FROM TICKETS.
+
+"Chennai" --> "Bengaluru"
+
+"Mumbai" --> "Delhi"
+
+"Goa" --> "Chennai"
+
+"Delhi" --> "Goa"
+
+import java.util.HashMap;
+public class ClassRoom{
+
+    public static String getStart(HashMap<String,String> tickets){
+        HashMap<String,String> revHm = new HashMap<>();
+        for(String keys: tickets.keySet()){
+            revHm.put(tickets.get(keys),keys);
+        }
+        for(String keys: tickets.keySet()){
+            if(revHm.containsKey(keys) == false){
+                return keys;
+            }
+        }
+        return null;
+    }
+    public static void main(String args[]){
+        //--------------Itinerary tickets---------------//
+        HashMap<String,String> tickets = new HashMap<>();
+        tickets.put("Chennai","Bengaluru");
+        tickets.put("Mumbai","Delhi");
+        tickets.put("Goa","Chennai");
+        tickets.put("Delhi","Goa");
+
+        String start = getStart(tickets);
+        System.out.print(start);
+        for(String keys: tickets.keySet()){
+            System.out.print(" --> "+tickets.get(start));
+            start = tickets.get(start);
+        }
+    }
+}
+
 
 
 
