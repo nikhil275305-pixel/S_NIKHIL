@@ -8654,6 +8654,47 @@ public class ClassRoom{
     }
 }
 
+//Q.133 --> UNION AND INTERSECTION OF 2 ARRAYS.
+
+arr1[] = {7,3,9};
+
+arr2[] = {6,3,9,2,9,4};
+
+import java.util.Set;
+import java.util.HashMap;
+public class ClassRoom{
+
+    public static void main(String args[]){
+        int arr1[] = {7,3,9};
+        int arr2[] = {6,3,9,2,9,4};
+        HashSet<Integer> hs = new HashSet<>();
+        for(int elt: arr1){
+            hs.add(elt);  // hs.add(nums[i]) is wrong. 
+        }                
+
+        for(int elt: arr2){
+            hs.add(elt);  // hs.add(nums[i]) is wrong. 
+        }
+
+        System.out.println("Union of arr1 & arr2 is: "+hs.size());
+        //System.out.println(hs);
+
+        hs.clear();
+        for(int elt: arr1){
+            hs.add(elt);
+        }
+
+        int count = 0;
+        for(int elt:arr2){
+            if(hs.contains(elt)){
+                count++;
+                hs.remove(elt);
+            }
+        }
+        System.out.println("Intersection of arr1 & arr2 is: "+count);
+    }
+}
+
 
 
 
