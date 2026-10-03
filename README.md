@@ -8764,6 +8764,31 @@ public class ClassRoom{
     }
 }
 
+//Q.136 --> SUB ARRAY SUM EQUAL TO K.
+
+import java.util.HashMap;
+public class ClassRoom{
+
+    public static void main(String args[]){ 
+        int arr1[] = {1,2,3};
+        int arr2[] = {10,2,-2,-20,10};
+        HashMap<Integer,Integer> map = new HashMap<>();
+        int K=-10; // for arr2
+        // int K=3; // for arr1
+        map.put(0,1);
+        int sum = 0;
+        int ans = 0;
+        for(int j=0; j<arr2.length; j++){
+            sum += arr2[j];
+            if(map.containsKey(sum-K)){
+                ans += map.get(sum-K);
+            }
+            map.put(sum,map.getOrDefault(sum,0)+1);
+        }
+        System.out.println(ans);
+    }
+}
+
 
 
 
