@@ -8789,7 +8789,105 @@ public class ClassRoom{
     }
 }
 
+-------------------------------ASSIGNMENT QUESTION {HASHING}-----------------------------------
+
+//Q.137 -->
+
+Question 1 :
+Bottom View of a Binary Tree
+The top view of a binary tree is the set of nodes visible when the tree is viewed from the top.
+Given a binary tree, print the top view of it. The output nodes can be printed in any order.
+
+Sample Input :
+
+     20
+   /    \
+  8       22
+/   \      \
+5      3     25
+     /   \
+    10    14
+    
+Sample Output : 5 10 3 14 25
+
+Hint : Use the concept of Vertical Order
+
+---------I WILL SOLVE IT AFTER COMPLETING THE TREE CHAPTER--------
 
 
+//Q.138 -->
+
+Question 2 :Two Sum
+
+Given an array of integers arr[ ] and an integer target, return indices of the two numbers such
+that they add up to target.
+
+You may assume that each input would have exactly one solution, and you may not use the
+same element twice.
+
+You can return the answer in any order.
+
+Sample Input 1 : arr = [2, 7, 11, 15], target = 9
+
+Sample Output 1 : [0, 1]
+
+As arr[0] + arr[1] == 9, we return [0, 1].
+
+Sample Input 2 : arr = [3,2,4], target = 6
+
+Sample Output 2 : [1, 2]
+
+import java.util.HashMap;
+public class ClassRoom{
+
+    public static int[] twoSum(int arr[], int tar){
+        // BruteForce -- O(n2)
+        for(int i=0; i<arr.length; i++){
+            for(int j=i+1; j<arr.length; j++){
+                if(arr[i] + arr[j] == tar){
+                    System.out.println("["+i+","+j+"]");
+                    break;
+                }
+            }
+        }
+    }
+    public static void main(String args[]){
+        // int arr[] = {2,7,11,15};    // o/p -- [0,1] or [1,0]
+        // int tar = 9;
+        int arr[] = {3,2,4};     // o/p -- [1,2] or [2,1]
+        int tar = 6;
+        
+        twoSum(arr,tar); 
+    }
+}
+
+---------------OTPIMIZED O(n)--------------------
+
+import java.util.HashMap;
+public class ClassRoom{
+
+    public static int[] twoSum(int arr[], int tar){
+        HashMap<Integer,Integer> map = new HashMap<>();
+        for(int i=0; i<arr.length; i++){
+            int complement = tar - arr[i];
+
+            if(map.containsKey(complement)){
+                return new int[]{map.get(complement),i};
+            }
+
+            map.put(arr[i],i);
+        }
+        return new int[]{0,0};
+    }
+
+    public static void main(String args[]){
+        // int arr[] = {2,7,11,15};    // o/p -- [0,1] or [1,0]
+        // int tar = 9;
+        int arr[] = {3,2,4};     // o/p -- [1,2] or [2,1]
+        int tar = 6;
+
+        twoSum(arr,tar); 
+    }
+}
 
 
