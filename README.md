@@ -8868,16 +8868,17 @@ public class ClassRoom{
 
     public static int[] twoSum(int arr[], int tar){
         HashMap<Integer,Integer> map = new HashMap<>();
+        
         for(int i=0; i<arr.length; i++){
             int complement = tar - arr[i];
 
             if(map.containsKey(complement)){
-                return new int[]{map.get(complement),i};
+                return new int[] {map.get(complement),i};
             }
 
             map.put(arr[i],i);
         }
-        return new int[]{0,0};
+        return new int[] {0,0};
     }
 
     public static void main(String args[]){
