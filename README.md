@@ -8891,4 +8891,69 @@ public class ClassRoom{
     }
 }
 
+//Q.139 -->
+
+Question 3 : Sort by Frequency
+
+Given a string s, sort it in decreasing order based on the frequency of the characters. The
+frequency of a character is the number of times it appears in the string.
+Return the sorted string. If there are multiple answers, return any of them.
+
+Sample Input 1 : s = "cccaaa"
+Sample Output 1 : "aaaccc"
+
+Both 'c' and 'a' appear three times, so both "cccaaa" and "aaaccc" are valid answers.
+Note that "cacaca" is incorrect, as the same characters must be together.
+
+Sample Input 2 : s = "tree"
+Sample Output 2 :"eert"
+
+'e' appears twice while 'r' and 't' both appear once.
+So 'e' must appear before both 'r' and 't'. Therefore "eetr" is also a valid answer.
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.PriorityQueue;
+
+public class ClassRoom {
+
+    // SOLVED IT AGAIN AFTER STUDYING QUEUE
+    public static String sortOnFreq(String s) {
+        // Step 1: Build the frequency map
+        HashMap<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
+        }
+
+        // Step 2: Use a Max-Heap (PriorityQueue) to sort entries by frequency descending
+        PriorityQueue<Map.Entry<Character, Integer>> pq = new PriorityQueue<>(
+            (a, b) -> b.getValue() - a.getValue()
+        );
+        pq.addAll(map.entrySet());
+
+        // Step 3: Build the result string
+        StringBuilder str = new StringBuilder();
+        while (!pq.isEmpty()) {
+            Map.Entry<Character, Integer> entry = pq.poll();
+            char ch = entry.getKey();
+            int freq = entry.getValue();
+            
+            for (int k = 0; k < freq; k++) {
+                str.append(ch);
+            }
+        }
+
+        return str.toString();
+    }
+
+    public static void main(String args[]) {
+        String s = "cccaaa";
+        // String s = "tree"; 
+
+        System.out.println(sortOnFreq(s));
+    }
+}
+
+
 
