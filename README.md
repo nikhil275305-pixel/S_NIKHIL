@@ -8961,7 +8961,7 @@ BONUS (LRU Cache)   ------------------   { IMPORTANT }
 
 Please go on the platform and solve this question : https://leetcode.com/problems/lru-cache/
        
-        ISAKO SOLVE KARO AUR SOLUTIN YAHA PR LIKHO.
+        ISAKO SOLVE KARO AUR SOLUTION YAHA PAR LIKHO.
 
 
 
