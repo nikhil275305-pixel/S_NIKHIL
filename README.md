@@ -8800,13 +8800,13 @@ Given a binary tree, print the top view of it. The output nodes can be printed i
 
 Sample Input :
 
-     20
-   /    \
-  8       22
-/   \      \
-5      3     25
-     /   \
-    10    14
+          20
+        /    \
+       8       22
+     /   \      \
+    5     3     25
+        /   \
+       10    14
     
 Sample Output : 5 10 3 14 25
 
@@ -8954,6 +8954,14 @@ public class ClassRoom {
         System.out.println(sortOnFreq(s));
     }
 }
+
+//Q.140 -->
+
+BONUS (LRU Cache)   ------------------   { IMPORTANT }
+
+Please go on the platform and solve this question : https://leetcode.com/problems/lru-cache/
+       
+        ISAKO SOLVE KARO AUR SOLUTIN YAHA PR LIKHO.
 
 
 
